@@ -29,19 +29,9 @@ jobs:
       - name: Install PlatformIO
         run: pip install --upgrade platformio
 
-      - name: Build firmware (${{ matrix.env }})
+      - name: Build combined image (${{ matrix.env }})
         working-directory: firmware
-        run: pio run -e ${{ matrix.env }}
-
-      - name: Build filesystem image (${{ matrix.env }})
-        working-directory: firmware
-        run: pio run -e ${{ matrix.env }} -t buildfs
-
-      - name: Combine firmware + filesystem UF2
-        working-directory: firmware
-        run: |
-          build_dir=.pio/build/${{ matrix.env }}
-          cat "$build_dir/firmware.uf2" "$build_dir/littlefs.uf2" > "$build_dir/EmuToLife-${{ matrix.env }}.uf2"
+        run: pio run -e ${{ matrix.env }} --target buildunified
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
