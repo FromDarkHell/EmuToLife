@@ -1,6 +1,6 @@
 ## EmuToLife
 
-EmuToLife is a USB emulator for the LEGO Dimensions toy pad (and *soon* **OTHER** devices). It lets you use a Raspberry Pi Pico 2W (or W) as a replacement for an official device. With this, you can play the game on PS3/Wii U/PS4, *or* Xbox 360 without the original playpad.
+EmuToLife is a USB emulator for the LEGO Dimensions toy pad (and *soon* **OTHER** devices). It lets you use a Raspberry Pi Pico 2W as a replacement for an official device. With this, you can play the game on PS3/Wii U/PS4, *or* Xbox 360 without the original playpad.
 
 ### Setup
 
