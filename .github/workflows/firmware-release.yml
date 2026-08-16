@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        env: [picow, pico2w]
+        env: [pico2w]
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
