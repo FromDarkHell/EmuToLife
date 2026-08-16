@@ -37,7 +37,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: firmware-${{ matrix.env }}
-          path: firmware/.pio/build/${{ matrix.env }}/EmuToLife-${{ matrix.env }}.uf2
+          path: firmware/.pio/build/${{ matrix.env }}/firmware_with_fs.uf2
 
   release:
     needs: build
