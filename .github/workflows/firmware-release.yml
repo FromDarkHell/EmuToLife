@@ -1,0 +1,73 @@
+name: Firmware Release
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "firmware/**"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        env: [picow, pico2w]
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install PlatformIO
+        run: pip install --upgrade platformio
+
+      - name: Build firmware (${{ matrix.env }})
+        working-directory: firmware
+        run: pio run -e ${{ matrix.env }}
+
+      - name: Build filesystem image (${{ matrix.env }})
+        working-directory: firmware
+        run: pio run -e ${{ matrix.env }} -t buildfs
+
+      - name: Combine firmware + filesystem UF2
+        working-directory: firmware
+        run: |
+          build_dir=.pio/build/${{ matrix.env }}
+          cat "$build_dir/firmware.uf2" "$build_dir/littlefs.uf2" > "$build_dir/EmuToLife-${{ matrix.env }}.uf2"
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: firmware-${{ matrix.env }}
+          path: firmware/.pio/build/${{ matrix.env }}/EmuToLife-${{ matrix.env }}.uf2
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Determine release tag
+        id: tag
+        run: echo "tag=firmware-$(date +%Y.%m.%d)-${GITHUB_SHA::7}" >> "$GITHUB_OUTPUT"
+
+      - name: Publish GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.tag.outputs.tag }}
+          name: Firmware ${{ steps.tag.outputs.tag }}
+          files: artifacts/*/*.uf2
+          generate_release_notes: true

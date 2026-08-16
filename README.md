@@ -9,7 +9,9 @@ EmuToLife is a USB emulator for the LEGO Dimensions toy pad (and *soon* **OTHER*
     - If successful, the Pico will restart.
 3. On the first boot, the Pico will create a new WiFi network named `captive`.
     - Connect to the `captive` WiFi network, and it will bring you to a captive portal
+    
     ![Captive Portal](/images/captive.png)
+
 4. From here, it will restart, and conect to your home WiFi.
 5. Then, afterwards, you can connect to it via mDNS by going to `emupad.local` in a browser.
 
