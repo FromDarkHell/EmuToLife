@@ -1,0 +1,851 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Pad color animation support */
+      .pad[data-pad-id] {
+        transition: background-color 0.3s ease;
+      }
+    </style>
+
+    <script rel="preload" src="/js/websockets.js"></script>
+    <script rel="preload" src="/js/modal.js"></script>
+    <script rel="preload" src="/js/toypad.js"></script>
+  </head>
+  <body>
+    <div
+      style="display: flex; align-items: center; gap: 1em; margin-bottom: 1em"
+    >
+      <h1 style="margin: 0">Toypad Emulator</h1>
+      <span id="ws-status" class="connecting">
+        <span class="dot"></span>
+        <span id="ws-status-text">Connecting</span>
+      </span>
+    </div>
+
+    <div style="width: 100%">
+      <div class="main">
+        <div>
+          <div class="box">
+            <h2>Toy Creator</h2>
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                gap: 1em;
+              "
+            >
+              <button data-modal-open="#characterModal">
+                Create Character
+              </button>
+              <button data-modal-open="#vehicleModal">Create Vehicle</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="box" style="width: 100%">
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 1em;
+                margin-left: auto;
+                margin-right: auto;
+              "
+            >
+              <h2 style="flex-shrink: 0">My Toys</h2>
+              <div class="button-container" style="flex-shrink: 1">
+                <button type="button" class="reset" onclick="deleteSelected()">
+                  Delete Toy
+                </button>
+              </div>
+            </div>
+
+            <div class="movement-instructions">
+              Click a toy to select it, then click a toypad space to move it
+              there.
+            </div>
+            <div id="toybox"></div>
+          </div>
+
+          <div class="box" style="width: 100%">
+            <h2>Toypad</h2>
+            <div class="movement-instructions">
+              Click on toys here to select them for moving, or click a selected
+              toy again to deselect it.
+            </div>
+
+            <div
+              style="
+                display: grid;
+                grid-template-rows: 2fr;
+                grid-template-columns: repeat(5, 1fr);
+                gap: 0.5em;
+              "
+            >
+              <div class="pad" data-pad-id="2" data-pad-index="1">
+                <!-- Top-Left Left Pad -->
+              </div>
+
+              <div class="pad hide"></div>
+
+              <div class="pad" data-pad-id="1" data-pad-index="2">
+                <!-- Middle Pad -->
+              </div>
+
+              <div class="pad hide"></div>
+
+              <div class="pad" data-pad-id="3" data-pad-index="3">
+                <!-- Top-Right Right Pad -->
+              </div>
+
+              <div class="pad" data-pad-id="2" data-pad-index="4">
+                <!-- Bottom-Left Left Pad -->
+              </div>
+              <div class="pad" data-pad-id="2" data-pad-index="5">
+                <!-- Bottom-Right Left Pad -->
+              </div>
+
+              <div class="pad hide"></div>
+
+              <div class="pad" data-pad-id="3" data-pad-index="6">
+                <!-- Bottom-Left Right Pad -->
+              </div>
+              <div class="pad" data-pad-id="3" data-pad-index="7">
+                <!-- Bottom-Right Right Pad -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="advanced">
+          <div class="controls">
+            <div
+              class="box"
+              style="display: flex; flex-direction: column; gap: 1em"
+            >
+              <div style="display: flex; gap: 1em">
+                <div class="form">
+                  <div>
+                    <h2>Upload</h2>
+                    <p class="sm">Upload new firmware OTA via this page</p>
+                  </div>
+
+                  <div class="button-container">
+                    <a
+                      href="/update"
+                      target="_blank"
+                      style="display: flex; flex-direction: column"
+                    >
+                      <button>Upload</button>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="form">
+                  <div>
+                    <h2>Upload File</h2>
+                    <p class="sm">Upload a file to the device filesystem</p>
+                  </div>
+
+                  <div
+                    class="button-container"
+                    style="
+                      display: flex;
+                      flex-direction: row;
+                      gap: 0.5em;
+                      justify-content: center;
+                      align-items: center;
+                    "
+                  >
+                    <label for="fileInput" style="cursor: pointer; margin: 0">
+                      <button
+                        type="button"
+                        style="width: 100%; pointer-events: none"
+                        id="fileLabel"
+                      >
+                        Choose File
+                      </button>
+                    </label>
+                    <input
+                      id="fileInput"
+                      type="file"
+                      style="display: none"
+                      onchange="handleFileSelected(this)"
+                    />
+                    <button
+                      type="button"
+                      id="uploadBtn"
+                      onclick="uploadFile()"
+                      disabled
+                      style="opacity: 0.5"
+                    >
+                      Upload
+                    </button>
+                    <p
+                      class="sm"
+                      id="uploadStatus"
+                      style="text-align: center; min-height: 1.2em"
+                    ></p>
+                  </div>
+
+                  <script>
+                    var _pendingFile = null;
+
+                    function handleFileSelected(input) {
+                      _pendingFile = input.files[0] ?? null;
+                      const btn = document.getElementById("uploadBtn");
+                      const label = document.getElementById("fileLabel");
+                      if (_pendingFile) {
+                        label.textContent = _pendingFile.name;
+                        btn.disabled = false;
+                        btn.style.opacity = "1";
+                      } else {
+                        label.textContent = "Choose File";
+                        btn.disabled = true;
+                        btn.style.opacity = "0.5";
+                      }
+                      document.getElementById("uploadStatus").textContent = "";
+                    }
+
+                    async function uploadFile() {
+                      if (!_pendingFile) return;
+
+                      const btn = document.getElementById("uploadBtn");
+                      const status = document.getElementById("uploadStatus");
+
+                      btn.disabled = true;
+                      btn.style.opacity = "0.5";
+                      status.textContent = "Uploading...";
+
+                      try {
+                        const path = "/" + _pendingFile.name;
+                        const res = await fetch(
+                          "/upload?path=" + encodeURIComponent(path),
+                          {
+                            method: "POST",
+                            headers: {
+                              "Content-Type": "application/octet-stream",
+                            },
+                            body: _pendingFile,
+                          },
+                        );
+
+                        if (res.ok) {
+                          const msg = await res.text();
+                          status.textContent = msg;
+                          _pendingFile = null;
+                          document.getElementById("fileInput").value = "";
+                          document.getElementById("fileLabel").textContent =
+                            "Choose File";
+                        } else {
+                          status.textContent =
+                            "Upload failed (" + res.status + ")";
+                          btn.disabled = false;
+                          btn.style.opacity = "1";
+                        }
+                      } catch (e) {
+                        status.textContent = "Error: " + e.message;
+                        btn.disabled = false;
+                        btn.style.opacity = "1";
+                      }
+                    }
+                  </script>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 1em">
+                <div class="form">
+                  <h2>Change Platform</h2>
+                  <p>Change between PS3 (Wii U, PS4) and Xbox 360</p>
+
+                  <div
+                    class="button-container"
+                    style="
+                      display: flex;
+                      flex-direction: row;
+                      gap: 0.5em;
+                      justify-content: center;
+                      align-items: center;
+                    "
+                  >
+                    <button
+                      type="button"
+                      style="flex-grow: 1"
+                      onclick="changePlatform(0, this)"
+                    >
+                      PS3
+                    </button>
+                    <button
+                      type="button"
+                      style="flex-grow: 1"
+                      onclick="changePlatform(1, this)"
+                    >
+                      Xbox 360
+                    </button>
+                  </div>
+                  <p id="platform-status" class="sm" style="display: none"></p>
+                </div>
+              </div>
+
+              <script>
+                async function changePlatform(value, button) {
+                  const statusEl = document.getElementById("platform-status");
+                  const buttons =
+                    button.parentElement.querySelectorAll("button");
+
+                  buttons.forEach((b) => (b.disabled = true));
+                  statusEl.style.display = "block";
+                  statusEl.textContent =
+                    "Switching platform - the device is restarting...";
+
+                  // The device reboots as part of handling this request, so it may never get to
+                  // send a response back - that's expected, not a failure. Once rebooted, it's
+                  // the websocket reconnecting (see websockets.js) that tells us it's back.
+                  window.__awaitingReboot = true;
+                  try {
+                    await fetch("/platform", {
+                      method: "POST",
+                      headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                      },
+                      body: `platform=${value}`,
+                    });
+                  } catch (e) {
+                    console.debug(
+                      "[platform] fetch didn't complete (expected - device is rebooting)",
+                      e,
+                    );
+                  }
+                }
+              </script>
+
+              <form
+                method="POST"
+                action="/restart"
+                onsubmit="return confirmReset();"
+              >
+                <div>
+                  <h2>Restart</h2>
+                  <p class="sm">This restarts the toypad controller</p>
+                </div>
+
+                <div class="button-container">
+                  <button type="submit" class="reset">Restart</button>
+                </div>
+              </form>
+
+              <form
+                method="POST"
+                action="/reset"
+                onsubmit="return confirmReset();"
+              >
+                <div>
+                  <h2>Factory Reset</h2>
+                  <p class="sm">
+                    This resets your settings and then restarts the toypad
+                    controller
+                  </p>
+                </div>
+
+                <div class="button-container">
+                  <button type="submit" class="reset">Factory Reset</button>
+                </div>
+
+                <script>
+                  function confirmReset() {
+                    return confirm(
+                      "This will erase all settings and restart the device. Are you sure?",
+                    );
+                  }
+                </script>
+              </form>
+            </div>
+
+            <div class="box">
+              <h2>Logs</h2>
+              <div id="container">Loading logs...</div>
+
+              <script>
+                let isFetchingLogs = false;
+                async function updateLogs() {
+                  if (isFetchingLogs) return;
+
+                  isFetchingLogs = true;
+                  try {
+                    let res = await fetch("/logs");
+                    if (res.ok) {
+                      let text = await res.text();
+                      document.getElementById("container").innerHTML =
+                        text.replace(/(?:\r\n|\r|\n)/g, "<br>");
+                      let container = document.getElementById("container");
+                      container.scrollTop = container.scrollHeight; // auto-scroll
+                    }
+                  } catch (e) {
+                    console.error("Log fetch failed:", e);
+                  } finally {
+                    isFetchingLogs = false;
+                  }
+                }
+
+                setInterval(updateLogs, 3000); // every 3s
+                updateLogs(); // initial load
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="characterModal" class="modal">
+        <div class="modal-content">
+          <span class="modal-close" data-modal-close>&times;</span>
+          <div>
+            <div class="filter-bar">
+              <h2 style="margin: 0">Select a Character</h2>
+              <select id="characterFilter" class="filter-select">
+                <option value="">All Abilities</option>
+              </select>
+            </div>
+            <div id="characterGrid" class="characterGrid">
+              <!-- Characters will be loaded here -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="vehicleModal" class="modal">
+        <div class="modal-content">
+          <span class="modal-close" data-modal-close>&times;</span>
+          <div>
+            <div class="filter-bar">
+              <h2 style="margin: 0">Select a Vehicle</h2>
+              <select id="vehicleFilter" class="filter-select">
+                <option value="">All Abilities</option>
+              </select>
+            </div>
+            <div id="vehicleGrid">
+              <!-- Characters will be loaded here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    var characters = null;
+    var vehicles = null;
+
+    var selectedToy = null;
+    var toybox = [];
+
+    // Object to track toys on toypad: {padId: toyObject}
+    var _toypadToys = {};
+
+    const _requestQueue = {
+      _chain: Promise.resolve(),
+      add(fn) {
+        this._chain = this._chain.then(fn).catch((err) => {
+          console.error("[Queue] Request failed:", err);
+        });
+        return this._chain;
+      },
+    };
+
+    const toypadUpdateHandler = {
+      set(target, property, value) {
+        const oldCharacter = target[property];
+        const newCharacter = value;
+
+        // Only send a removal if the toy is going back to the toybox (index -1)
+        // For pad-to-pad moves, the backend handles the remove itself
+        if (oldCharacter !== undefined && newCharacter === undefined) {
+          _requestQueue.add(() =>
+            fetch("/toypad", {
+              method: "PUT",
+              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+              body: new URLSearchParams({ uid: oldCharacter.uid, index: -1 }),
+            }),
+          );
+        }
+
+        if (newCharacter !== undefined) {
+          _requestQueue.add(() =>
+            fetch("/toypad", {
+              method: "PUT",
+              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+              body: new URLSearchParams({
+                uid: newCharacter.uid,
+                index: property,
+              }),
+            }),
+          );
+        }
+
+        target[property] = value;
+        return true;
+      },
+    };
+
+    var toypadToys = new Proxy(_toypadToys, toypadUpdateHandler);
+
+    const _allTags = { character: [], vehicle: [] };
+
+    function populateFilterDropdown(grid_type, tags) {
+      const select = document.getElementById(`${grid_type}Filter`);
+
+      // Collect every unique ability across all tags
+      const abilities = new Set();
+      tags.forEach((tag) => {
+        const builds =
+          grid_type === "vehicle" ? [tag].concat(tag.rebuilds ?? []) : [tag];
+        builds.forEach((b) =>
+          (b.abilities ?? []).forEach((a) => abilities.add(a)),
+        );
+      });
+
+      // Preserve current selection if it still exists after a reload
+      const current = select.value;
+      select.innerHTML = `<option value="">All Abilities</option>`;
+
+      [...abilities]
+        .filter((x) => x !== "")
+        .sort()
+        .forEach((ability) => {
+          const opt = document.createElement("option");
+          opt.value = ability;
+          opt.textContent = ability;
+          select.appendChild(opt);
+        });
+
+      if (current && abilities.has(current)) select.value = current;
+    }
+
+    function getFilteredTags(grid_type) {
+      const select = document.getElementById(`${grid_type}Filter`);
+      const chosen = select ? select.value : "";
+      const tags = _allTags[grid_type];
+
+      if (!chosen) return tags;
+
+      return tags.filter((tag) => {
+        const builds =
+          grid_type === "vehicle" ? [tag].concat(tag.rebuilds ?? []) : [tag];
+        return builds.some((b) => (b.abilities ?? []).includes(chosen));
+      });
+    }
+
+    function updateGrid(grid_type, tags) {
+      const grid = document.getElementById(`${grid_type}Grid`);
+      grid.innerHTML = "";
+
+      const sorted = [...tags].sort((a, b) => a.name.localeCompare(b.name));
+
+      sorted.forEach((tag) => {
+        const option = document.createElement("div");
+        option.className = "character-option";
+
+        if (grid_type === "character") {
+          option.innerHTML = `
+                <img src="/images/${grid_type}s/${tag.id.toString().padStart(4, "0")}.webp"
+                     alt="${tag.name}">
+                <p>${tag.name}</p>
+            `;
+          option.addEventListener("click", (evt) =>
+            createNewToy(evt.target, tag, grid_type),
+          );
+        }
+
+        if (grid_type === "vehicle") {
+          const contents = [];
+          for (const build of [tag].concat(tag.rebuilds ?? [])) {
+            const el = document.createElement("div");
+            el.className = "character-option";
+            el.addEventListener("click", (evt) =>
+              createNewToy(evt.target, build, grid_type),
+            );
+            el.innerHTML = `
+                    <img src="/images/${grid_type}s/${build.id.toString().padStart(4, "0")}.webp"
+                         alt="${build.name}">
+                    <p>${build.name}</p>
+                `;
+            contents.push(el);
+          }
+
+          option.innerHTML = `
+                <details>
+                  <summary style="display:flex;flex-direction:row;gap:1em;
+                                  justify-content:center;align-items:center">
+                    <img src="/images/${grid_type}s/${tag.id.toString().padStart(4, "0")}.webp"
+                         alt="${tag.name}" height="64" width="64">
+                    <div>${tag.name}</div>
+                  </summary>
+                  <div class="tagList" style="display:flex;flex-direction:row;gap:1em;
+                              justify-content:center;align-items:center;margin:20px 0">
+                  </div>
+                </details>
+            `;
+
+          option.querySelector(".tagList").append(...contents);
+        }
+
+        grid.appendChild(option);
+      });
+    }
+
+    function refreshGrid(grid_type) {
+      updateGrid(grid_type, getFilteredTags(grid_type));
+    }
+
+    // Wire up the dropdowns
+    document
+      .getElementById("characterFilter")
+      .addEventListener("change", () => refreshGrid("character"));
+    document
+      .getElementById("vehicleFilter")
+      .addEventListener("change", () => refreshGrid("vehicle"));
+
+    fetch("/json/characters.json").then(async (res) => {
+      _allTags.character = await res.json();
+      populateFilterDropdown("character", _allTags.character);
+      refreshGrid("character");
+    });
+
+    fetch("/json/vehicles.json").then(async (res) => {
+      _allTags.vehicle = await res.json();
+      populateFilterDropdown("vehicle", _allTags.vehicle);
+      refreshGrid("vehicle");
+    });
+
+    // Sends a new request to the server, creating a new toy for inside the toybox
+    async function createNewToy(element, tag, type) {
+      await fetch("/toybox", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+          name: tag.name,
+          id: tag.id,
+          type: type,
+        }),
+      }).then((x) => {
+        updateToybox().then((x) => {
+          // Close the modal
+          element.closest(".modal")?.classList.remove("active");
+        });
+      });
+    }
+
+    // Deletes the currently selected toy from the toybox / pad
+    async function deleteSelected(element) {
+      if (selectedToy == null) return;
+
+      if (selectedToy.currentPadId !== undefined) {
+        moveToyToToybox(selectedToy.currentPadId);
+      }
+
+      await fetch("/toybox-delete", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+          uid: selectedToy.uid,
+        }),
+      }).then((x) => {
+        updateToybox();
+        clearSelection();
+      });
+    }
+
+    function clearSelection() {
+      document
+        .querySelectorAll(".toy-item.selected")
+        .forEach((el) => el.classList.remove("selected"));
+      document
+        .querySelectorAll(".toy-on-pad.selected")
+        .forEach((el) => el.classList.remove("selected"));
+
+      // Re-render any pad that was showing action buttons
+      if (selectedToy !== null && selectedToy.currentPadId !== undefined) {
+        const currentPad = selectedToy.currentPadId;
+        selectedToy = null;
+        renderPad(currentPad);
+      } else {
+        selectedToy = null;
+      }
+    }
+
+    async function updateToybox() {
+      await fetch("/toybox").then(async (data) => {
+        toybox = await data.json();
+        console.log(`Loaded toybox data...`);
+        renderToybox(true);
+      });
+    }
+
+    function renderToybox(updatePads = false) {
+      console.log("Updating toybox...");
+
+      const grid = document.getElementById(`toybox`);
+      grid.innerHTML = "";
+
+      if (updatePads) {
+        const toysOnPad = toybox.filter((toy) => toy.index != -1);
+        console.log(`Need to place ${JSON.stringify(toysOnPad)} onto toypad`);
+
+        toysOnPad.forEach((toy) => {
+          _toypadToys[toy.index] = toy;
+          renderPad(toy.index);
+        });
+      }
+
+      // Only show toys that are not on the toypad
+      const availableToys = toybox.filter(
+        (toy) =>
+          !Object.values(toypadToys).some((padToy) => padToy.uid === toy.uid),
+      );
+
+      console.log(`Available Toybox Toys: ${JSON.stringify(availableToys)}`);
+
+      availableToys.forEach((toy) => {
+        const item = document.createElement("div");
+        item.className = "toy-item";
+
+        item.setAttribute("data-type", toy.type);
+        item.setAttribute("data-uid", toy.uid);
+        item.setAttribute("data-id", toy.id);
+
+        item.innerHTML = `
+                              <img src="/images/${toy.type}s/${toy.id
+                                .toString()
+                                .padStart(
+                                  4,
+                                  "0",
+                                )}.webp" alt="${toy.name}"  height="80" width="80">
+                      <p>${toy.name}</p>
+        `;
+
+        item.addEventListener("click", toyClick);
+        grid.appendChild(item);
+      });
+    }
+
+    function renderPad(padId) {
+      console.log(`Rendering pad: ${padId}`);
+      const pad = document.querySelector(`[data-pad-index="${padId}"]`);
+      const toy = toypadToys[padId];
+
+      if (!toy) {
+        pad.classList.remove("occupied");
+        pad.innerHTML = "";
+        return;
+      }
+
+      const isSelected =
+        selectedToy &&
+        selectedToy.uid === toy.uid &&
+        selectedToy.currentPadId == padId;
+
+      pad.classList.add("occupied");
+      pad.innerHTML = `
+        <div class="toy-on-pad ${isSelected ? "selected" : ""}" data-uid="${toy.uid}">
+            <img src="/images/${toy.type}s/${toy.id.toString().padStart(4, "0")}.webp"
+                 alt="${toy.name}" class="toy-on-pad-image">
+            <p>${toy.name}</p>
+            ${
+              isSelected
+                ? `
+            <div class="pad-toy-actions">
+                <button class="pad-toy-action action-putback" title="Put back">Place</button>
+                <button class="pad-toy-action action-remove"  title="Remove">Remove</button>
+            </div>`
+                : ""
+            }
+        </div>
+    `;
+
+      // Wire up the action buttons if present
+      if (isSelected) {
+        pad.querySelector(".action-putback").addEventListener("click", (e) => {
+          e.stopPropagation();
+          moveToyToPad(selectedToy, selectedToy.currentPadId);
+          clearSelection(); // already in correct place, just deselect
+        });
+
+        pad.querySelector(".action-remove").addEventListener("click", (e) => {
+          e.stopPropagation();
+          moveToyToToybox(padId);
+          clearSelection();
+        });
+      }
+    }
+
+    // Initialize the system
+    function init() {
+      connectWS();
+
+      updateToybox();
+
+      // Deselect when clicking outside any pad or toybox item
+      document.addEventListener("click", function (e) {
+        if (selectedToy === null) return;
+
+        const isInsidePad = e.target.closest(".pad[data-pad-index]");
+        const isInsideToybox = e.target.closest(".toy-item");
+        const isActionBtn = e.target.closest(".pad-toy-action");
+
+        if (!isInsidePad && !isInsideToybox && !isActionBtn) {
+          clearSelection();
+        }
+      });
+
+      // Add click event handlers to all of the pads
+      document.querySelectorAll(".pad[data-pad-index]").forEach((pad) => {
+        pad.addEventListener("click", function (e) {
+          const padId = this.getAttribute("data-pad-index");
+
+          // If clicking on a toy that's already on a pad
+          if (e.target.closest(".toy-on-pad")) {
+            handleToyOnPadClick(e, padId);
+            return;
+          }
+
+          if (selectedToy && selectedToy.currentPadId == padId) {
+            moveToyToPad(selectedToy, selectedToy.currentPadId);
+            clearSelection();
+            return;
+          }
+
+          // If we have a selected toy from toybox, move it to this pad
+          if (
+            selectedToy &&
+            !toypadToys[padId] &&
+            selectedToy.currentPadId === undefined
+          ) {
+            moveToyToPad(selectedToy, padId);
+            clearSelection();
+          }
+          // If clicking on an empty pad and we have a toy selected from another pad
+          else if (
+            selectedToy &&
+            !toypadToys[padId] &&
+            selectedToy.currentPadId !== undefined
+          ) {
+            moveToyBetweenPads(selectedToy.currentPadId, padId);
+            clearSelection();
+          }
+        });
+      });
+    }
+
+    // Start the application
+    init();
+  </script>
+</html>

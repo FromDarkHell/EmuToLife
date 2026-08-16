@@ -1,0 +1,236 @@
+[
+    {
+        "name": "Wyldstyle",
+        "id": 3,
+        "uid": "042F0D76D7D980",
+        "index": 1,
+        "type": "character",
+        "vehicleUpgradesP23": 0,
+        "vehicleUpgradesP25": 0
+    },
+    {
+        "name": "Gandalf",
+        "id": 2,
+        "uid": "047E0A9CB07280",
+        "index": 2,
+        "type": "character",
+        "vehicleUpgradesP23": 0,
+        "vehicleUpgradesP25": 0
+    },
+    {
+        "name": "Marty McFly",
+        "id": 31,
+        "uid": "04EB541D93D880",
+        "index": -1,
+        "type": "character",
+        "vehicleUpgradesP23": 0,
+        "vehicleUpgradesP25": 0
+    },
+    {
+        "name": "Chell",
+        "id": 9,
+        "uid": "04DE4350E4F380",
+        "index": -1,
+        "type": "character",
+        "vehicleUpgradesP23": 0,
+        "vehicleUpgradesP25": 0
+    },
+    {
+        "name": "Gamer Kid",
+        "id": 26,
+        "uid": "046A613F04CF80",
+        "index": -1,
+        "type": "character",
+        "vehicleUpgradesP23": 0,
+        "vehicleUpgradesP25": 0
+    },
+    {
+        "name": "The Doctor",
+        "id": 15,
+        "uid": "040889BDF0E280",
+        "index": -1,
+        "type": "character",
+        "vehicleUpgradesP23": 0,
+        "vehicleUpgradesP25": 0
+    },
+    {
+        "name": "Newt Scamander",
+        "id": 56,
+        "uid": "047743B67CC380",
+        "index": -1,
+        "type": "character",
+        "vehicleUpgradesP23": 0,
+        "vehicleUpgradesP25": 0
+    },
+    {
+        "name": "Cyberman",
+        "id": 13,
+        "uid": "04C1A981044880",
+        "index": -1,
+        "type": "character",
+        "vehicleUpgradesP23": 0,
+        "vehicleUpgradesP25": 0
+    },
+    {
+        "name": "TARDIS",
+        "id": 1030,
+        "uid": "04C1964FAF8080",
+        "index": -1,
+        "type": "vehicle",
+        "vehicleUpgradesP23": 4026531839,
+        "vehicleUpgradesP25": 4026531839
+    },
+    {
+        "name": "K-9",
+        "id": 1027,
+        "uid": "0446D160A7E380",
+        "index": -1,
+        "type": "vehicle",
+        "vehicleUpgradesP23": 4026531839,
+        "vehicleUpgradesP25": 4026531839
+    },
+    {
+        "name": "Scooby-Doo",
+        "id": 36,
+        "uid": "0479E036419B80",
+        "index": -1,
+        "type": "character",
+        "vehicleUpgradesP23": 0,
+        "vehicleUpgradesP25": 0
+    },
+    {
+        "name": "Peter Venkman",
+        "id": 34,
+        "uid": "0481C69E219280",
+        "index": -1,
+        "type": "character",
+        "vehicleUpgradesP23": 0,
+        "vehicleUpgradesP25": 0
+    },
+    {
+        "name": "Batman",
+        "id": 1,
+        "uid": "04BD07C2B96280",
+        "index": -1,
+        "type": "character",
+        "vehicleUpgradesP23": 0,
+        "vehicleUpgradesP25": 0
+    },
+    {
+        "name": "Abby Yates",
+        "id": 47,
+        "uid": "04277B02764C80",
+        "index": -1,
+        "type": "character",
+        "vehicleUpgradesP23": 0,
+        "vehicleUpgradesP25": 0
+    },
+    {
+        "name": "Finn the Human",
+        "id": 48,
+        "uid": "04A2C4B427AF80",
+        "index": -1,
+        "type": "character",
+        "vehicleUpgradesP23": 0,
+        "vehicleUpgradesP25": 0
+    },
+    {
+        "name": "Ecto-1 (2016)",
+        "id": 1197,
+        "uid": "0490AC0FFC7E80",
+        "index": -1,
+        "type": "vehicle",
+        "vehicleUpgradesP23": 4026531839,
+        "vehicleUpgradesP25": 4026531839
+    },
+    {
+        "name": "Niffler",
+        "id": 1191,
+        "uid": "04B66D87030E80",
+        "index": -1,
+        "type": "vehicle",
+        "vehicleUpgradesP23": 4026531839,
+        "vehicleUpgradesP25": 4026531839
+    },
+    {
+        "name": "Sloth",
+        "id": 66,
+        "uid": "040E4004A1D880",
+        "index": -1,
+        "type": "character",
+        "vehicleUpgradesP23": 0,
+        "vehicleUpgradesP25": 0
+    },
+    {
+        "name": "Batgirl",
+        "id": 64,
+        "uid": "04AC9FBB816A80",
+        "index": -1,
+        "type": "character",
+        "vehicleUpgradesP23": 0,
+        "vehicleUpgradesP25": 0
+    },
+    {
+        "name": "Robin",
+        "id": 65,
+        "uid": "0406F2322A2780",
+        "index": -1,
+        "type": "character",
+        "vehicleUpgradesP23": 0,
+        "vehicleUpgradesP25": 0
+    },
+    {
+        "name": "Excalibur Batman",
+        "id": 69,
+        "uid": "0440AA28F7D480",
+        "index": -1,
+        "type": "character",
+        "vehicleUpgradesP23": 0,
+        "vehicleUpgradesP25": 0
+    },
+    {
+        "name": "Ethan Hunt",
+        "id": 49,
+        "uid": "04A5C51D413A80",
+        "index": -1,
+        "type": "character",
+        "vehicleUpgradesP23": 0,
+        "vehicleUpgradesP25": 0
+    },
+    {
+        "name": "IMF Scrambler",
+        "id": 1212,
+        "uid": "04E937AAA4F780",
+        "index": -1,
+        "type": "vehicle",
+        "vehicleUpgradesP23": 4026531839,
+        "vehicleUpgradesP25": 4026531839
+    },
+    {
+        "name": "Jakemobile",
+        "id": 1176,
+        "uid": "043A5FE1C47880",
+        "index": -1,
+        "type": "vehicle",
+        "vehicleUpgradesP23": 4026531839,
+        "vehicleUpgradesP25": 4026531839
+    },
+    {
+        "name": "Ancient Psychic Tandem War Elephant",
+        "id": 1170,
+        "uid": "04AFF65FA9C880",
+        "index": -1,
+        "type": "vehicle",
+        "vehicleUpgradesP23": 4026531839,
+        "vehicleUpgradesP25": 4026531839
+    },
+    {
+        "name": "IMF Sports Car",
+        "id": 1215,
+        "uid": "0418CE6765B680",
+        "index": -1,
+        "type": "vehicle",
+        "vehicleUpgradesP23": 4026531839,
+        "vehicleUpgradesP25": 4026531839
+    }
+]

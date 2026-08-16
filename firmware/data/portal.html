@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Toypad Setup</h1>
+    <p>
+      Connect your Toypad to your WiFi network in order to configure your
+      device.
+    </p>
+    <form method="POST" action="/connect" style="flex-grow: 0; display: block">
+      <input type="text" name="ssid" placeholder="Wi-Fi SSID" required /><br />
+      <input type="password" name="password" placeholder="Password" /><br />
+      <button type="submit">Connect</button>
+    </form>
+  </body>
+</html>
