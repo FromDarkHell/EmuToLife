@@ -123,6 +123,11 @@ void LegoServer::start_web() {
                     if (!filePath.startsWith("/")) {
                         filePath = "/" + filePath;
                     }
+
+                    if(filePath.indexOf(".js") > 0) {
+                        filePath = "/js" + filePath;
+                    }
+
                 } else {
                     request->send(400, "text/plain", "Missing 'path' query parameter");
                     return;
@@ -242,6 +247,7 @@ bool LegoServer::add_lego_endpoints() {
         const char* tag_name = nullptr;
         int tag_id = 0xFFFF;
         const char* tag_type = nullptr;
+        const char* tag_game = "dimensions";
 
         for (int i = 0; i < request->params(); i++) {
             const AsyncWebParameter* param = request->getParam(i);
@@ -252,15 +258,17 @@ bool LegoServer::add_lego_endpoints() {
                 tag_id = atoi(param->value().c_str());
             } else if (param->name() == "type") {
                 tag_type = param->value().c_str();
+            } else if (param->name() == "game") {
+                tag_game = param->value().c_str();
             } else {
                 log_warn("[server::toybox] Unknown param %s", param->name().c_str());
             }
         }
 
-        log_dbg("[server::toybox] Adding new tag to toybox / Name: %s / ID: %d / Type: %s",
-                tag_name, tag_id, tag_type);
+        log_dbg("[server::toybox] Adding new tag to toybox / Name: %s / ID: %d / Type: %s / Game: %s",
+                tag_name, tag_id, tag_type, tag_game);
 
-        this->toybox->addToy(tag_name, tag_id, tag_type);
+        this->toybox->addToy(tag_name, tag_id, tag_type, tag_game);
         this->store_toybox();
         request->send(200, "application/json", this->toybox->serialize());
     });
@@ -291,18 +299,25 @@ bool LegoServer::add_lego_endpoints() {
             return;
         }
 
-        ToyTag* tag = this->toybox->getByUID(tag_uid);
+        Toy* tag = this->toybox->getByUID(tag_uid);
         if (tag == nullptr) {
             request->send(404, "text/plain", "Unable to find tag");
             return;
         }
 
-        const TagIndex lastLocation = (*tag).padIndex;
+        if (tag->toyGame() != ToyGame::LegoDimensions) {
+            // Tag placement / RFID emulation isn't implemented yet for other games.
+            request->send(400, "text/plain", "Tag placement is not yet supported for this game");
+            return;
+        }
+        ToyTag* legoTag = static_cast<ToyTag*>(tag);
+
+        const TagIndex lastLocation = legoTag->padIndex;
         const TagIndex location = static_cast<TagIndex>(std::stoi(tag_index));
-        (*tag).padIndex = location;
+        legoTag->padIndex = location;
 
         this->_toyboxDirty = true;
-        this->toypad->tagChangeEvent(tag, lastLocation);
+        this->toypad->tagChangeEvent(legoTag, lastLocation);
 
         request->send(200, "application/json", this->toybox->serialize());
     });
@@ -330,6 +345,51 @@ bool LegoServer::add_lego_endpoints() {
         log_dbg("[server::platform] Setting platform to %s",
                 platformInt == ToypadPlatform::PS3 ? "PS3" : "X360");
         config.setUChar("platform", static_cast<uint8_t>(platformInt));
+        request->send(200, "text/plain", "Success... Restarting...");
+
+        rp2040.reboot();
+    });
+
+    // Reads the currently persisted platform/game, so the frontend can reflect the actual
+    // device state instead of guessing from local storage.
+    server->on("/settings", HTTP_GET, [this](AsyncWebServerRequest* request) {
+        const uint8_t platformVal =
+            config.getUChar("platform", static_cast<uint8_t>(ToypadPlatform::PS3));
+        const uint8_t gameVal = config.getUChar("game", static_cast<uint8_t>(ToyGame::LegoDimensions));
+
+        JsonDocument doc;
+        doc["platform"] = platformVal;
+        doc["game"] = toyGameString(static_cast<ToyGame>(gameVal));
+
+        String result;
+        serializeJson(doc, result);
+        request->send(200, "application/json", result);
+    });
+
+    // Persists which game's USB vendor/product IDs the Toypad should present as, then restarts
+    // the device - the vendor/product IDs are only read once, at boot, when the USB device is
+    // configured.
+    server->on("/game", HTTP_POST, [this](AsyncWebServerRequest* request) {
+        const char* game = nullptr;
+        for (int i = 0; i < request->params(); i++) {
+            const AsyncWebParameter* param = request->getParam(i);
+
+            if (param->name() == "game") {
+                game = param->value().c_str();
+            } else {
+                log_warn("[server::game] Unknown param %s", param->name().c_str());
+            }
+        }
+
+        if (game == nullptr) {
+            request->send(400, "text/plain", "Missing Game");
+            return;
+        }
+
+        const ToyGame gameEnum = toyGameFromString(game);
+
+        log_dbg("[server::game] Setting game to %s", toyGameString(gameEnum));
+        config.setUChar("game", static_cast<uint8_t>(gameEnum));
         request->send(200, "text/plain", "Success... Restarting...");
 
         rp2040.reboot();
@@ -425,9 +485,14 @@ bool LegoServer::load_toybox() {
         // toypad.
         // This way the toypad knows who is on what tag index.
         for (size_t i = 0; i < this->toybox->count(); i++) {
-            ToyTag* tag = this->toybox->getToy(i);
-            if (tag->padIndex != TagIndex::Unplaced || tag->padIndex != TagIndex::INVALID) {
-                toypad->tagChangeEvent(tag, TagIndex::Unplaced);
+            Toy* tag = this->toybox->getToy(i);
+            if (tag->toyGame() != ToyGame::LegoDimensions) {
+                continue;
+            }
+
+            ToyTag* legoTag = static_cast<ToyTag*>(tag);
+            if (legoTag->padIndex != TagIndex::Unplaced || legoTag->padIndex != TagIndex::INVALID) {
+                toypad->tagChangeEvent(legoTag, TagIndex::Unplaced);
             }
         }
     }

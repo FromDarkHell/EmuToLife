@@ -1,6 +1,9 @@
 // Initialize the system
-function init() {
+async function init() {
   connectWS();
+
+  // Fetches the settings from the firmware on init
+  await loadSettings();
 
   updateToybox();
   initGrid();

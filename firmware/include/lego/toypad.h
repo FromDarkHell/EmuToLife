@@ -38,6 +38,11 @@ class Toypad {
     ToypadPlatform platform() const { return _platform; }
 
     /**
+     * @brief Returns the active game this Toypad is presenting the USB vendor/product IDs for.
+     */
+    ToyGame game() const { return _game; }
+
+    /**
      * @brief Changes the active platform and re-initialises the USB
      *        interface with the matching VID/PID.
      *
@@ -104,6 +109,7 @@ class Toypad {
      *
      */
     ToypadPlatform _platform = ToypadPlatform::PS3;
+    ToyGame _game = ToyGame::LegoDimensions;
 
     /**
      * @brief The Adafruit_USBD_HID instance that manages the USB HID interface. This is configured

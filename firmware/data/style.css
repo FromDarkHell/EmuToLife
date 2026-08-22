@@ -121,6 +121,12 @@ button:hover {
   box-shadow: 0 3px #800000;
   color: white;
 }
+#game-select button.active,
+#platform-select button.active {
+  background: #333;
+  color: #ffcc00;
+  box-shadow: 0 3px #000;
+}
 .reset:hover {
   background: #990000;
 }

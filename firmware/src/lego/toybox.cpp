@@ -3,7 +3,7 @@
 
 Toybox::Toybox() : toyCount(0) {}
 
-bool Toybox::addToy(const char* name, const int id, const char* type) {
+bool Toybox::addToy(const char* name, const int id, const char* type, const char* game) {
     // Check if we have space for another toy
     if (toyCount >= MAX_TOYS) {
         return false;
@@ -14,7 +14,9 @@ bool Toybox::addToy(const char* name, const int id, const char* type) {
         return false;
     }
 
-    if (strcmp(type, "vehicle") == 0) {
+    if (game && strcmp(game, "infinity") == 0) {
+        toys[toyCount] = new InfinityToyTag(id, name);
+    } else if (strcmp(type, "vehicle") == 0) {
         // TODO: Add the upgrades for this (???)
         toys[toyCount] = new VehicleTag(id, name);
     } else if (strcmp(type, "character") == 0) {
@@ -54,11 +56,11 @@ bool Toybox::removeToy(const char* uid) {
     return true;
 }
 
-ToyTag* Toybox::getToy(size_t index) {
+Toy* Toybox::getToy(size_t index) {
     return toys[index];
 }
 
-ToyTag* Toybox::getByUID(const char* uid) {
+Toy* Toybox::getByUID(const char* uid) {
     int index = -1;
 
     char t_uid[15];
@@ -139,9 +141,12 @@ bool Toybox::deserialize(const char* json) {
             break;  // Safety check to prevent overflow
         }
 
+        const char* gameStr = toy["game"] | "dimensions";
         const char* typeStr = toy["type"] | "";
-        ToyTag* tag;
-        if (strcmp(typeStr, "vehicle") == 0) {
+        Toy* tag;
+        if (strcmp(gameStr, "infinity") == 0) {
+            tag = new InfinityToyTag();
+        } else if (strcmp(typeStr, "vehicle") == 0) {
             tag = new VehicleTag();
         } else if (strcmp(typeStr, "character") == 0) {
             tag = new CharacterTag();

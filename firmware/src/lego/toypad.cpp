@@ -1,5 +1,6 @@
 #include "lego/toypad.h"
 #include <config/config.h>
+#include <infinity/constants.h>
 #include "log/logger.h"
 
 Toypad* Toypad::_instance = nullptr;
@@ -10,11 +11,15 @@ Toypad::Toypad() {
 }
 
 void Toypad::begin() {
-    // Read persisted platform choice; default to PS3 if never set.
+    // Read persisted platform/game choice; default to PS3 + LEGO Dimensions if never set.
     uint8_t platformVal = config.getUChar("platform", static_cast<uint8_t>(ToypadPlatform::PS3));
     _platform = static_cast<ToypadPlatform>(platformVal);
 
-    log_dbg("[Toypad::begin] Platform = %s", _platform == ToypadPlatform::X360 ? "X360" : "PS3");
+    uint8_t gameVal = config.getUChar("game", static_cast<uint8_t>(ToyGame::LegoDimensions));
+    _game = static_cast<ToyGame>(gameVal);
+
+    log_dbg("[Toypad::begin] Platform = %s / Game = %s",
+            _platform == ToypadPlatform::X360 ? "X360" : "PS3", toyGameString(_game));
 
     if (!TinyUSBDevice.isInitialized()) {
         TinyUSBDevice.begin(0);
@@ -77,26 +82,37 @@ void Toypad::_configureDevice() {
     TinyUSBDevice.clearConfiguration();
     TinyUSBDevice.setVersion(0x0200);
 
+    // The vendor/product IDs presented over USB are game-specific (each game's Portal/Playpad
+    // enumerates as a different device); everything else about the descriptor (manufacturer,
+    // product name, serial, device version) still comes from LEGODimensions, since Infinity
+    // doesn't define its own strings yet and this only needs to be enough for the OS/game to pick
+    // the right driver.
     switch (_platform) {
-        case ToypadPlatform::X360:
-            TinyUSBDevice.setID(LEGODimensions::X360Identifier.VID,
-                                LEGODimensions::X360Identifier.PID);
+        case ToypadPlatform::X360: {
+            const USBIdentifier& usbId = (_game == ToyGame::DisneyInfinity)
+                                              ? DisneyInfinity::X360Identifier
+                                              : LEGODimensions::X360Identifier;
+            TinyUSBDevice.setID(usbId.VID, usbId.PID);
             TinyUSBDevice.setDeviceVersion(LEGODimensions::X360_DEVICE_VERSION);
             TinyUSBDevice.setManufacturerDescriptor(LEGODimensions::X360_MANUFACTURER);
             TinyUSBDevice.setProductDescriptor(LEGODimensions::X360_PRODUCT_NAME);
             TinyUSBDevice.setSerialDescriptor(LEGODimensions::X360_SERIAL);
 
             break;
+        }
 
         case ToypadPlatform::PS3:
-        default:
-            TinyUSBDevice.setID(LEGODimensions::PS3Identifier.VID,
-                                LEGODimensions::PS3Identifier.PID);
+        default: {
+            const USBIdentifier& usbId = (_game == ToyGame::DisneyInfinity)
+                                              ? DisneyInfinity::PS3Identifier
+                                              : LEGODimensions::PS3Identifier;
+            TinyUSBDevice.setID(usbId.VID, usbId.PID);
             TinyUSBDevice.setDeviceVersion(LEGODimensions::PS3_DEVICE_VERSION);
             TinyUSBDevice.setManufacturerDescriptor(LEGODimensions::PS3_MANUFACTURER);
             TinyUSBDevice.setProductDescriptor(LEGODimensions::PS3_PRODUCT_NAME);
             TinyUSBDevice.setSerialDescriptor(LEGODimensions::PS3_SERIAL);
             break;
+        }
     }
 }
 

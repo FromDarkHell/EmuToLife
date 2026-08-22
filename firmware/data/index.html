@@ -257,11 +257,12 @@
 
               <div style="display: flex; gap: 1em">
                 <div class="form">
-                  <h2>Change Platform</h2>
-                  <p>Change between PS3 (Wii U, PS4) and Xbox 360</p>
+                  <h2>Change Game</h2>
+                  <p>Switch which game's tags this Toypad emulates</p>
 
                   <div
                     class="button-container"
+                    id="game-select"
                     style="
                       display: flex;
                       flex-direction: row;
@@ -273,6 +274,77 @@
                     <button
                       type="button"
                       style="flex-grow: 1"
+                      data-game="dimensions"
+                      onclick="changeGame('dimensions', this)"
+                    >
+                      LEGO Dimensions
+                    </button>
+                    <button
+                      type="button"
+                      style="flex-grow: 1"
+                      data-game="infinity"
+                      onclick="changeGame('infinity', this)"
+                    >
+                      Disney Infinity
+                    </button>
+                  </div>
+                  <p id="game-status" class="sm" style="display: none"></p>
+                </div>
+              </div>
+
+              <script>
+                async function changeGame(value, button) {
+                  const statusEl = document.getElementById("game-status");
+                  const buttons =
+                    button.parentElement.querySelectorAll("button");
+
+                  buttons.forEach((b) => (b.disabled = true));
+                  statusEl.style.display = "block";
+                  statusEl.textContent =
+                    "Switching game - the device is restarting...";
+
+                  // The device reboots as part of handling this request (it needs to re-enumerate
+                  // over USB with the new game's vendor/product IDs), so it may never get to send
+                  // a response back - that's expected, not a failure. Once rebooted, it's the
+                  // websocket reconnecting (see websockets.js) that tells us it's back.
+                  window.__awaitingReboot = true;
+                  try {
+                    await fetch("/game", {
+                      method: "POST",
+                      headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                      },
+                      body: `game=${value}`,
+                    });
+                  } catch (e) {
+                    console.debug(
+                      "[game] fetch didn't complete (expected - device is rebooting)",
+                      e,
+                    );
+                  }
+                }
+              </script>
+
+              <div style="display: flex; gap: 1em">
+                <div class="form">
+                  <h2>Change Platform</h2>
+                  <p>Change between PS3 (Wii U, PS4) and Xbox 360</p>
+
+                  <div
+                    class="button-container"
+                    id="platform-select"
+                    style="
+                      display: flex;
+                      flex-direction: row;
+                      gap: 0.5em;
+                      justify-content: center;
+                      align-items: center;
+                    "
+                  >
+                    <button
+                      type="button"
+                      style="flex-grow: 1"
+                      data-platform="0"
                       onclick="changePlatform(0, this)"
                     >
                       PS3
@@ -280,6 +352,7 @@
                     <button
                       type="button"
                       style="flex-grow: 1"
+                      data-platform="1"
                       onclick="changePlatform(1, this)"
                     >
                       Xbox 360

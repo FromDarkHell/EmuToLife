@@ -3,24 +3,33 @@
 #include <ArduinoJson.h>
 #include <lego/constants.h>
 #include <lego/tag.h>
+#include "toy.h"
 
 using ToyTagType = LEGODimensions::ToyTagType;
 using TagIndex = LEGODimensions::TagIndex;
 
 /**
- * @brief Adds JSON (de)serialization on top of the library's LEGODimensions::ToyTag. JSON is kept
- * local to this firmware rather than the library, since persistence format is an application
+ * @brief Adds JSON (de)serialization on top of the library's LEGODimensions::ToyTag, and
+ * implements the Toy interface so a Toybox can hold this alongside other games' toy types. JSON is
+ * kept local to this firmware rather than the library, since persistence format is an application
  * concern, not a protocol one.
  *
  * Inherits `LEGODimensions::ToyTag` virtually so that `VehicleTag`/`CharacterTag` below can
  * multiply-inherit both this (for JSON) and `LEGODimensions::VehicleTag`/`CharacterTag` (for the
  * NFC buffer layout) without ending up with two separate ToyTag subobjects.
  */
-class ToyTag : public virtual LEGODimensions::ToyTag {
+class ToyTag : public Toy, public virtual LEGODimensions::ToyTag {
    public:
     using LEGODimensions::ToyTag::ToyTag;
 
-    virtual JsonDocument toJSON() const {
+    ToyGame toyGame() const override { return ToyGame::LegoDimensions; }
+    uint32_t toyId() const override { return id; }
+    const char* toyName() const override { return name; }
+    const char* toyType() const override { return typeString(); }
+
+    void getUIDStr(char* out) const override { LEGODimensions::ToyTag::getUIDStr(out); }
+
+    JsonDocument toJSON() const override {
         JsonDocument doc;
         fillJSON(doc);
         return doc;
@@ -30,7 +39,7 @@ class ToyTag : public virtual LEGODimensions::ToyTag {
      * @brief Restores all of the game-specific metadata from a JSONVariant
      *
      */
-    virtual bool fromJSON(const JsonVariant input) {
+    bool fromJSON(const JsonVariant input) override {
         parseJSON(input);
         return true;
     }
@@ -52,6 +61,7 @@ class ToyTag : public virtual LEGODimensions::ToyTag {
 
         doc["index"] = static_cast<int16_t>(padIndex);
         doc["type"] = typeString();
+        doc["game"] = toyGameString(ToyGame::LegoDimensions);
     }
 
     /**

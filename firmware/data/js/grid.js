@@ -113,6 +113,7 @@ async function createNewToy(element, tag, type) {
       name: tag.name,
       id: tag.id,
       type: type,
+      game: selectedGame,
     }),
   }).then((x) => {
     updateToybox().then((x) => {
@@ -122,7 +123,26 @@ async function createNewToy(element, tag, type) {
   });
 }
 
-// Wires up the character/vehicle filter dropdowns and loads the dimension data
+// Fetches the current game's character/vehicle tag data and refreshes the grids
+function loadGameData() {
+  const jsonPath = GAMES[selectedGame].jsonPath;
+
+  fetch(`/json/${jsonPath}/characters.json`).then(async (res) => {
+    _allTags.character = res.ok ? await res.json() : [];
+    populateFilterDropdown("character", _allTags.character);
+    refreshGrid("character");
+  });
+
+  fetch(`/json/${jsonPath}/vehicles.json`).then(async (res) => {
+    _allTags.vehicle = res.ok ? await res.json() : [];
+    populateFilterDropdown("vehicle", _allTags.vehicle);
+    refreshGrid("vehicle");
+  });
+}
+
+// Wires up the character/vehicle filter dropdowns and loads the current game's data. Expects
+// loadSettings() to have already resolved (see app.js's init()), so `cdn`/`selectedGame` are
+// correct before anything using them renders.
 function initGrid() {
   document
     .getElementById("characterFilter")
@@ -131,15 +151,5 @@ function initGrid() {
     .getElementById("vehicleFilter")
     .addEventListener("change", () => refreshGrid("vehicle"));
 
-  fetch("/json/dimensions/characters.json").then(async (res) => {
-    _allTags.character = await res.json();
-    populateFilterDropdown("character", _allTags.character);
-    refreshGrid("character");
-  });
-
-  fetch("/json/dimensions/vehicles.json").then(async (res) => {
-    _allTags.vehicle = await res.json();
-    populateFilterDropdown("vehicle", _allTags.vehicle);
-    refreshGrid("vehicle");
-  });
+  loadGameData();
 }
