@@ -1,0 +1,322 @@
+
+    =========================== USB Port21 ===========================
+
+Connection Status        : 0x01 (Device is connected)
+Port Chain               : 4-21
+Properties               : 0x00
+ IsUserConnectable       : no
+ PortIsDebugCapable      : no
+ PortHasMultiCompanions  : no
+ PortConnectorIsTypeC    : no
+ConnectionIndex          : 0x15 (Port 21)
+
+      ========================== Summary =========================
+Vendor ID                : 0x24C6 (Xbox 3rd Party Partners)
+Product ID               : 0xFA00
+Manufacturer String      : "Disney Interactive"
+Product String           : "Disney Infinity Reader"
+Serial                   : "7A11E6F9"
+USB Version              : 2.0 (but 12 Mbit/s FullSpeed only)
+Port maximum Speed       : High-Speed
+Device maximum Speed     : Full-Speed
+Device Connection Speed  : Full-Speed
+Self powered             : no
+Demanded Current         : 500 mA
+Used Endpoints           : 8
+
+      ======================== USB Device ========================
+
+        +++++++++++++++++ Device Information ++++++++++++++++++
+Device Description       : Disney Infinity Reader
+Device Path 1            : \\?\USB#VID_24C6&PID_FA00#7A11E6F9#{a5dcbf10-6530-11d2-901f-00c04fb951ed} (GUID_DEVINTERFACE_USB_DEVICE)
+Device Path 2            : \\?\USB#VID_24C6&PID_FA00#7A11E6F9#{5be0aec2-dcbc-438a-8950-a298323955c4}
+Kernel Name              : \Device\USBPDO-11
+Device ID                : USB\VID_24C6&PID_FA00\7A11E6F9
+Hardware IDs             : USB\VID_24C6&PID_FA00&REV_0100 USB\VID_24C6&PID_FA00
+Driver KeyName           : {eb781aaf-9c70-4523-a5df-642a87eca567}\0002
+Driver                   : \SystemRoot\system32\DRIVERS\libusb0.sys (Version: 1.4.0.0  Date: 2026-08-22  Company: https://github.com/mcuee/libusb-win32)
+Driver Inf               : C:\WINDOWS\inf\oem3.inf
+Legacy BusType           : PNPBus
+Class                    : libusb-win32 devices
+Class GUID               : {eb781aaf-9c70-4523-a5df-642a87eca567}
+Service                  : libusb0
+Enumerator               : USB
+Location Info            : Port_#0021.Hub_#0001
+Address                  : 21
+Location IDs             : PCIROOT(0)#PCI(0103)#PCI(0000)#USBROOT(0)#USB(21), ACPI(_SB_)#ACPI(PCI0)#ACPI(GPP2)#ACPI(PTXH)#ACPI(RHUB)#ACPI(PO21)
+Container ID             : {44867b8d-e198-5824-a334-d155818a54d0}
+Manufacturer Info        : ThrustMaster, Inc.
+Capabilities             : 0x94 (Removable, UniqueID, SurpriseRemovalOK)
+Status                   : 0x0180600A (DN_DRIVER_LOADED, DN_STARTED, DN_DISABLEABLE, DN_REMOVABLE, DN_NT_ENUMERATOR, DN_NT_DRIVER)
+First Install Date       : 2026-09-11 17:53:41
+Last Arrival Date        : 2026-09-11 17:53:41
+EnhancedPowerMgmtEnabled : 0
+Power State              : D0 (supported: D0, D3, wake from D0)
+
+        +++++++++++++++++ Registry USB Flags +++++++++++++++++
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\usbflags\24C6FA000100
+ osvc                    : REG_BINARY 00 00
+
+        ---------------- Connection Information ---------------
+Connection Index         : 0x15 (Port 21)
+Connection Status        : 0x01 (DeviceConnected)
+Current Config Value     : 0x01 (Configuration 1)
+Device Address           : 0x10 (16)
+Is Hub                   : 0x00 (no)
+Device Bus Speed         : 0x01 (Full-Speed)
+Number of open Pipes     : 0x07 (7 pipes to data endpoints)
+Pipe[0]                  : EndpointID=1  Direction=IN   ScheduleOffset=0  Type=Interrupt  wMaxPacketSize=0x20    bInterval=4   -> 420 Bits/ms = 52500 Bytes/s
+Pipe[1]                  : EndpointID=2  Direction=OUT  ScheduleOffset=0  Type=Interrupt  wMaxPacketSize=0x20    bInterval=4   -> 420 Bits/ms = 52500 Bytes/s
+Pipe[2]                  : EndpointID=3  Direction=IN   ScheduleOffset=0  Type=Interrupt  wMaxPacketSize=0x20    bInterval=2   -> 420 Bits/ms = 52500 Bytes/s
+Pipe[3]                  : EndpointID=4  Direction=OUT  ScheduleOffset=0  Type=Interrupt  wMaxPacketSize=0x20    bInterval=4   -> 420 Bits/ms = 52500 Bytes/s
+Pipe[4]                  : EndpointID=5  Direction=IN   ScheduleOffset=0  Type=Interrupt  wMaxPacketSize=0x20    bInterval=32  -> 420 Bits/ms = 52500 Bytes/s
+Pipe[5]                  : EndpointID=5  Direction=OUT  ScheduleOffset=0  Type=Interrupt  wMaxPacketSize=0x20    bInterval=16  -> 420 Bits/ms = 52500 Bytes/s
+Pipe[6]                  : EndpointID=6  Direction=IN   ScheduleOffset=0  Type=Interrupt  wMaxPacketSize=0x20    bInterval=16  -> 420 Bits/ms = 52500 Bytes/s
+Data (HexDump)           : 15 00 00 00 12 01 00 02 FF FF FF 08 C6 24 00 FA   .............$..
+                           00 01 01 02 03 01 01 01 00 10 00 07 00 00 00 01   ................
+                           00 00 00 07 05 81 03 20 00 04 00 00 00 00 07 05   ....... ........
+                           02 03 20 00 04 00 00 00 00 07 05 83 03 20 00 02   .. .......... ..
+                           00 00 00 00 07 05 04 03 20 00 04 00 00 00 00 07   ........ .......
+                           05 85 03 20 00 20 00 00 00 00 07 05 05 03 20 00   ... . ........ .
+                           10 00 00 00 00 07 05 86 03 20 00 10 00 00 00 00   ......... ......
+
+        --------------- Connection Information V2 -------------
+Connection Index         : 0x15 (21)
+Length                   : 0x10 (16 bytes)
+SupportedUsbProtocols    : 0x03
+ Usb110                  : 1 (yes, port supports USB 1.1)
+ Usb200                  : 1 (yes, port supports USB 2.0)
+ Usb300                  : 0 (no, port not supports USB 3.0)
+ ReservedMBZ             : 0x00
+Flags                    : 0x00
+ DevIsOpAtSsOrHigher     : 0 (Device is not operating at SuperSpeed or higher)
+ DevIsSsCapOrHigher      : 0 (Device is not SuperSpeed capable or higher)
+ DevIsOpAtSsPlusOrHigher : 0 (Device is not operating at SuperSpeedPlus or higher)
+ DevIsSsPlusCapOrHigher  : 0 (Device is not SuperSpeedPlus capable or higher)
+ ReservedMBZ             : 0x00
+Data (HexDump)           : 15 00 00 00 10 00 00 00 03 00 00 00 00 00 00 00   ................
+
+    ---------------------- Device Descriptor ----------------------
+bLength                  : 0x12 (18 bytes)
+bDescriptorType          : 0x01 (Device Descriptor)
+bcdUSB                   : 0x200 (USB Version 2.0) -> but device is Full-Speed only
+bDeviceClass             : 0xFF (Vendor Specific)
+bDeviceSubClass          : 0xFF
+bDeviceProtocol          : 0xFF
+bMaxPacketSize0          : 0x08 (8 bytes)
+idVendor                 : 0x24C6 (Xbox 3rd Party Partners)
+idProduct                : 0xFA00
+bcdDevice                : 0x0100
+iManufacturer            : 0x01 (String Descriptor 1)
+ Language 0x0409         : "Disney Interactive"
+iProduct                 : 0x02 (String Descriptor 2)
+ Language 0x0409         : "Disney Infinity Reader"
+iSerialNumber            : 0x03 (String Descriptor 3)
+ Language 0x0409         : "7A11E6F9"
+bNumConfigurations       : 0x01 (1 Configuration)
+Data (HexDump)           : 12 01 00 02 FF FF FF 08 C6 24 00 FA 00 01 01 02   .........$......
+                           03 01                                             ..
+
+    ------------------ Configuration Descriptor -------------------
+bLength                  : 0x09 (9 bytes)
+bDescriptorType          : 0x02 (Configuration Descriptor)
+wTotalLength             : 0x0099 (153 bytes)
+bNumInterfaces           : 0x04 (4 Interfaces)
+bConfigurationValue      : 0x01 (Configuration 1)
+iConfiguration           : 0x00 (No String Descriptor)
+bmAttributes             : 0x80
+ D7: Reserved, set 1     : 0x01
+ D6: Self Powered        : 0x00 (no)
+ D5: Remote Wakeup       : 0x00 (no)
+ D4..0: Reserved, set 0  : 0x00
+MaxPower                 : 0xFA (500 mA)
+Data (HexDump)           : 09 02 99 00 04 01 00 80 FA 09 04 00 00 02 FF 5D   ...............]
+                           01 00 11 21 10 01 21 25 81 14 00 00 00 00 13 02   ...!..!%........
+                           08 00 00 07 05 81 03 20 00 04 07 05 02 03 20 00   ....... ...... .
+                           04 09 04 01 00 04 FF 5D 03 00 1B 21 00 01 21 01   .......]...!..!.
+                           83 20 01 04 20 16 85 00 00 00 00 00 00 16 05 00   . .. ...........
+                           00 00 00 00 00 07 05 83 03 20 00 02 07 05 04 03   ......... ......
+                           20 00 04 07 05 85 03 20 00 20 07 05 05 03 20 00    ...... . .... .
+                           10 09 04 02 00 01 FF 5D 02 00 09 21 00 01 21 22   .......]...!..!"
+                           86 07 00 07 05 86 03 20 00 10 09 04 03 00 00 FF   ....... ........
+                           FD 13 04 06 41 00 01 01 03                        ....A....
+
+        ---------------- Interface Descriptor -----------------
+bLength                  : 0x09 (9 bytes)
+bDescriptorType          : 0x04 (Interface Descriptor)
+bInterfaceNumber         : 0x00 (Interface 0)
+bAlternateSetting        : 0x00
+bNumEndpoints            : 0x02 (2 Endpoints)
+bInterfaceClass          : 0xFF (Vendor Specific)
+bInterfaceSubClass       : 0x5D
+bInterfaceProtocol       : 0x01
+iInterface               : 0x00 (No String Descriptor)
+Data (HexDump)           : 09 04 00 00 02 FF 5D 01 00                        ......]..
+
+        ----------------- Unknown Descriptor ------------------
+bLength                  : 0x11 (17 bytes)
+bDescriptorType          : 0x21
+Data (HexDump)           : 11 21 10 01 21 25 81 14 00 00 00 00 13 02 08 00 
+                           00 
+
+        ----------------- Endpoint Descriptor -----------------
+bLength                  : 0x07 (7 bytes)
+bDescriptorType          : 0x05 (Endpoint Descriptor)
+bEndpointAddress         : 0x81 (Direction=IN EndpointID=1)
+bmAttributes             : 0x03 (TransferType=Interrupt)
+wMaxPacketSize           : 0x0020 (32 bytes)
+bInterval                : 0x04 (4 ms)
+Data (HexDump)           : 07 05 81 03 20 00 04                              .... ..
+
+        ----------------- Endpoint Descriptor -----------------
+bLength                  : 0x07 (7 bytes)
+bDescriptorType          : 0x05 (Endpoint Descriptor)
+bEndpointAddress         : 0x02 (Direction=OUT EndpointID=2)
+bmAttributes             : 0x03 (TransferType=Interrupt)
+wMaxPacketSize           : 0x0020 (32 bytes)
+bInterval                : 0x04 (4 ms)
+Data (HexDump)           : 07 05 02 03 20 00 04                              .... ..
+
+        ---------------- Interface Descriptor -----------------
+bLength                  : 0x09 (9 bytes)
+bDescriptorType          : 0x04 (Interface Descriptor)
+bInterfaceNumber         : 0x01 (Interface 1)
+bAlternateSetting        : 0x00
+bNumEndpoints            : 0x04 (4 Endpoints)
+bInterfaceClass          : 0xFF (Vendor Specific)
+bInterfaceSubClass       : 0x5D
+bInterfaceProtocol       : 0x03
+iInterface               : 0x00 (No String Descriptor)
+Data (HexDump)           : 09 04 01 00 04 FF 5D 03 00                        ......]..
+
+        ----------------- Unknown Descriptor ------------------
+bLength                  : 0x1B (27 bytes)
+bDescriptorType          : 0x21
+Data (HexDump)           : 1B 21 00 01 21 01 83 20 01 04 20 16 85 00 00 00 
+                           00 00 00 16 05 00 00 00 00 00 00 
+
+        ----------------- Endpoint Descriptor -----------------
+bLength                  : 0x07 (7 bytes)
+bDescriptorType          : 0x05 (Endpoint Descriptor)
+bEndpointAddress         : 0x83 (Direction=IN EndpointID=3)
+bmAttributes             : 0x03 (TransferType=Interrupt)
+wMaxPacketSize           : 0x0020 (32 bytes)
+bInterval                : 0x02 (2 ms)
+Data (HexDump)           : 07 05 83 03 20 00 02                              .... ..
+
+        ----------------- Endpoint Descriptor -----------------
+bLength                  : 0x07 (7 bytes)
+bDescriptorType          : 0x05 (Endpoint Descriptor)
+bEndpointAddress         : 0x04 (Direction=OUT EndpointID=4)
+bmAttributes             : 0x03 (TransferType=Interrupt)
+wMaxPacketSize           : 0x0020 (32 bytes)
+bInterval                : 0x04 (4 ms)
+Data (HexDump)           : 07 05 04 03 20 00 04                              .... ..
+
+        ----------------- Endpoint Descriptor -----------------
+bLength                  : 0x07 (7 bytes)
+bDescriptorType          : 0x05 (Endpoint Descriptor)
+bEndpointAddress         : 0x85 (Direction=IN EndpointID=5)
+bmAttributes             : 0x03 (TransferType=Interrupt)
+wMaxPacketSize           : 0x0020 (32 bytes)
+bInterval                : 0x20 (32 ms)
+Data (HexDump)           : 07 05 85 03 20 00 20                              .... . 
+
+        ----------------- Endpoint Descriptor -----------------
+bLength                  : 0x07 (7 bytes)
+bDescriptorType          : 0x05 (Endpoint Descriptor)
+bEndpointAddress         : 0x05 (Direction=OUT EndpointID=5)
+bmAttributes             : 0x03 (TransferType=Interrupt)
+wMaxPacketSize           : 0x0020 (32 bytes)
+bInterval                : 0x10 (16 ms)
+Data (HexDump)           : 07 05 05 03 20 00 10                              .... ..
+
+        ---------------- Interface Descriptor -----------------
+bLength                  : 0x09 (9 bytes)
+bDescriptorType          : 0x04 (Interface Descriptor)
+bInterfaceNumber         : 0x02 (Interface 2)
+bAlternateSetting        : 0x00
+bNumEndpoints            : 0x01 (1 Endpoint)
+bInterfaceClass          : 0xFF (Vendor Specific)
+bInterfaceSubClass       : 0x5D
+bInterfaceProtocol       : 0x02
+iInterface               : 0x00 (No String Descriptor)
+Data (HexDump)           : 09 04 02 00 01 FF 5D 02 00                        ......]..
+
+        ----------------- Unknown Descriptor ------------------
+bLength                  : 0x09 (9 bytes)
+bDescriptorType          : 0x21
+Data (HexDump)           : 09 21 00 01 21 22 86 07 00 
+
+        ----------------- Endpoint Descriptor -----------------
+bLength                  : 0x07 (7 bytes)
+bDescriptorType          : 0x05 (Endpoint Descriptor)
+bEndpointAddress         : 0x86 (Direction=IN EndpointID=6)
+bmAttributes             : 0x03 (TransferType=Interrupt)
+wMaxPacketSize           : 0x0020 (32 bytes)
+bInterval                : 0x10 (16 ms)
+Data (HexDump)           : 07 05 86 03 20 00 10                              .... ..
+
+        ---------------- Interface Descriptor -----------------
+bLength                  : 0x09 (9 bytes)
+bDescriptorType          : 0x04 (Interface Descriptor)
+bInterfaceNumber         : 0x03 (Interface 3)
+bAlternateSetting        : 0x00
+bNumEndpoints            : 0x00 (Default Control Pipe only)
+bInterfaceClass          : 0xFF (Vendor Specific)
+bInterfaceSubClass       : 0xFD
+bInterfaceProtocol       : 0x13
+iInterface               : 0x04 (String Descriptor 4)
+ Language 0x0409         : "Xbox Security Method 3, Version 1.00, © 2005 Microsoft Corporation. All rights reserved."
+Data (HexDump)           : 09 04 03 00 00 FF FD 13 04                        .........
+
+        ----------------- Unknown Descriptor ------------------
+bLength                  : 0x06 (6 bytes)
+bDescriptorType          : 0x41
+Data (HexDump)           : 06 41 00 01 01 03 
+
+    ----------------- Device Qualifier Descriptor -----------------
+Error                    : ERROR_GEN_FAILURE  (because the device is Full-Speed only)
+
+      -------------------- String Descriptors -------------------
+             ------ String Descriptor 0 ------
+bLength                  : 0x04 (4 bytes)
+bDescriptorType          : 0x03 (String Descriptor)
+Language ID[0]           : 0x0409 (English - United States)
+Data (HexDump)           : 04 03 09 04                                       ....
+             ------ String Descriptor 1 ------
+bLength                  : 0x26 (38 bytes)
+bDescriptorType          : 0x03 (String Descriptor)
+Language 0x0409          : "Disney Interactive"
+Data (HexDump)           : 26 03 44 00 69 00 73 00 6E 00 65 00 79 00 20 00   &.D.i.s.n.e.y. .
+                           49 00 6E 00 74 00 65 00 72 00 61 00 63 00 74 00   I.n.t.e.r.a.c.t.
+                           69 00 76 00 65 00                                 i.v.e.
+             ------ String Descriptor 2 ------
+bLength                  : 0x2E (46 bytes)
+bDescriptorType          : 0x03 (String Descriptor)
+Language 0x0409          : "Disney Infinity Reader"
+Data (HexDump)           : 2E 03 44 00 69 00 73 00 6E 00 65 00 79 00 20 00   ..D.i.s.n.e.y. .
+                           49 00 6E 00 66 00 69 00 6E 00 69 00 74 00 79 00   I.n.f.i.n.i.t.y.
+                           20 00 52 00 65 00 61 00 64 00 65 00 72 00          .R.e.a.d.e.r.
+             ------ String Descriptor 3 ------
+bLength                  : 0x12 (18 bytes)
+bDescriptorType          : 0x03 (String Descriptor)
+Language 0x0409          : "7A11E6F9"
+Data (HexDump)           : 12 03 37 00 41 00 31 00 31 00 45 00 36 00 46 00   ..7.A.1.1.E.6.F.
+                           39 00                                             9.
+             ------ String Descriptor 4 ------
+bLength                  : 0xB2 (178 bytes)
+bDescriptorType          : 0x03 (String Descriptor)
+Language 0x0409          : "Xbox Security Method 3, Version 1.00, © 2005 Microsoft Corporation. All rights reserved."
+Data (HexDump)           : B2 03 58 00 62 00 6F 00 78 00 20 00 53 00 65 00   ..X.b.o.x. .S.e.
+                           63 00 75 00 72 00 69 00 74 00 79 00 20 00 4D 00   c.u.r.i.t.y. .M.
+                           65 00 74 00 68 00 6F 00 64 00 20 00 33 00 2C 00   e.t.h.o.d. .3.,.
+                           20 00 56 00 65 00 72 00 73 00 69 00 6F 00 6E 00    .V.e.r.s.i.o.n.
+                           20 00 31 00 2E 00 30 00 30 00 2C 00 20 00 A9 00    .1...0.0.,. ...
+                           20 00 32 00 30 00 30 00 35 00 20 00 4D 00 69 00    .2.0.0.5. .M.i.
+                           63 00 72 00 6F 00 73 00 6F 00 66 00 74 00 20 00   c.r.o.s.o.f.t. .
+                           43 00 6F 00 72 00 70 00 6F 00 72 00 61 00 74 00   C.o.r.p.o.r.a.t.
+                           69 00 6F 00 6E 00 2E 00 20 00 41 00 6C 00 6C 00   i.o.n... .A.l.l.
+                           20 00 72 00 69 00 67 00 68 00 74 00 73 00 20 00    .r.i.g.h.t.s. .
+                           72 00 65 00 73 00 65 00 72 00 76 00 65 00 64 00   r.e.s.e.r.v.e.d.
+                           2E 00                                             ..

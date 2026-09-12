@@ -39,6 +39,13 @@ class Toy {
 
     virtual void getUIDStr(char* out) const = 0;
 
+    /**
+     * @brief The toy's current placement, in whatever format that the game uses;
+     * Each game's interface interprets this itself when placing/removing the toy.
+     */
+    virtual int rawLocation() const = 0;
+    virtual void setRawLocation(int loc) = 0;
+
     virtual JsonDocument toJSON() const = 0;
     virtual bool fromJSON(const JsonVariant input) = 0;
 };

@@ -15,7 +15,7 @@ bool Toybox::addToy(const char* name, const int id, const char* type, const char
     }
 
     if (game && strcmp(game, "infinity") == 0) {
-        toys[toyCount] = new InfinityToyTag(id, name);
+        toys[toyCount] = new InfinityToyTag(id, name, type);
     } else if (strcmp(type, "vehicle") == 0) {
         // TODO: Add the upgrades for this (???)
         toys[toyCount] = new VehicleTag(id, name);

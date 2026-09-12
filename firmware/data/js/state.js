@@ -47,6 +47,14 @@ const _requestQueue = {
   },
 };
 
+function slotsForLocation(location) {
+  return Array.from(
+    document.querySelectorAll(
+      `#${activePadGridId()} [data-pad-index^="${location}-"], #${activePadGridId()} [data-pad-index="${location}"]`,
+    ),
+  ).map((el) => el.getAttribute("data-pad-index"));
+}
+
 const toypadUpdateHandler = {
   set(target, property, value) {
     const oldCharacter = target[property];
@@ -71,7 +79,7 @@ const toypadUpdateHandler = {
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: new URLSearchParams({
             uid: newCharacter.uid,
-            index: property,
+            index: parseInt(property, 10),
           }),
         }),
       );
@@ -84,7 +92,60 @@ const toypadUpdateHandler = {
 
 var toypadToys = new Proxy(_toypadToys, toypadUpdateHandler);
 
-const _allTags = { character: [], vehicle: [] };
+// Populated dynamically from the active game's /json/<game>/tags.json - keyed by whatever
+// category keys that file has (e.g. "characters"/"vehicles" for Dimensions, "characters"/
+// "playsets"/"abilities"/"powerdiscs" for Infinity). See grid.js's loadGameData().
+var _allTags = {};
+
+// Friendly display names for known categories, used for button/modal text ("Create X" / "Select
+// a X"). Falls back to a capitalized, de-pluralized guess for anything not listed here, so a new
+// category added to a game's tags.json works without a frontend change.
+const CATEGORY_LABELS = {
+  characters: "Character",
+  vehicles: "Vehicle",
+  playsets: "Playset",
+  abilities: "Ability",
+  powerdiscs: "Power Disc",
+};
+
+function categoryLabel(category) {
+  if (CATEGORY_LABELS[category]) return CATEGORY_LABELS[category];
+
+  const singular = category.endsWith("ies")
+    ? category.slice(0, -3) + "y"
+    : category.endsWith("s")
+      ? category.slice(0, -1)
+      : category;
+  return singular.charAt(0).toUpperCase() + singular.slice(1);
+}
+
+// Dimensions' backend (ToysToLifeLib) distinguishes vehicle/character tags by a singular "type"
+// string; Infinity has no such distinction and just stores whatever category key it's given
+// verbatim. This only needs to translate Dimensions' two known categories.
+const DIMENSIONS_TYPE_OVERRIDE = { characters: "character", vehicles: "vehicle" };
+
+function toyTypeForCategory(category) {
+  if (selectedGame === "dimensions") {
+    return DIMENSIONS_TYPE_OVERRIDE[category] || category;
+  }
+  return category;
+}
+
+// A toy's stored "type" is Dimensions' singular form ("character"/"vehicle") or Infinity's
+// already-plural category key ("playsets", etc) - both are pluralized CDN folder names, so this
+// just needs to make sure singular ones get their "s" added.
+function imageFolderForType(type) {
+  return type.endsWith("s") ? type : `${type}s`;
+}
+
+// The DOM id of the pad grid for the currently active game (see index.html: #dimensions-pads has
+// LEGO's 7 sub-positions, #infinity-pads has Infinity's 3 plain pad sections). Both grids' pad
+// elements reuse the same small data-pad-index numbers, so anything that queries pad elements by
+// index must scope to whichever grid is actually active - never query `.pad[data-pad-index]`
+// document-wide.
+function activePadGridId() {
+  return selectedGame === "infinity" ? "infinity-pads" : "dimensions-pads";
+}
 
 // Fetches the pad info (platform + game) from the firmware
 async function loadSettings() {
@@ -111,6 +172,14 @@ async function loadSettings() {
           Number(b.dataset.platform) === settings.platform,
         ),
       );
+
+    // Show only the pad grid for the active game - see activePadGridId()'s comment for why the
+    // other one must stay out of the click-handling/rendering path entirely, not just hidden.
+    const activeGridId = activePadGridId();
+    document.getElementById("dimensions-pads").style.display =
+      activeGridId === "dimensions-pads" ? "grid" : "none";
+    document.getElementById("infinity-pads").style.display =
+      activeGridId === "infinity-pads" ? "grid" : "none";
   } catch (e) {
     console.error("[settings] Failed to load current platform/game:", e);
   }

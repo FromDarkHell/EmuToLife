@@ -1,6 +1,6 @@
 #include "web/server.h"
 
-LegoServer::LegoServer(const char* ssid, const char* password, Toypad* toypadInstance) {
+LegoServer::LegoServer(const char* ssid, const char* password, PortalTransport* toypadInstance) {
     this->ssid = strdup(ssid);
     this->password = strdup(password);
     this->html = fs_read("/index.html");
@@ -124,7 +124,7 @@ void LegoServer::start_web() {
                         filePath = "/" + filePath;
                     }
 
-                    if(filePath.indexOf(".js") > 0) {
+                    if (filePath.endsWith(".js") && !filePath.startsWith("/js/")) {
                         filePath = "/js" + filePath;
                     }
 
@@ -265,8 +265,9 @@ bool LegoServer::add_lego_endpoints() {
             }
         }
 
-        log_dbg("[server::toybox] Adding new tag to toybox / Name: %s / ID: %d / Type: %s / Game: %s",
-                tag_name, tag_id, tag_type, tag_game);
+        log_dbg(
+            "[server::toybox] Adding new tag to toybox / Name: %s / ID: %d / Type: %s / Game: %s",
+            tag_name, tag_id, tag_type, tag_game);
 
         this->toybox->addToy(tag_name, tag_id, tag_type, tag_game);
         this->store_toybox();
@@ -305,20 +306,24 @@ bool LegoServer::add_lego_endpoints() {
             return;
         }
 
-        if (tag->toyGame() != ToyGame::LegoDimensions) {
-            // Tag placement / RFID emulation isn't implemented yet for other games.
-            request->send(400, "text/plain", "Tag placement is not yet supported for this game");
+        if (this->toypad == nullptr || tag->toyGame() != this->toypad->game()) {
+            // No live portal for this toy's game to notify - either nothing is running (shouldn't
+            // normally happen) or a different game currently owns the USB device.
+            request->send(400, "text/plain",
+                          "Tag placement is not supported for this game right now");
             return;
         }
-        ToyTag* legoTag = static_cast<ToyTag*>(tag);
 
-        const TagIndex lastLocation = legoTag->padIndex;
-        const TagIndex location = static_cast<TagIndex>(std::stoi(tag_index));
-        legoTag->padIndex = location;
+        const int lastLocation = tag->rawLocation();
+        tag->setRawLocation(std::stoi(tag_index));
+
+        if (!this->toypad->placeToy(tag, lastLocation)) {
+            tag->setRawLocation(lastLocation);
+            request->send(409, "text/plain", "rejected");
+            return;
+        }
 
         this->_toyboxDirty = true;
-        this->toypad->tagChangeEvent(legoTag, lastLocation);
-
         request->send(200, "application/json", this->toybox->serialize());
     });
 
@@ -355,7 +360,8 @@ bool LegoServer::add_lego_endpoints() {
     server->on("/settings", HTTP_GET, [this](AsyncWebServerRequest* request) {
         const uint8_t platformVal =
             config.getUChar("platform", static_cast<uint8_t>(ToypadPlatform::PS3));
-        const uint8_t gameVal = config.getUChar("game", static_cast<uint8_t>(ToyGame::LegoDimensions));
+        const uint8_t gameVal =
+            config.getUChar("game", static_cast<uint8_t>(ToyGame::LegoDimensions));
 
         JsonDocument doc;
         doc["platform"] = platformVal;
@@ -479,21 +485,19 @@ bool LegoServer::load_toybox() {
     free((void*)json);
 
     if (toypad != nullptr) {
-        toypad->onTagStateChange([this](const ToyTag* updated) { this->_toyboxDirty = true; });
+        toypad->onTagStateChange([this](const Toy* updated) { this->_toyboxDirty = true; });
 
-        // Now that we've loaded the toybox, we can send all of the toybox tag-updates to the
-        // toypad.
-        // This way the toypad knows who is on what tag index.
+        // Now that we've loaded the toybox, tell the active portal about every toy from its game
+        // that's already placed, so it knows who's on what pad/index. `-1` is every game's "never
+        // placed" raw-location sentinel (see Toy::rawLocation's doc comment), and placeToy() itself
+        // ignores toys from a different game, so this stays generic across whichever is active.
         for (size_t i = 0; i < this->toybox->count(); i++) {
             Toy* tag = this->toybox->getToy(i);
-            if (tag->toyGame() != ToyGame::LegoDimensions) {
+            if (tag->toyGame() != toypad->game() || tag->rawLocation() == -1) {
                 continue;
             }
 
-            ToyTag* legoTag = static_cast<ToyTag*>(tag);
-            if (legoTag->padIndex != TagIndex::Unplaced || legoTag->padIndex != TagIndex::INVALID) {
-                toypad->tagChangeEvent(legoTag, TagIndex::Unplaced);
-            }
+            toypad->placeToy(tag, -1);
         }
     }
 

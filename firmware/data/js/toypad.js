@@ -23,9 +23,14 @@ function swapToyWithPad(selectedToy, targetPadId) {
 
   // If selected toy is from toybox
   if (selectedToy.currentPadId === undefined) {
-    // Move toy from toybox to pad
+    // If the target is occupied, explicitly remove the displaced toy first - going straight to
+    // `toypadToys[targetPadId] = selectedToy` would overwrite it locally without ever telling the
+    // backend it's been removed, leaving it "placed" there forever from the firmware's point of
+    // view (it'd keep counting against that pad's stacking limit, and come back on next refresh).
+    if (toyOnTargetPad) {
+      toypadToys[targetPadId] = undefined;
+    }
     toypadToys[targetPadId] = selectedToy;
-    // (toyOnTargetPad will automatically appear in toybox when renderToybox() runs)
   }
   // If selected toy is from another pad
   else {

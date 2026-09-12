@@ -53,18 +53,62 @@ function renderToybox(updatePads = false) {
   grid.innerHTML = "";
 
   if (updatePads) {
-    const toysOnPad = toybox.filter((toy) => toy.index != -1);
+    const previousSlotByUid = {};
+    Object.entries(_toypadToys).forEach(([slot, toy]) => {
+      if (toy) previousSlotByUid[toy.uid] = slot;
+    });
+
+    Object.keys(_toypadToys).forEach((padId) => delete _toypadToys[padId]);
+
+    // Both games' pad grids reuse the same small data-pad-index numbers (see
+    // activePadGridId()'s comment), so a placed toy from the *other* game must never be rendered
+    // onto the active grid - it'd land on an unrelated, colliding pad slot.
+    const toysOnPad = toybox.filter(
+      (toy) => toy.index != -1 && toy.game === selectedGame,
+    );
     console.log(`Need to place ${JSON.stringify(toysOnPad)} onto toypad`);
 
+    const occupiedSlots = new Set();
+    const unassignedToys = [];
+
+    // Keep a toy in whatever slot it already occupied, if that slot is still valid for its
+    // (possibly unchanged) location - only newly-appearing toys get assigned a fresh slot below.
+    // Otherwise every refresh would re-sort a whole stack by array order instead of leaving
+    // already-placed toys where they are.
     toysOnPad.forEach((toy) => {
-      _toypadToys[toy.index] = toy;
-      renderPad(toy.index);
+      const slots = slotsForLocation(toy.index);
+      const previousSlot = previousSlotByUid[toy.uid];
+
+      if (previousSlot && slots.includes(previousSlot)) {
+        _toypadToys[previousSlot] = toy;
+        occupiedSlots.add(previousSlot);
+      } else {
+        unassignedToys.push(toy);
+      }
     });
+
+    unassignedToys.forEach((toy) => {
+      const freeSlot = slotsForLocation(toy.index).find(
+        (slot) => !occupiedSlots.has(slot),
+      );
+      if (!freeSlot) return;
+
+      _toypadToys[freeSlot] = toy;
+      occupiedSlots.add(freeSlot);
+    });
+
+    // Re-render every slot in the active grid, not just occupied ones, so a slot that lost its
+    // toy in this refresh (a stack shrinking) gets cleared instead of showing stale content.
+    document
+      .querySelectorAll(`#${activePadGridId()} .pad[data-pad-index]`)
+      .forEach((el) => renderPad(el.getAttribute("data-pad-index")));
   }
 
-  // Only show toys that are not on the toypad
+  // Only show toys for the active game that aren't already on the toypad - a toy from the other
+  // game can't be placed on this grid anyway (the firmware rejects it), so hide it here too.
   const availableToys = toybox.filter(
     (toy) =>
+      toy.game === selectedGame &&
       !Object.values(toypadToys).some((padToy) => padToy.uid === toy.uid),
   );
 
@@ -79,7 +123,7 @@ function renderToybox(updatePads = false) {
     item.setAttribute("data-id", toy.id);
 
     item.innerHTML = `
-                          <img src="${cdn}/${toy.type}s/${toy.id
+                          <img src="${cdn}/${imageFolderForType(toy.type)}/${toy.id
                             .toString()
                             .padStart(
                               4,
@@ -95,7 +139,10 @@ function renderToybox(updatePads = false) {
 
 function renderPad(padId) {
   console.log(`Rendering pad: ${padId}`);
-  const pad = document.querySelector(`[data-pad-index="${padId}"]`);
+  // Scoped to the active game's grid - both grids reuse the same small data-pad-index numbers.
+  const pad = document.querySelector(
+    `#${activePadGridId()} [data-pad-index="${padId}"]`,
+  );
   const toy = toypadToys[padId];
 
   if (!toy) {
@@ -112,7 +159,7 @@ function renderPad(padId) {
   pad.classList.add("occupied");
   pad.innerHTML = `
     <div class="toy-on-pad ${isSelected ? "selected" : ""}" data-uid="${toy.uid}">
-        <img src="${cdn}/${toy.type}s/${toy.id.toString().padStart(4, "0")}.webp"
+        <img src="${cdn}/${imageFolderForType(toy.type)}/${toy.id.toString().padStart(4, "0")}.webp"
              alt="${toy.name}" class="toy-on-pad-image" ${cdnFallbackScript}>
         <p>${toy.name}</p>
         ${

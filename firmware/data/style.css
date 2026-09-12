@@ -188,11 +188,18 @@ button:hover {
   transform: scale(1.05);
 }
 
-.toy-item[data-type="character"] {
+.toy-item[data-type="character"],
+.toy-item[data-type="characters"] {
   background-color: #b38f00;
 }
 
-.toy-item[data-type="vehicle"] {
+.toy-item[data-type="abilities"],
+.toy-item[data-type="powerdiscs"] {
+  background-color: #009900;
+}
+
+.toy-item[data-type="vehicle"],
+.toy-item[data-type="playsets"] {
   background-color: #990000;
 }
 
@@ -277,7 +284,10 @@ button:hover {
 
 /* Character/Toybox Management */
 
-.characterGrid {
+/* Shared layout for every category's dynamically-built grid (see grid.js's buildCategoryUI()).
+   Categories with expandable "pick a specific build" entries (anything with `rebuilds`, e.g.
+   LEGO Dimensions vehicles) get a single column instead, since those rows expand taller. */
+.tag-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 1em;
@@ -286,13 +296,8 @@ button:hover {
   overflow-y: scroll;
 }
 
-#vehicleGrid {
-  display: grid;
+.tag-grid.has-rebuilds {
   grid-template-columns: 1fr;
-  gap: 1em;
-  margin: 20px 0;
-  max-height: 50vh;
-  overflow-y: scroll;
 }
 
 .character-option {
@@ -341,7 +346,9 @@ button:hover {
   transition: background-color 0.25s ease-out;
   border-radius: 0.5rem;
 
-  height: 9em;
+  min-height: 9em;
+  min-width: 9em;
+
   display: flex;
   align-items: center;
   justify-content: center;

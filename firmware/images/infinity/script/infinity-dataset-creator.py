@@ -166,6 +166,12 @@ def fix_images():
         candidate_name = candidate_name_from_filename(stem)
         tag = find_best_match(candidate_name, candidate_tags)
 
+        print(
+            f"Candidate: {candidate_name!r} -> Match: {tag['name']!r}"
+            if tag
+            else f"Candidate: {candidate_name!r} -> No match"
+        )
+
         if tag is None:
             unmatched.append(image_path)
             continue

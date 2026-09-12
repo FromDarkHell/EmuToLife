@@ -1,7 +1,6 @@
 #pragma once
 
 #include <Arduino.h>
-#include <lego/packet.h>
 #include "log/logger.h"
 
 
@@ -11,7 +10,12 @@
  *
  *        Call push() to enqueue a packet.
  *        Call update() from the main loop.
+ *
+ *        Templated on the concrete EventPacket type (e.g. `LEGODimensions::EventPacket`,
+ *        `DisneyInfinity::EventPacket`), since each game's event packet is its own type despite
+ *        sharing the same underlying layout.
  */
+template <typename EventPacketT>
 class EventQueue {
    public:
     static constexpr uint16_t DISPATCH_INTERVAL_MS = 500;
@@ -27,7 +31,7 @@ class EventQueue {
      * @return true   Packet accepted
      * @return false  Queue full, packet dropped
      */
-    bool push(const LEGODimensions::EventPacket& packet) {
+    bool push(const EventPacketT& packet) {
         if (_count >= MAX_EVENTS) {
             log_warn("[EventQueue] Queue full - dropping event packet");
             return false;
@@ -65,7 +69,7 @@ class EventQueue {
             return;
         }
 
-        LEGODimensions::EventPacket& front = _slots[_head];
+        EventPacketT& front = _slots[_head];
         log_dbg("[EventQueue] Dispatching packet (%d remaining after this)", _count - 1);
 
         sendFn(front);
@@ -88,7 +92,7 @@ class EventQueue {
     uint8_t count() const { return _count; }
 
       private:
-    LEGODimensions::EventPacket _slots[MAX_EVENTS];
+    EventPacketT _slots[MAX_EVENTS];
     uint8_t _head;
     uint8_t _tail;
     uint8_t _count;

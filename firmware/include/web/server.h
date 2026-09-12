@@ -14,12 +14,12 @@
 #include "config/config.h"
 #include "fs/fs.h"
 #include "lego/toybox.h"
-#include "lego/toypad.h"
 #include "log/logger.h"
+#include "usb/portal_transport.h"
 
 class LegoServer {
    public:
-    LegoServer(const char*, const char*, Toypad*);
+    LegoServer(const char*, const char*, PortalTransport*);
     ~LegoServer();
 
     void initialize();
@@ -52,5 +52,5 @@ class LegoServer {
     uint32_t _lastStoreMs = 0;
     static constexpr uint32_t STORE_DEBOUNCE_MS = 2000;
 
-    Toypad* toypad = nullptr;
+    PortalTransport* toypad = nullptr;
 };

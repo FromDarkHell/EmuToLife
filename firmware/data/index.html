@@ -26,17 +26,16 @@
           <div class="box">
             <h2>Toy Creator</h2>
             <div
+              id="toyCreatorButtons"
               style="
                 display: flex;
                 flex-direction: row;
+                flex-wrap: wrap;
                 justify-content: center;
                 gap: 1em;
               "
             >
-              <button data-modal-open="#characterModal">
-                Create Character
-              </button>
-              <button data-modal-open="#vehicleModal">Create Vehicle</button>
+              <!-- One "Create X" button per category in the active game's tags.json - see grid.js's buildCategoryUI() -->
             </div>
           </div>
         </div>
@@ -76,7 +75,9 @@
               toy again to deselect it.
             </div>
 
+            <!-- LEGO Dimensions: full 7-position layout (2 sub-positions per side pad, 1 center). -->
             <div
+              id="dimensions-pads"
               style="
                 display: grid;
                 grid-template-rows: 2fr;
@@ -114,6 +115,47 @@
               </div>
               <div class="pad" data-pad-id="3" data-pad-index="7">
                 <!-- Bottom-Right Right Pad -->
+              </div>
+            </div>
+
+            <!-- Disney Infinity comes with 3 "stacked" pads instead -->
+            <div
+              id="infinity-pads"
+              style="
+                display: none;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.5em;
+                justify-items: center;
+              "
+            >
+              <div style="display: flex; flex-direction: column; gap: 0.5em">
+                <div class="pad" data-pad-id="2" data-pad-index="2-0">
+                  <!-- Left Slot 0 -->
+                </div>
+                <div class="pad" data-pad-id="2" data-pad-index="2-1">
+                  <!-- Left Slot 1 -->
+                </div>
+                <div class="pad" data-pad-id="2" data-pad-index="2-2">
+                  <!-- Left Slot 2 -->
+                </div>
+              </div>
+
+              <div style="display: flex; flex-direction: column">
+                <div class="pad" data-pad-id="1" data-pad-index="1-0">
+                  <!-- Center Slot -->
+                </div>
+              </div>
+
+              <div style="display: flex; flex-direction: column; gap: 0.5em">
+                <div class="pad" data-pad-id="3" data-pad-index="3-0">
+                  <!-- Right Slot 0 -->
+                </div>
+                <div class="pad" data-pad-id="3" data-pad-index="3-1">
+                  <!-- Right Slot 1 -->
+                </div>
+                <div class="pad" data-pad-id="3" data-pad-index="3-2">
+                  <!-- Right Slot 2 -->
+                </div>
               </div>
             </div>
           </div>
@@ -428,7 +470,7 @@
               </form>
             </div>
 
-            <div class="box">
+            <div class="box" style="flex-shrink: 1">
               <h2>Logs</h2>
               <div id="container">Loading logs...</div>
             </div>
@@ -436,38 +478,8 @@
         </div>
       </div>
 
-      <div id="characterModal" class="modal">
-        <div class="modal-content">
-          <span class="modal-close" data-modal-close>&times;</span>
-          <div>
-            <div class="filter-bar">
-              <h2 style="margin: 0">Select a Character</h2>
-              <select id="characterFilter" class="filter-select">
-                <option value="">All Abilities</option>
-              </select>
-            </div>
-            <div id="characterGrid" class="characterGrid">
-              <!-- Characters will be loaded here -->
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="vehicleModal" class="modal">
-        <div class="modal-content">
-          <span class="modal-close" data-modal-close>&times;</span>
-          <div>
-            <div class="filter-bar">
-              <h2 style="margin: 0">Select a Vehicle</h2>
-              <select id="vehicleFilter" class="filter-select">
-                <option value="">All Abilities</option>
-              </select>
-            </div>
-            <div id="vehicleGrid">
-              <!-- Characters will be loaded here -->
-            </div>
-          </div>
-        </div>
+      <div id="toyCreatorModals">
+        <!-- One selection modal per category in the active game's tags.json - see grid.js's buildCategoryUI() -->
       </div>
     </div>
   </body>

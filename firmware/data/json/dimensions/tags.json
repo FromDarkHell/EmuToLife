@@ -1,0 +1,3514 @@
+{
+  "characters": [
+    {
+      "id": 1,
+      "name": "Batman",
+      "world": "DC Comics",
+      "abilities": [
+        "Grapple",
+        "Boomerang",
+        "Stealth",
+        "Rope Swing",
+        "Glide",
+        "Detective Mode",
+        "Master Build"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Gandalf",
+      "world": "The Lord of the Rings",
+      "abilities": ["Magic", "Magical Shield", "Illumination"]
+    },
+    {
+      "id": 3,
+      "name": "Wyldstyle",
+      "world": "The LEGO Movie",
+      "abilities": ["Relic Detector", "Acrobat", "Master Build"]
+    },
+    {
+      "id": 4,
+      "name": "Aquaman",
+      "world": "DC Comics",
+      "abilities": [
+        "Atlantis Elemental",
+        "Dive",
+        "Hazard Cleaner",
+        "Growth",
+        "Water Spray"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Bad Cop",
+      "world": "The LEGO Movie",
+      "abilities": ["Laser", "Relic Detector", "Target"]
+    },
+    {
+      "id": 6,
+      "name": "Bane",
+      "world": "DC Comics",
+      "abilities": [
+        "Big Transform",
+        "Super Strength",
+        "Super Strength Handles",
+        "Hazard Protection"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Bart Simpson",
+      "world": "The Simpsons",
+      "abilities": ["Target", "Mini Access"]
+    },
+    {
+      "id": 8,
+      "name": "Benny",
+      "world": "The LEGO Movie",
+      "abilities": [
+        "Hacking",
+        "Sonar Smash",
+        "Target",
+        "Master Build",
+        "Technology",
+        "Glide"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Chell",
+      "world": "Portal 2",
+      "abilities": ["Acrobat", "Portal Gun"]
+    },
+    {
+      "id": 10,
+      "name": "Cole",
+      "world": "Ninjago",
+      "abilities": [
+        "Spinjitzu",
+        "Acrobat",
+        "Stealth",
+        "Laser Deflector",
+        "Super Strength"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Cragger",
+      "world": "Legends of Chima",
+      "abilities": [
+        "CHI",
+        "Super Strength",
+        "Super Strength Handles",
+        "Dive",
+        "Hazard Protection"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Cyborg",
+      "world": "DC Comics",
+      "abilities": [
+        "Target",
+        "Dive",
+        "Laser",
+        "Underwater Laser",
+        "Technology",
+        "Underwater Technology",
+        "Big Transform",
+        "Super Strength",
+        "Super Strength Handles",
+        "Character Changing",
+        "Flying",
+        "Fix-It",
+        "Hearts Regenerate"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Cyberman",
+      "world": "Doctor Who",
+      "abilities": [
+        "Mind Control",
+        "Hacking",
+        "Drone Mazes",
+        "Silver LEGO Blowup",
+        "X-Ray Vision",
+        "Dive",
+        "Technology"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Doc Brown",
+      "world": "Back to the Future",
+      "abilities": [
+        "Hacking",
+        "Technology",
+        "Fix-It",
+        "Drone Mazes",
+        "Intelligence"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "The Doctor",
+      "world": "Doctor Who",
+      "abilities": [
+        "Hacking",
+        "Technology",
+        "Fix-It",
+        "Sonar Smash",
+        "Intelligence"
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Emmet",
+      "world": "The LEGO Movie",
+      "abilities": ["Drill", "Master Build", "Fix-It"]
+    },
+    {
+      "id": 17,
+      "name": "Eris",
+      "world": "Legends of Chima",
+      "abilities": ["Super Strength", "CHI", "Target", "Flying"]
+    },
+    {
+      "id": 18,
+      "name": "Gimli",
+      "world": "The Lord of the Rings",
+      "abilities": ["Super Strength", "Super Strength Handles", "Mini Access"]
+    },
+    {
+      "id": 19,
+      "name": "Gollum",
+      "world": "The Lord of the Rings",
+      "abilities": [
+        "Boomerang",
+        "Silver LEGO Blowup",
+        "Mini Access",
+        "Acrobat",
+        "Dive"
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Harley Quinn",
+      "world": "DC Comics",
+      "abilities": ["Acrobat", "Super Strength"]
+    },
+    {
+      "id": 21,
+      "name": "Homer Simpson",
+      "world": "The Simpsons",
+      "abilities": [
+        "Sonar Smash",
+        "Chili Eating",
+        "Big Transform",
+        "Super Strength",
+        "Super Strength Handles"
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Jay",
+      "world": "Ninjago",
+      "abilities": [
+        "Spinjitzu",
+        "Fix-It",
+        "Acrobat",
+        "Stealth",
+        "Electricity",
+        "Intelligence"
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Joker",
+      "world": "DC Comics",
+      "abilities": ["Electricity", "Target", "Grapple", "Hazard Protection"]
+    },
+    {
+      "id": 24,
+      "name": "Kai",
+      "world": "Ninjago",
+      "abilities": ["Spinjitzu", "Acrobat", "Stealth", "Laser Deflector"]
+    },
+    {
+      "id": 25,
+      "name": "ACU Trooper",
+      "world": "Jurassic World",
+      "abilities": ["Electricity", "Illumination"]
+    },
+    {
+      "id": 26,
+      "name": "Gamer Kid",
+      "world": "Midway Arcade",
+      "abilities": [
+        "Super Strength",
+        "Super Strength Handles",
+        "Laser",
+        "Invulnerability",
+        "Stealth",
+        "Speed"
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Krusty the Clown",
+      "world": "The Simpsons",
+      "abilities": ["Growth", "Hazard Cleaner", "Water Spray"]
+    },
+    {
+      "id": 28,
+      "name": "Laval",
+      "world": "Legends of Chima",
+      "abilities": [
+        "CHI",
+        "Super Strength",
+        "Acrobat",
+        "Laser Deflector",
+        "Sonar Smash"
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Legolas",
+      "world": "The Lord of the Rings",
+      "abilities": ["Pole Vault", "Target", "Acrobat", "Grind Rails"]
+    },
+    {
+      "id": 30,
+      "name": "Lloyd",
+      "world": "Ninjago",
+      "abilities": [
+        "Spinjitzu",
+        "Acrobat",
+        "Stealth",
+        "Laser Deflector",
+        "Illumination"
+      ]
+    },
+    {
+      "id": 31,
+      "name": "Marty McFly",
+      "world": "Back to the Future",
+      "abilities": ["Sonar Smash"]
+    },
+    {
+      "id": 32,
+      "name": "Nya",
+      "world": "Ninjago",
+      "abilities": [
+        "Spinjitzu",
+        "Acrobat",
+        "Stealth",
+        "Laser Deflector",
+        "Fix-It"
+      ]
+    },
+    {
+      "id": 33,
+      "name": "Owen Grady",
+      "world": "Jurassic World",
+      "abilities": ["Tracking", "Stealth", "Target", "Vine Cut"]
+    },
+    {
+      "id": 34,
+      "name": "Peter Venkman",
+      "world": "Ghostbusters",
+      "abilities": ["Suspend Ghost", "Laser", "Hazard Protection"]
+    },
+    {
+      "id": 35,
+      "name": "Slimer",
+      "world": "Ghostbusters",
+      "abilities": [
+        "Boomerang",
+        "Flying",
+        "Slurp Access",
+        "Dive",
+        "Hazard Cleaner",
+        "Sonar Smash",
+        "Illumination",
+        "Mini Access",
+        "Hazard Protection"
+      ]
+    },
+    {
+      "id": 36,
+      "name": "Scooby-Doo",
+      "world": "Scooby-Doo!",
+      "abilities": ["Tracking", "Dig", "Dive", "Stealth", "Glide"]
+    },
+    {
+      "id": 37,
+      "name": "Sensei Wu",
+      "world": "Ninjago",
+      "abilities": ["Spinjitzu", "Stealth", "Pole Vault", "Acrobat", "Glide"]
+    },
+    {
+      "id": 38,
+      "name": "Shaggy",
+      "world": "Scooby-Doo!",
+      "abilities": ["Tracking", "Illumination", "Stealth", "Glide"]
+    },
+    {
+      "id": 39,
+      "name": "Stay Puft",
+      "world": "Ghostbusters",
+      "abilities": [
+        "Big Transform",
+        "Super Strength",
+        "Super Strength Handles",
+        "Hazard Protection"
+      ]
+    },
+    {
+      "id": 40,
+      "name": "Superman",
+      "world": "DC Comics",
+      "abilities": [
+        "Flying",
+        "Dive",
+        "Invulnerability",
+        "Super Strength",
+        "Super Strength Handles",
+        "Freeze Breath",
+        "Laser",
+        "X-Ray Vision"
+      ]
+    },
+    {
+      "id": 41,
+      "name": "Unikitty",
+      "world": "The LEGO Movie",
+      "abilities": ["Rainbow LEGO Objects", "Master Build", "Big Transform"]
+    },
+    {
+      "id": 42,
+      "name": "Wicked Witch of the West",
+      "world": "The Wizard of Oz",
+      "abilities": [
+        "Silver LEGO Blowup",
+        "Flying",
+        "Magic",
+        "Illumination",
+        "Mind Control",
+        "Magical Shield"
+      ]
+    },
+    {
+      "id": 43,
+      "name": "Wonder Woman",
+      "world": "DC Comics",
+      "abilities": [
+        "Acrobat",
+        "Flying",
+        "Mind Control",
+        "Laser Deflector",
+        "Invulnerability",
+        "Grapple",
+        "Boomerang",
+        "Dive",
+        "Super Strength",
+        "Super Strength Handles"
+      ]
+    },
+    {
+      "id": 44,
+      "name": "Zane",
+      "world": "Ninjago",
+      "abilities": [
+        "Acrobat",
+        "Spinjitzu",
+        "Stealth",
+        "Boomerang",
+        "Dive",
+        "X-Ray Vision"
+      ]
+    },
+    {
+      "id": 45,
+      "name": "Green Arrow",
+      "world": "DC Comics",
+      "abilities": ["Pole Vault", "Target", "Acrobat", "Grapple", ""]
+    },
+    {
+      "id": 46,
+      "name": "Supergirl",
+      "world": "DC Comics",
+      "abilities": [
+        "Flying",
+        "Laser",
+        "Invulnerability",
+        "Super Strength",
+        "Super Strength Handles",
+        "X-Ray Vision",
+        "Dive",
+        "Freeze Breath",
+        "Red Lantern Transformation",
+        "Lantern Constructs",
+        "Dig",
+        "Grapple"
+      ]
+    },
+    {
+      "id": 47,
+      "name": "Abby Yates",
+      "world": "Ghostbusters (2016)",
+      "abilities": [
+        "Intelligence",
+        "Ghost Trap",
+        "Suspend Ghost",
+        "Ghost Puzzles",
+        "Laser",
+        "Hazard Protection",
+        "Charge Transfer",
+        "P.K.E. Meter",
+        "Character Changing",
+        "Technology",
+        "Silver LEGO Blowup",
+        "Fix-It",
+        "Grapple",
+        "Rope Swing",
+        "Super Strength",
+        "Super Strength Handles",
+        "Ghost Chipper"
+      ]
+    },
+    {
+      "id": 48,
+      "name": "Finn the Human",
+      "world": "Adventure Time",
+      "abilities": [
+        "Acrobat",
+        "Laser",
+        "Target",
+        "Laser Deflector",
+        "Pole Vault",
+        "Sword Switch",
+        "Cursed Red LEGO Objects",
+        "Grapple",
+        "Vine Cut",
+        "Rope Swing"
+      ]
+    },
+    {
+      "id": 49,
+      "name": "Ethan Hunt",
+      "world": "Mission: Impossible",
+      "abilities": [
+        "Acrobat",
+        "Target",
+        "Technology",
+        "Fuse Box",
+        "Magno Gloves",
+        "Drone Mazes",
+        "Grapple",
+        "Silver LEGO Blowup",
+        "Stealth",
+        "Scan Disguise",
+        "Dive",
+        "X-Ray Vision",
+        "Rope Swing"
+      ]
+    },
+    {
+      "id": 50,
+      "name": "Lumpy Space Princess",
+      "world": "Adventure Time",
+      "abilities": [
+        "Boomerang",
+        "Hazard Protection",
+        "Rainbow LEGO Objects",
+        "Mini Access",
+        "Slurp Access",
+        "Target"
+      ]
+    },
+    {
+      "id": 51,
+      "name": "Jake the Dog",
+      "world": "Adventure Time",
+      "abilities": [
+        "Grapple",
+        "Illumination",
+        "Slurp Access",
+        "Tracking",
+        "Dig",
+        "Rope Swing",
+        "Shape Shift",
+        "Super Strength",
+        "Super Strength Handles",
+        "Drill",
+        "Gyrosphere Switch",
+        "Sonar Smash",
+        "Dive",
+        "Mini Access",
+        "Drone Mazes",
+        "Big Transform"
+      ]
+    },
+    {
+      "id": 52,
+      "name": "Harry Potter",
+      "world": "Harry Potter",
+      "abilities": [
+        "Water Spray",
+        "Target",
+        "Laser Deflector",
+        "Diffindo",
+        "Flying",
+        "Illumination",
+        "Silver LEGO Blowup",
+        "Stealth",
+        "Magic",
+        "Parseltongue Doors",
+        "Apparate Access",
+        "Hazard Cleaner",
+        "Growth"
+      ]
+    },
+    {
+      "id": 53,
+      "name": "Lord Voldemort",
+      "world": "Harry Potter",
+      "abilities": [
+        "Water Spray",
+        "Target",
+        "Laser Deflector",
+        "Diffindo",
+        "Flying",
+        "Illumination",
+        "Mind Control",
+        "Silver LEGO Blowup",
+        "Magic",
+        "Parseltongue Doors",
+        "Apparate Access",
+        "Hazard Cleaner",
+        "Growth"
+      ]
+    },
+    {
+      "id": 54,
+      "name": "Michael Knight",
+      "world": "Knight Rider",
+      "abilities": [
+        "Acrobat",
+        "Hacking",
+        "Technology",
+        "Tracking",
+        "X-Ray Vision"
+      ]
+    },
+    {
+      "id": 55,
+      "name": "B.A. Baracus",
+      "world": "The A-Team",
+      "abilities": [
+        "Target",
+        "Fix-It",
+        "Silver LEGO Blowup",
+        "Super Strength",
+        "Super Strength Handles",
+        "A-Team Master Build",
+        "Laser Deflector",
+        "Character Changing"
+      ]
+    },
+    {
+      "id": 56,
+      "name": "Newt Scamander",
+      "world": "Fantastic Beasts and Where to Find Them",
+      "abilities": [
+        "Water Spray",
+        "Target",
+        "Laser Deflector",
+        "Diffindo",
+        "Illumination",
+        "Silver LEGO Blowup",
+        "Stealth",
+        "Magic",
+        "Intelligence",
+        "Fix-It",
+        "Lockpicking",
+        "Fantastical Briefcase",
+        "Apparate Access",
+        "Hazard Cleaner",
+        "Growth"
+      ]
+    },
+    {
+      "id": 57,
+      "name": "Sonic the Hedgehog",
+      "world": "Sonic the Hedgehog",
+      "abilities": [
+        "Speed",
+        "Grind Rails",
+        "Acrobat",
+        "Super Strength",
+        "Super Transformation",
+        "Invulnerability",
+        "Laser Deflector",
+        "Super Jump"
+      ]
+    },
+    {
+      "id": 58,
+      "name": "Future Update (unreleased)",
+      "world": "N/A",
+      "abilities": ["Unknown"]
+    },
+    {
+      "id": 59,
+      "name": "Gizmo",
+      "world": "Gremlins",
+      "abilities": [
+        "Target",
+        "Mini Access",
+        "Grapple",
+        "Rope Swing",
+        "Vine Cut",
+        "Acrobat",
+        "Dig",
+        "Silver LEGO Blowup"
+      ]
+    },
+    {
+      "id": 60,
+      "name": "Stripe",
+      "world": "Gremlins",
+      "abilities": ["Target", "Acrobat", "Dig", "Vine Cut"]
+    },
+    {
+      "id": 61,
+      "name": "E.T.",
+      "world": "E.T. the Extra-Terrestrial",
+      "abilities": [
+        "Growth",
+        "Fix-It",
+        "Hearts Regenerate",
+        "Illumination",
+        "Stealth",
+        "Magic",
+        "Mini Access"
+      ]
+    },
+    {
+      "id": 62,
+      "name": "Tina Goldstein",
+      "world": "Fantastic Beasts and Where to Find Them",
+      "abilities": [
+        "Acrobat",
+        "Water Spray",
+        "Target",
+        "Laser Deflector",
+        "Diffindo",
+        "Illumination",
+        "Silver LEGO Blowup",
+        "Stealth",
+        "Magic",
+        "Apparate Access",
+        "Magical Shield",
+        "Growth",
+        "Hazard Cleaner",
+        "Mind Control"
+      ]
+    },
+    {
+      "id": 63,
+      "name": "Marceline the Vampire Queen",
+      "world": "Adventure Time",
+      "abilities": [
+        "Sonar Smash",
+        "Flying",
+        "Magic",
+        "Slurp Access",
+        "Dig",
+        "Tracking",
+        "Stealth",
+        "Acrobat",
+        "Cursed Red LEGO Objects",
+        "Hearts Regenerate",
+        "Mini Access",
+        "Vine Cut",
+        "Super Strength"
+      ]
+    },
+    {
+      "id": 64,
+      "name": "Batgirl",
+      "world": "The LEGO Batman Movie",
+      "abilities": [
+        "Boomerang",
+        "Detective Mode",
+        "Stealth",
+        "Grapple",
+        "High Security Access",
+        "Glide",
+        "Rope Swing"
+      ]
+    },
+    {
+      "id": 65,
+      "name": "Robin",
+      "world": "The LEGO Batman Movie",
+      "abilities": [
+        "Acrobat",
+        "Fix-It",
+        "Vent Access",
+        "Illumination",
+        "Suit Rip",
+        "Dive",
+        "Pole Vault",
+        "Laser Deflector",
+        "Glide",
+        "Grapple",
+        "Rope Swing"
+      ]
+    },
+    {
+      "id": 66,
+      "name": "Sloth",
+      "world": "The Goonies",
+      "abilities": [
+        "Super Strength",
+        "Super Strength Handles",
+        "Grapple",
+        "Rope Swing",
+        "Dig",
+        "Dive",
+        "Target",
+        "Uniform Changing",
+        "Character Changing",
+        "Mini Access",
+        "Intelligence",
+        "Silver LEGO Blowup",
+        "Acrobat",
+        "Laser Deflector",
+        "Technology",
+        "X-Ray Vision",
+        "Fix-It",
+        "Tracking",
+        "Illumination",
+        "Sonar Smash",
+        "Truffle Shuffle",
+        "Vine Cut"
+      ]
+    },
+    {
+      "id": 67,
+      "name": "Hermione Granger",
+      "world": "Harry Potter",
+      "abilities": [
+        "Acrobat",
+        "Water Spray",
+        "Target",
+        "Laser Deflector",
+        "Diffindo",
+        "Illumination",
+        "Silver LEGO Blowup",
+        "Magic",
+        "Intelligence",
+        "Apparate Access",
+        "Hazard Cleaner",
+        "Growth"
+      ]
+    },
+    {
+      "id": 68,
+      "name": "Chase McCain",
+      "world": "LEGO City: Undercover",
+      "abilities": [
+        "Acrobat",
+        "Grapple",
+        "Rope Swing",
+        "Tracking",
+        "Relic Detector",
+        "Uniform Changing",
+        "Illumination",
+        "Silver LEGO Blowup",
+        "Super Strength",
+        "Water Spray",
+        "Growth",
+        "Hazard Cleaner",
+        "Glide",
+        "Target",
+        "Hacking",
+        "Flying",
+        "Drill"
+      ]
+    },
+    {
+      "id": 69,
+      "name": "Excalibur Batman",
+      "world": "The LEGO Batman Movie",
+      "abilities": [
+        "Boomerang",
+        "Sword Switch",
+        "Stealth",
+        "Laser Deflector",
+        "Grapple",
+        "Rope Swing",
+        "Super Strength",
+        "Master Build"
+      ]
+    },
+    {
+      "id": 70,
+      "name": "Raven",
+      "world": "Teen Titans Go!",
+      "abilities": [
+        "Magic",
+        "Raven Portals",
+        "Flying",
+        "Laser",
+        "Electricity",
+        "Drone Mazes",
+        "Hazard Protection",
+        "Intelligence",
+        "Lantern Constructs"
+      ]
+    },
+    {
+      "id": 71,
+      "name": "Beast Boy",
+      "world": "Teen Titans Go!",
+      "abilities": [
+        "Atlantis Elemental",
+        "Acrobat",
+        "Dig",
+        "Flying",
+        "Drone Mazes",
+        "Slurp Access",
+        "Mini Access",
+        "Tracking",
+        "Dive"
+      ]
+    },
+    {
+      "id": 72,
+      "name": "Beetlejuice",
+      "world": "Beetlejuice",
+      "abilities": [
+        "Mind Control",
+        "Magic",
+        "Slurp Access",
+        "Illumination",
+        "Mini Access",
+        "Super Strength",
+        "Apparate Access"
+      ]
+    },
+    {
+      "id": 73,
+      "name": "Lord Vortech (unreleased)",
+      "world": "Lego Dimensions",
+      "abilities": ["Unknown"]
+    },
+    {
+      "id": 74,
+      "name": "Blossom",
+      "world": "The Powerpuff Girls",
+      "abilities": [
+        "Flying",
+        "Lantern Constructs",
+        "Laser",
+        "Freeze Breath",
+        "Energy Shield",
+        "Intelligence",
+        "Super Strength",
+        "Dive",
+        "X-Ray Vision",
+        "Hearts Regenerate"
+      ]
+    },
+    {
+      "id": 75,
+      "name": "Bubbles",
+      "world": "The Powerpuff Girls",
+      "abilities": [
+        "Flying",
+        "Laser",
+        "Lantern Constructs",
+        "Rainbow LEGO Objects",
+        "Sonar Smash",
+        "Parseltongue Doors",
+        "Super Strength",
+        "Dive",
+        "Atlantis Elemental",
+        "Hearts Regenerate"
+      ]
+    },
+    {
+      "id": 76,
+      "name": "Buttercup",
+      "world": "The Powerpuff Girls",
+      "abilities": [
+        "Flying",
+        "Lantern Constructs",
+        "Super Strength",
+        "Super Strength Handles",
+        "Energy Shield",
+        "Gyrosphere Switch",
+        "Dive",
+        "Spinjitzu",
+        "Hearts Regenerate"
+      ]
+    },
+    {
+      "id": 77,
+      "name": "Starfire",
+      "world": "Teen Titans Go!",
+      "abilities": [
+        "Atlantis Elemental",
+        "Acrobat",
+        "Laser",
+        "Rainbow LEGO Objects",
+        "Dive",
+        "Flying",
+        "Parseltongue Doors",
+        "Hearts Regenerate"
+      ]
+    },
+    {
+      "id": 78,
+      "name": "World 15 (unreleased)",
+      "world": "15",
+      "abilities": ["Unknown"]
+    },
+    {
+      "id": 79,
+      "name": "World 16 (unreleased)",
+      "world": "16",
+      "abilities": ["Unknown"]
+    },
+    {
+      "id": 80,
+      "name": "World 17 (unreleased)",
+      "world": "17",
+      "abilities": ["Unknown"]
+    },
+    {
+      "id": 81,
+      "name": "World 18 (unreleased)",
+      "world": "18",
+      "abilities": ["Unknown"]
+    },
+    {
+      "id": 82,
+      "name": "World 19 (unreleased)",
+      "world": "19",
+      "abilities": ["Unknown"]
+    },
+    {
+      "id": 83,
+      "name": "World 20 (unreleased)",
+      "world": "20",
+      "abilities": ["Unknown"]
+    },
+    {
+      "id": 768,
+      "name": "Unknown",
+      "world": "Unknown",
+      "abilities": ["Unknown"]
+    },
+    {
+      "id": 769,
+      "name": "Supergirl Red Lantern",
+      "world": "DC Comics",
+      "abilities": [
+        "Flying",
+        "Dive",
+        "Invulnerability",
+        "Super Strength",
+        "Laser",
+        "X-Ray Vision",
+        "Lantern Constructs",
+        "Dig",
+        "Grapple",
+        "Freeze Breath"
+      ]
+    },
+    {
+      "id": 770,
+      "name": "Unknown",
+      "world": "Unknown",
+      "abilities": ["Unknown"]
+    }
+  ],
+  "vehicles": [
+    {
+      "id": 1000,
+      "name": "Police Car",
+      "world": "The LEGO Movie",
+      "abilities": ["Accelerator Switches", "Tow Bar"],
+      "rebuilds": [
+        {
+          "id": 1001,
+          "name": "Aerial Squad Car",
+          "world": "The LEGO Movie",
+          "abilities": [
+            "Flying",
+            "Flight Docks and Flight Cargo Hooks",
+            "Accelerator Switches",
+            "Tow Bar"
+          ]
+        },
+        {
+          "id": 1002,
+          "name": "Missile Striker",
+          "world": "The LEGO Movie",
+          "abilities": [
+            "Flying",
+            "Flight Docks and Flight Cargo Hooks",
+            "Silver LEGO Blowup",
+            "Accelerator Switches",
+            "Tow Bar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1003,
+      "name": "Gravity Sprinter",
+      "world": "The Simpsons",
+      "abilities": ["Accelerator Switches"],
+      "rebuilds": [
+        {
+          "id": 1004,
+          "name": "Street Shredder",
+          "world": "The Simpsons",
+          "abilities": ["Accelerator Switches", "Speed Boost", "Tow Bar"]
+        },
+        {
+          "id": 1005,
+          "name": "Sky Clobberer",
+          "world": "The Simpsons",
+          "abilities": [
+            "Flying",
+            "Flight Docks and Flight Cargo Hooks",
+            "Special Attack",
+            "Accelerator Switches",
+            "Speed Boost",
+            "Tow Bar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1006,
+      "name": "Batmobile",
+      "world": "DC Comics",
+      "abilities": ["Accelerator Switches"],
+      "rebuilds": [
+        {
+          "id": 1007,
+          "name": "Batblaster",
+          "world": "DC Comics",
+          "abilities": ["Accelerator Switches", "Sonar Smash", "Tow Bar"]
+        },
+        {
+          "id": 1008,
+          "name": "Sonic Batray",
+          "world": "DC Comics",
+          "abilities": [
+            "Accelerator Switches",
+            "Special Attack",
+            "Sonar Smash",
+            "Tow Bar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1009,
+      "name": "Benny's Spaceship",
+      "world": "The LEGO Movie",
+      "abilities": ["Flying", "Flight Docks and Flight Cargo Hooks"],
+      "rebuilds": [
+        {
+          "id": 1010,
+          "name": "Lasercraft",
+          "world": "The LEGO Movie",
+          "abilities": [
+            "Flying",
+            "Flight Docks and Flight Cargo Hooks",
+            "Gold LEGO Blowup"
+          ]
+        },
+        {
+          "id": 1011,
+          "name": "The Annihilator",
+          "world": "The LEGO Movie",
+          "abilities": [
+            "Flying",
+            "Flight Docks and Flight Cargo Hooks",
+            "Silver LEGO Blowup",
+            "Gold LEGO Blowup"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1012,
+      "name": "DeLorean Time Machine",
+      "world": "Back to the Future",
+      "abilities": ["Accelerator Switches", "Time Travel"],
+      "rebuilds": [
+        {
+          "id": 1013,
+          "name": "Electric Time Machine",
+          "world": "Back to the Future",
+          "abilities": [
+            "Special Attack",
+            "Electricity",
+            "Tow Bar",
+            "Accelerator Switches",
+            "Time Travel"
+          ]
+        },
+        {
+          "id": 1014,
+          "name": "Ultra Time Machine",
+          "world": "Back to the Future",
+          "abilities": [
+            "Silver LEGO Blowup",
+            "Flying",
+            "Flight Docks and Flight Cargo Hooks",
+            "Time Travel",
+            "Special Attack",
+            "Electricity",
+            "Tow Bar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1015,
+      "name": "Hoverboard",
+      "world": "Back to the Future",
+      "abilities": ["Hover"],
+      "rebuilds": [
+        {
+          "id": 1016,
+          "name": "Cyclone Board",
+          "world": "Back to the Future",
+          "abilities": ["Special Attack", "Hover"]
+        },
+        {
+          "id": 1017,
+          "name": "Ultimate Hoverjet",
+          "world": "Back to the Future",
+          "abilities": [
+            "Flying",
+            "Special Attack",
+            "Silver LEGO Blowup",
+            "Hover"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1018,
+      "name": "Eagle Interceptor",
+      "world": "Legends of Chima",
+      "abilities": ["Flying", "Flight Docks and Flight Cargo Hooks"],
+      "rebuilds": [
+        {
+          "id": 1019,
+          "name": "Eagle Sky Blazer",
+          "world": "Legends of Chima",
+          "abilities": [
+            "Flying",
+            "Flight Docks and Flight Cargo Hooks",
+            "Speed Boost",
+            "Silver LEGO Blowup"
+          ]
+        },
+        {
+          "id": 1020,
+          "name": "Eagle Swoop Diver",
+          "world": "Legends of Chima",
+          "abilities": [
+            "Flying",
+            "Flight Docks and Flight Cargo Hooks",
+            "Special Attack",
+            "Gold LEGO Blowup",
+            "Speed Boost",
+            "Silver LEGO Blowup"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1021,
+      "name": "Swamp Skimmer",
+      "world": "Legends of Chima",
+      "abilities": ["Sail"],
+      "rebuilds": [
+        {
+          "id": 1022,
+          "name": "Cragger's Fireship",
+          "world": "Legends of Chima",
+          "abilities": ["Sail", "Speed Boost", "Special Attack"]
+        },
+        {
+          "id": 1023,
+          "name": "Croc Command Sub",
+          "world": "Legends of Chima",
+          "abilities": [
+            "Dive",
+            "Silver LEGO Blowup",
+            "Sail",
+            "Speed Boost",
+            "Special Attack"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1024,
+      "name": "Cyber-Guard",
+      "world": "DC Comics",
+      "abilities": ["Mech Walker"],
+      "rebuilds": [
+        {
+          "id": 1025,
+          "name": "Cyber-Wrecker",
+          "world": "DC Comics",
+          "abilities": ["Mech Walker", "Super Strength", "Dig"]
+        },
+        {
+          "id": 1026,
+          "name": "Laser Robot Walker",
+          "world": "DC Comics",
+          "abilities": [
+            "Gold LEGO Blowup",
+            "Mech Walker",
+            "Super Strength",
+            "Dig"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1027,
+      "name": "K-9",
+      "world": "Doctor Who",
+      "abilities": ["Silver LEGO Blowup"],
+      "rebuilds": [
+        {
+          "id": 1028,
+          "name": "K-9 Ruff Rover",
+          "world": "Doctor Who",
+          "abilities": ["Sonar Smash", "Silver LEGO Blowup"]
+        },
+        {
+          "id": 1029,
+          "name": "K-9 Laser Cutter",
+          "world": "Doctor Who",
+          "abilities": ["Gold LEGO Blowup", "Sonar Smash", "Silver LEGO Blowup"]
+        }
+      ]
+    },
+    {
+      "id": 1030,
+      "name": "TARDIS",
+      "world": "Doctor Who",
+      "abilities": [
+        "TARDIS Travel",
+        "Stealth",
+        "Flying",
+        "Flight Docks and Flight Cargo Hooks"
+      ],
+      "rebuilds": [
+        {
+          "id": 1031,
+          "name": "Laser-Pulse TARDIS",
+          "world": "Doctor Who",
+          "abilities": [
+            "TARDIS Travel",
+            "Stealth",
+            "Flying",
+            "Gold LEGO Blowup"
+          ]
+        },
+        {
+          "id": 1032,
+          "name": "Energy-Burst TARDIS",
+          "world": "Doctor Who",
+          "abilities": [
+            "TARDIS Travel",
+            "Stealth",
+            "Flying",
+            "Flight Docks and Flight Cargo Hooks",
+            "Gold LEGO Blowup"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1033,
+      "name": "Emmet's Excavator",
+      "world": "The LEGO Movie",
+      "abilities": ["Accelerator Switches", "Dig"],
+      "rebuilds": [
+        {
+          "id": 1034,
+          "name": "Destroy Dozer",
+          "world": "The LEGO Movie",
+          "abilities": ["Accelerator Switches", "Dig", "Tow Bar"]
+        },
+        {
+          "id": 1035,
+          "name": "Destruct-o-Mech",
+          "world": "The LEGO Movie",
+          "abilities": [
+            "Mech Walker",
+            "Super Strength",
+            "Accelerator Switches",
+            "Dig",
+            "Tow Bar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1036,
+      "name": "Winged Monkey",
+      "world": "The Wizard of Oz",
+      "abilities": [""],
+      "rebuilds": [
+        {
+          "id": 1037,
+          "name": "Battle Monkey",
+          "world": "The Wizard of Oz",
+          "abilities": ["Special Attack", "Silver LEGO Blowup", "Flying"]
+        },
+        {
+          "id": 1038,
+          "name": "Commander Monkey",
+          "world": "The Wizard of Oz",
+          "abilities": [
+            "Flying",
+            "Special Weapon",
+            "Sonar Smash",
+            "Special Attack",
+            "Silver LEGO Blowup"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1039,
+      "name": "Axe Chariot",
+      "world": "The Lord of the Rings",
+      "abilities": ["Accelerator Switches", "Tow Bar"],
+      "rebuilds": [
+        {
+          "id": 1040,
+          "name": "Axe Hurler",
+          "world": "The Lord of the Rings",
+          "abilities": ["Accelerator Switches", "Special Attack", "Tow Bar"]
+        },
+        {
+          "id": 1041,
+          "name": "Soaring Chariot",
+          "world": "The Lord of the Rings",
+          "abilities": [
+            "Accelerator Switches",
+            "Flying",
+            "Flight Docks and Flight Cargo Hooks",
+            "Tow Bar",
+            "Special Attack"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1042,
+      "name": "Shelob the Great",
+      "world": "The Lord of the Rings",
+      "abilities": ["Dig"],
+      "rebuilds": [
+        {
+          "id": 1043,
+          "name": "8-Legged Stalker",
+          "world": "The Lord of the Rings",
+          "abilities": ["Super Strength", "Special Attack", "Dig"]
+        },
+        {
+          "id": 1044,
+          "name": "Poison Slinger",
+          "world": "The Lord of the Rings",
+          "abilities": ["Special Attack", "Dig", "Super Strength"]
+        }
+      ]
+    },
+    {
+      "id": 1045,
+      "name": "Homer's Car",
+      "world": "The Simpsons",
+      "abilities": ["Accelerator Switches", "Tow Bar"],
+      "rebuilds": [
+        {
+          "id": 1047,
+          "name": "The SubmaHomer",
+          "world": "The Simpsons",
+          "abilities": [
+            "Dive",
+            "Silver LEGO Blowup",
+            "Accelerator Switches",
+            "Tow Bar"
+          ]
+        },
+        {
+          "id": 1046,
+          "name": "The Homercraft",
+          "world": "The Simpsons",
+          "abilities": [
+            "Sail",
+            "Dive",
+            "Silver LEGO Blowup",
+            "Accelerator Switches",
+            "Tow Bar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1048,
+      "name": "Taunt-o-Vision",
+      "world": "The Simpsons",
+      "abilities": ["Taunt", "Silver LEGO Blowup"],
+      "rebuilds": [
+        {
+          "id": 1050,
+          "name": "The MechaHomer",
+          "world": "The Simpsons",
+          "abilities": ["Gold LEGO Blowup", "Taunt", "Silver LEGO Blowup"]
+        },
+        {
+          "id": 1049,
+          "name": "Blast Cam",
+          "world": "The Simpsons",
+          "abilities": [
+            "Special Weapon",
+            "Gold LEGO Blowup",
+            "Taunt",
+            "Silver LEGO Blowup"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1051,
+      "name": "Velociraptor",
+      "world": "Jurassic World",
+      "abilities": ["Guardian Ability", "Vine Cut"],
+      "rebuilds": [
+        {
+          "id": 1053,
+          "name": "Venom Raptor",
+          "world": "Jurassic World",
+          "abilities": [
+            "Special Attack",
+            "Vine Cut",
+            "Guardian Ability",
+            "Super Strength"
+          ]
+        },
+        {
+          "id": 1052,
+          "name": "Spike Attack Raptor",
+          "world": "Jurassic World",
+          "abilities": [
+            "Super Strength",
+            "Dig",
+            "Vine Cut",
+            "Guardian Ability",
+            "Special Attack",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1054,
+      "name": "Gyrosphere",
+      "world": "Jurassic World",
+      "abilities": ["Gyrosphere Switch"],
+      "rebuilds": [
+        {
+          "id": 1055,
+          "name": "Sonic Beam Gyrosphere",
+          "world": "Jurassic World",
+          "abilities": ["Gyrosphere Switch", "Sonar Smash"]
+        },
+        {
+          "id": 1056,
+          "name": "Speed Boost Gyrosphere",
+          "world": "Jurassic World",
+          "abilities": ["Gyrosphere Switch", "Speed Boost", "Sonar Smash"]
+        }
+      ]
+    },
+    {
+      "id": 1057,
+      "name": "Clown Bike",
+      "world": "The Simpsons",
+      "abilities": ["Accelerator Switches"],
+      "rebuilds": [
+        {
+          "id": 1058,
+          "name": "Cannon Bike",
+          "world": "The Simpsons",
+          "abilities": ["Accelerator Switches", "Special Attack", "Tow Bar"]
+        },
+        {
+          "id": 1059,
+          "name": "Anti-Gravity Rocket Bike",
+          "world": "The Simpsons",
+          "abilities": [
+            "Flying",
+            "Flight Docks and Flight Cargo Hooks",
+            "Accelerator Switches",
+            "Special Attack",
+            "Tow Bar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1060,
+      "name": "Mighty Lion Rider",
+      "world": "Legends of Chima",
+      "abilities": ["Accelerator Switches"],
+      "rebuilds": [
+        {
+          "id": 1061,
+          "name": "Lion Blazer",
+          "world": "Legends of Chima",
+          "abilities": ["Special Attack", "Tow Bar", "Accelerator Switches"]
+        },
+        {
+          "id": 1062,
+          "name": "Fire Lion",
+          "world": "Legends of Chima",
+          "abilities": [
+            "Special Weapon",
+            "Special Attack",
+            "Tow Bar",
+            "Accelerator Switches"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1063,
+      "name": "Arrow Launcher",
+      "world": "The Lord of the Rings",
+      "abilities": ["Accelerator Switches"],
+      "rebuilds": [
+        {
+          "id": 1064,
+          "name": "Seeking Shooter",
+          "world": "The Lord of the Rings",
+          "abilities": ["Accelerator Switches", "Special Attack", "Tow Bar"]
+        },
+        {
+          "id": 1065,
+          "name": "Triple Ballista",
+          "world": "The Lord of the Rings",
+          "abilities": [
+            "Accelerator Switches",
+            "Special Weapon",
+            "Special Attack",
+            "Tow Bar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1066,
+      "name": "Mystery Machine",
+      "world": "Scooby-Doo!",
+      "abilities": ["Accelerator Switches"],
+      "rebuilds": [
+        {
+          "id": 1067,
+          "name": "Mystery Tow & Go",
+          "world": "Scooby-Doo!",
+          "abilities": ["Accelerator Switches", "Tow Bar"]
+        },
+        {
+          "id": 1068,
+          "name": "Mystery Monster",
+          "world": "Scooby-Doo!",
+          "abilities": ["Accelerator Switches", "Water Spray", "Tow Bar"]
+        }
+      ]
+    },
+    {
+      "id": 1069,
+      "name": "Boulder Bomber",
+      "world": "Ninjago",
+      "abilities": ["Flying", "Flight Docks and Flight Cargo Hooks"],
+      "rebuilds": [
+        {
+          "id": 1070,
+          "name": "Boulder Blaster",
+          "world": "Ninjago",
+          "abilities": [
+            "Flying",
+            "Flight Docks and Flight Cargo Hooks",
+            "Silver LEGO Blowup"
+          ]
+        },
+        {
+          "id": 1071,
+          "name": "Cyclone Jet",
+          "world": "Ninjago",
+          "abilities": [
+            "Flying",
+            "Flight Docks and Flight Cargo Hooks",
+            "Special Attack",
+            "Silver LEGO Blowup"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1072,
+      "name": "Storm Fighter",
+      "world": "Ninjago",
+      "abilities": ["Flying", "Flight Docks and Flight Cargo Hooks"],
+      "rebuilds": [
+        {
+          "id": 1073,
+          "name": "Lightning Jet",
+          "world": "Ninjago",
+          "abilities": [
+            "Flying",
+            "Flight Docks and Flight Cargo Hooks",
+            "Gold LEGO Blowup",
+            "Electricity"
+          ]
+        },
+        {
+          "id": 1074,
+          "name": "Electro-Shooter",
+          "world": "Ninjago",
+          "abilities": [
+            "Flying",
+            "Flight Docks and Flight Cargo Hooks",
+            "Gold LEGO Blowup",
+            "Electricity",
+            "Special Attack"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1075,
+      "name": "Blade Bike",
+      "world": "Ninjago",
+      "abilities": ["Accelerator Switches"],
+      "rebuilds": [
+        {
+          "id": 1076,
+          "name": "Flying Fire Bike",
+          "world": "Ninjago",
+          "abilities": [
+            "Accelerator Switches",
+            "Special Attack",
+            "Flying",
+            "Flight Docks and Flight Cargo Hooks"
+          ]
+        },
+        {
+          "id": 1077,
+          "name": "Blades of Fire",
+          "world": "Ninjago",
+          "abilities": [
+            "Accelerator Switches",
+            "Special Attack",
+            "Flying",
+            "Flight Docks and Flight Cargo Hooks"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1078,
+      "name": "Samurai Mech",
+      "world": "Ninjago",
+      "abilities": ["Mech Walker", "Super Strength"],
+      "rebuilds": [
+        {
+          "id": 1079,
+          "name": "Samurai Shooter",
+          "world": "Ninjago",
+          "abilities": ["Silver LEGO Blowup", "Mech Walker", "Super Strength"]
+        },
+        {
+          "id": 1080,
+          "name": "Soaring Samurai Mech",
+          "world": "Ninjago",
+          "abilities": [
+            "Flying",
+            "Flight Docks and Flight Cargo Hooks",
+            "Silver LEGO Blowup",
+            "Mech Walker",
+            "Super Strength"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1081,
+      "name": "Companion Cube",
+      "world": "Portal 2",
+      "abilities": ["Weight Switch"],
+      "rebuilds": [
+        {
+          "id": 1082,
+          "name": "Laser Deflector",
+          "world": "Portal 2",
+          "abilities": ["Laser Deflector", "Weight Switch"]
+        },
+        {
+          "id": 1083,
+          "name": "Gold Heart Emitter",
+          "world": "Portal 2",
+          "abilities": ["Hearts Regenerate", "Weight Switch", "Laser Deflector"]
+        }
+      ]
+    },
+    {
+      "id": 1084,
+      "name": "Sentry Turret",
+      "world": "Portal 2",
+      "abilities": ["Turret Switches"],
+      "rebuilds": [
+        {
+          "id": 1085,
+          "name": "Turret Striker",
+          "world": "Portal 2",
+          "abilities": ["Gold LEGO Blowup", "Turret Switches"]
+        },
+        {
+          "id": 1086,
+          "name": "Flying Turret Carrier",
+          "world": "Portal 2",
+          "abilities": [
+            "Silver LEGO Blowup",
+            "Flying",
+            "Flight Docks and Flight Cargo Hooks",
+            "Gold LEGO Blowup",
+            "Turret Switches"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1087,
+      "name": "Scooby Snack",
+      "world": "Scooby-Doo!",
+      "abilities": ["Super Strength"],
+      "rebuilds": [
+        {
+          "id": 1088,
+          "name": "Scooby Fire Snack",
+          "world": "Scooby-Doo!",
+          "abilities": ["Gold LEGO Blowup", "Super Strength"]
+        },
+        {
+          "id": 1089,
+          "name": "Scooby Ghost Snack",
+          "world": "Scooby-Doo!",
+          "abilities": ["Stealth", "Gold LEGO Blowup", "Super Strength"]
+        }
+      ]
+    },
+    {
+      "id": 1090,
+      "name": "Cloud Cuckoo Car",
+      "world": "The LEGO Movie",
+      "abilities": ["Flying", "Flight Docks and Flight Cargo Hooks"],
+      "rebuilds": [
+        {
+          "id": 1091,
+          "name": "X-Stream Soaker",
+          "world": "The LEGO Movie",
+          "abilities": [
+            "Flying",
+            "Flight Docks and Flight Cargo Hooks",
+            "Water Spray"
+          ]
+        },
+        {
+          "id": 1092,
+          "name": "Rainbow Cannon",
+          "world": "The LEGO Movie",
+          "abilities": [
+            "Flying",
+            "Flight Docks and Flight Cargo Hooks",
+            "Special Attack",
+            "",
+            "Water Spray"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1093,
+      "name": "Invisible Jet",
+      "world": "DC Comics",
+      "abilities": ["Flying", "Flight Docks and Flight Cargo Hooks", "Stealth"],
+      "rebuilds": [
+        {
+          "id": 1094,
+          "name": "Laser Shooter",
+          "world": "DC Comics",
+          "abilities": [
+            "Flying",
+            "Flight Docks and Flight Cargo Hooks",
+            "Stealth",
+            "Gold LEGO Blowup"
+          ]
+        },
+        {
+          "id": 1095,
+          "name": "Torpedo Bomber",
+          "world": "DC Comics",
+          "abilities": [
+            "Flying",
+            "Flight Docks and Flight Cargo Hooks",
+            "Stealth",
+            "Gold LEGO Blowup",
+            "Silver LEGO Blowup"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1096,
+      "name": "NinjaCopter",
+      "world": "Ninjago",
+      "abilities": ["Flying", "Flight Docks and Flight Cargo Hooks"],
+      "rebuilds": [
+        {
+          "id": 1097,
+          "name": "Glaciator",
+          "world": "Ninjago",
+          "abilities": [
+            "Flying",
+            "Flight Docks and Flight Cargo Hooks",
+            "Special Attack"
+          ]
+        },
+        {
+          "id": 1098,
+          "name": "Freeze Fighter",
+          "world": "Ninjago",
+          "abilities": [
+            "Flying",
+            "Flight Docks and Flight Cargo Hooks",
+            "Gold LEGO Blowup",
+            "",
+            "Special Attack"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1099,
+      "name": "Travelling Time Train",
+      "world": "Back to the Future",
+      "abilities": ["Accelerator Switches", "Time Travel"],
+      "rebuilds": [
+        {
+          "id": 1100,
+          "name": "Flying Time Train",
+          "world": "Back to the Future",
+          "abilities": [
+            "Flying",
+            "Flight Docks and Flight Cargo Hooks",
+            "Time Travel",
+            "Accelerator Switches",
+            "Tow Bar"
+          ]
+        },
+        {
+          "id": 1101,
+          "name": "Missile Blast Time Train",
+          "world": "Back to the Future",
+          "abilities": [
+            "Flying",
+            "Flight Docks and Flight Cargo Hooks",
+            "Silver LEGO Blowup",
+            "Time Travel",
+            "Accelerator Switches",
+            "Tow Bar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1102,
+      "name": "Aqua Watercraft",
+      "world": "DC Comics",
+      "abilities": ["Sail", "Dive"],
+      "rebuilds": [
+        {
+          "id": 1103,
+          "name": "Seven Seas Speeder",
+          "world": "DC Comics",
+          "abilities": ["Speed Boost", "Special Weapon", "Sail", "Dive"]
+        },
+        {
+          "id": 1104,
+          "name": "Trident of Fire",
+          "world": "DC Comics",
+          "abilities": [
+            "Silver LEGO Blowup",
+            "Special Attack",
+            "Speed Boost",
+            "Special Weapon",
+            "Sail",
+            "Dive"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1105,
+      "name": "Drill Driver",
+      "world": "DC Comics",
+      "abilities": ["Accelerator Switches", "Drill", "Dig"],
+      "rebuilds": [
+        {
+          "id": 1106,
+          "name": "Bane Dig 'n' Drill",
+          "world": "DC Comics",
+          "abilities": ["Tow Bar", "Dig", "Drill", "Accelerator Switches"]
+        },
+        {
+          "id": 1107,
+          "name": "Bane Drill 'n' Blast",
+          "world": "DC Comics",
+          "abilities": [
+            "Special Attack",
+            "Silver LEGO Blowup",
+            "Drill",
+            "Dig",
+            "Accelerator Switches",
+            "Tow Bar",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1108,
+      "name": "Quinn Mobile",
+      "world": "DC Comics",
+      "abilities": ["Accelerator Switches"],
+      "rebuilds": [
+        {
+          "id": 1109,
+          "name": "Quinn Ultra Racer",
+          "world": "DC Comics",
+          "abilities": ["Speed Boost", "Tow Bar", "Accelerator Switches"]
+        },
+        {
+          "id": 1110,
+          "name": "Missile Launcher",
+          "world": "DC Comics",
+          "abilities": [
+            "Silver LEGO Blowup",
+            "Speed Boost",
+            "Tow Bar",
+            "Accelerator Switches"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1111,
+      "name": "The Joker's Chopper",
+      "world": "DC Comics",
+      "abilities": [
+        "Flying",
+        "Flight Docks and Flight Cargo Hooks",
+        "Special Attack"
+      ],
+      "rebuilds": [
+        {
+          "id": 1112,
+          "name": "Mischievous Missile Blaster",
+          "world": "DC Comics",
+          "abilities": [
+            "Flying",
+            "Flight Docks and Flight Cargo Hooks",
+            "Special Attack"
+          ]
+        },
+        {
+          "id": 1113,
+          "name": "Lock 'n' Laser Jet",
+          "world": "DC Comics",
+          "abilities": [
+            "Flying",
+            "Flight Docks and Flight Cargo Hooks",
+            "Gold LEGO Blowup",
+            "Special Attack"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1114,
+      "name": "Hover Pod",
+      "world": "DC Comics",
+      "abilities": ["Flying", "Flight Docks and Flight Cargo Hooks"],
+      "rebuilds": [
+        {
+          "id": 1115,
+          "name": "Krypton Striker",
+          "world": "DC Comics",
+          "abilities": [
+            "Flying",
+            "Flight Docks and Flight Cargo Hooks",
+            "Special Weapon"
+          ]
+        },
+        {
+          "id": 1116,
+          "name": "Super Stealth Pod",
+          "world": "DC Comics",
+          "abilities": [
+            "Flying",
+            "Flight Docks and Flight Cargo Hooks",
+            "Silver LEGO Blowup",
+            "Special Weapon"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1117,
+      "name": "Dalek",
+      "world": "Doctor Who",
+      "abilities": [""],
+      "rebuilds": [
+        {
+          "id": 1118,
+          "name": "Fire 'n' Ride Dalek",
+          "world": "Doctor Who",
+          "abilities": ["Gold LEGO Blowup"]
+        },
+        {
+          "id": 1119,
+          "name": "Silver Shooter Dalek",
+          "world": "Doctor Who",
+          "abilities": [
+            "Flying",
+            "Flight Docks and Flight Cargo Hooks",
+            "Silver LEGO Blowup",
+            "Gold LEGO Blowup"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1120,
+      "name": "Ecto-1",
+      "world": "Ghostbusters",
+      "abilities": ["Accelerator Switches"],
+      "rebuilds": [
+        {
+          "id": 1121,
+          "name": "Ecto-1 Blaster",
+          "world": "Ghostbusters",
+          "abilities": ["Accelerator Switches", "Water Spray", "Tow Bar"]
+        },
+        {
+          "id": 1122,
+          "name": "Ecto-1 Water Diver",
+          "world": "Ghostbusters",
+          "abilities": [
+            "Dive",
+            "Silver LEGO Blowup",
+            "Accelerator Switches",
+            "Water Spray",
+            "Tow Bar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1123,
+      "name": "Ghost Trap",
+      "world": "Ghostbusters",
+      "abilities": ["Ghost Trap"],
+      "rebuilds": [
+        {
+          "id": 1124,
+          "name": "Ghost Stun 'n' Trap",
+          "world": "Ghostbusters",
+          "abilities": ["Ghost Trap", "Special Attack"]
+        },
+        {
+          "id": 1125,
+          "name": "Proton Zapper",
+          "world": "Ghostbusters",
+          "abilities": [
+            "Gold LEGO Blowup",
+            "Special Weapon",
+            "Ghost Trap",
+            "Special Attack"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1126,
+      "name": "Unknown",
+      "world": "Unknown",
+      "abilities": ["Unknown"],
+      "rebuilds": []
+    },
+    {
+      "id": 1127,
+      "name": "Unknown",
+      "world": "Unknown",
+      "abilities": ["Unknown"],
+      "rebuilds": []
+    },
+    {
+      "id": 1128,
+      "name": "Unknown",
+      "world": "Unknown",
+      "abilities": ["Unknown"],
+      "rebuilds": []
+    },
+    {
+      "id": 1129,
+      "name": "Unknown",
+      "world": "Unknown",
+      "abilities": ["Unknown"],
+      "rebuilds": []
+    },
+    {
+      "id": 1130,
+      "name": "Unknown",
+      "world": "Unknown",
+      "abilities": ["Unknown"],
+      "rebuilds": []
+    },
+    {
+      "id": 1131,
+      "name": "Unknown",
+      "world": "Unknown",
+      "abilities": ["Unknown"],
+      "rebuilds": []
+    },
+    {
+      "id": 1132,
+      "name": "Lloyd's Golden Dragon",
+      "world": "Ninjago",
+      "abilities": ["Flying"],
+      "rebuilds": [
+        {
+          "id": 1133,
+          "name": "Sword Projector Dragon",
+          "world": "Ninjago",
+          "abilities": ["Flying", "Special Attack"]
+        }
+      ]
+    },
+    {
+      "id": 1134,
+      "name": "Unknown",
+      "world": "Unknown",
+      "abilities": ["Unknown"],
+      "rebuilds": []
+    },
+    {
+      "id": 1135,
+      "name": "Unknown",
+      "world": "Unknown",
+      "abilities": ["Unknown"],
+      "rebuilds": []
+    },
+    {
+      "id": 1136,
+      "name": "Unknown",
+      "world": "Unknown",
+      "abilities": ["Unknown"],
+      "rebuilds": []
+    },
+    {
+      "id": 1137,
+      "name": "Unknown",
+      "world": "Unknown",
+      "abilities": ["Unknown"],
+      "rebuilds": []
+    },
+    {
+      "id": 1138,
+      "name": "Unknown",
+      "world": "Unknown",
+      "abilities": ["Unknown"],
+      "rebuilds": []
+    },
+    {
+      "id": 1139,
+      "name": "Unknown",
+      "world": "Unknown",
+      "abilities": ["Unknown"],
+      "rebuilds": []
+    },
+    {
+      "id": 1140,
+      "name": "Unknown",
+      "world": "Unknown",
+      "abilities": ["Unknown"],
+      "rebuilds": []
+    },
+    {
+      "id": 1141,
+      "name": "Unknown",
+      "world": "Unknown",
+      "abilities": ["Unknown"],
+      "rebuilds": []
+    },
+    {
+      "id": 1142,
+      "name": "Unknown",
+      "world": "Unknown",
+      "abilities": ["Unknown"],
+      "rebuilds": [
+        {
+          "id": 1144,
+          "name": "Mega Flight Dragon",
+          "world": "Ninjago",
+          "abilities": ["Flying", "Special Weapon", "", "Special Attack"]
+        }
+      ]
+    },
+    {
+      "id": 1143,
+      "name": "Unknown",
+      "world": "Unknown",
+      "abilities": ["Unknown"],
+      "rebuilds": []
+    },
+    {
+      "id": 1145,
+      "name": "Unknown",
+      "world": "Unknown",
+      "abilities": ["Unknown"],
+      "rebuilds": []
+    },
+    {
+      "id": 1146,
+      "name": "Unknown",
+      "world": "Unknown",
+      "abilities": ["Unknown"],
+      "rebuilds": []
+    },
+    {
+      "id": 1147,
+      "name": "Unknown",
+      "world": "Unknown",
+      "abilities": ["Unknown"],
+      "rebuilds": []
+    },
+    {
+      "id": 1148,
+      "name": "Unknown",
+      "world": "Unknown",
+      "abilities": ["Unknown"],
+      "rebuilds": []
+    },
+    {
+      "id": 1149,
+      "name": "Unknown",
+      "world": "Unknown",
+      "abilities": ["Unknown"],
+      "rebuilds": []
+    },
+    {
+      "id": 1150,
+      "name": "Unknown",
+      "world": "Unknown",
+      "abilities": ["Unknown"],
+      "rebuilds": []
+    },
+    {
+      "id": 1151,
+      "name": "Unknown",
+      "world": "Unknown",
+      "abilities": ["Unknown"],
+      "rebuilds": []
+    },
+    {
+      "id": 1152,
+      "name": "Unknown",
+      "world": "Unknown",
+      "abilities": ["Unknown"],
+      "rebuilds": []
+    },
+    {
+      "id": 1153,
+      "name": "Unknown",
+      "world": "Unknown",
+      "abilities": ["Unknown"],
+      "rebuilds": []
+    },
+    {
+      "id": 1154,
+      "name": "Unknown",
+      "world": "Unknown",
+      "abilities": ["Unknown"],
+      "rebuilds": []
+    },
+    {
+      "id": 1155,
+      "name": "Flying White Dragon",
+      "world": "Ninjago",
+      "abilities": ["Flying"],
+      "rebuilds": [
+        {
+          "id": 1156,
+          "name": "Golden Fire Dragon",
+          "world": "Ninjago",
+          "abilities": ["Flying", "Special Attack"]
+        },
+        {
+          "id": 1157,
+          "name": "Ultra Destruction Dragon",
+          "world": "Ninjago",
+          "abilities": ["Flying", "Special Weapon", "", "Special Attack"]
+        }
+      ]
+    },
+    {
+      "id": 1158,
+      "name": "Arcade Machine",
+      "world": "Midway Arcade",
+      "abilities": ["Arcade Docks"],
+      "rebuilds": [
+        {
+          "id": 1159,
+          "name": "8-Bit Shooter",
+          "world": "Midway Arcade",
+          "abilities": ["Flying", "Arcade Docks"]
+        },
+        {
+          "id": 1160,
+          "name": "The Pixelator",
+          "world": "Midway Arcade",
+          "abilities": ["Special Attack", "Arcade Docks", "Flying"]
+        }
+      ]
+    },
+    {
+      "id": 1161,
+      "name": "G-6155 Spy Hunter",
+      "world": "Midway Arcade",
+      "abilities": ["Accelerator Switches", "Tow Bar"],
+      "rebuilds": [
+        {
+          "id": 1162,
+          "name": "Interdiver",
+          "world": "Midway Arcade",
+          "abilities": [
+            "Sail",
+            "Silver LEGO Blowup",
+            "Accelerator Switches",
+            "Tow Bar"
+          ]
+        },
+        {
+          "id": 1163,
+          "name": "Aerial Spyhunter",
+          "world": "Midway Arcade",
+          "abilities": [
+            "Flying",
+            "Flight Docks and Flight Cargo Hooks",
+            "Gold LEGO Blowup",
+            "Sail",
+            "Silver LEGO Blowup",
+            "Accelerator Switches",
+            "Tow Bar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1164,
+      "name": "Slime Shooter",
+      "world": "Ghostbusters",
+      "abilities": ["Slime Bolts", "Special Attack"],
+      "rebuilds": [
+        {
+          "id": 1165,
+          "name": "Slime Exploder",
+          "world": "Ghostbusters",
+          "abilities": ["Slime Beam", "Slime Bolts", "Special Attack"]
+        },
+        {
+          "id": 1166,
+          "name": "Slime Streamer",
+          "world": "Ghostbusters",
+          "abilities": [
+            "Slime Bomb",
+            "Silver LEGO Blowup",
+            "Slime Beam",
+            "Slime Bolts",
+            "Special Attack"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1167,
+      "name": "Terror Dog",
+      "world": "Ghostbusters",
+      "abilities": ["Guardian Ability"],
+      "rebuilds": [
+        {
+          "id": 1168,
+          "name": "Terror Dog Destroyer",
+          "world": "Ghostbusters",
+          "abilities": ["Silver LEGO Blowup", "Dig", "Guardian Ability"]
+        },
+        {
+          "id": 1169,
+          "name": "Soaring Terror Dog",
+          "world": "Ghostbusters",
+          "abilities": [
+            "Flying",
+            "Special Weapon",
+            "Silver LEGO Blowup",
+            "Dig",
+            "Guardian Ability"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1170,
+      "name": "Ancient Psychic Tandem War Elephant",
+      "world": "Adventure Time",
+      "abilities": ["Hover", "Gold LEGO Blowup", "Guardian Ability"],
+      "rebuilds": [
+        {
+          "id": 1171,
+          "name": "Cosmic Squid",
+          "world": "Adventure Time",
+          "abilities": [
+            "Flight Docks and Flight Cargo Hooks",
+            "Tow Bar",
+            "Water Spray",
+            "Hover",
+            "Gold LEGO Blowup",
+            "Guardian Ability"
+          ]
+        },
+        {
+          "id": 1172,
+          "name": "Psychic Submarine",
+          "world": "Adventure Time",
+          "abilities": [
+            "Gold LEGO Blowup",
+            "Underwater Interactions",
+            "Underwater Drone",
+            "Flight Docks and Flight Cargo Hooks",
+            "Tow Bar",
+            "Water Spray",
+            "Hover",
+            "Guardian Ability"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1173,
+      "name": "BMO",
+      "world": "Adventure Time",
+      "abilities": ["BMO Docks", "Illumination", "Guardian Ability"],
+      "rebuilds": [
+        {
+          "id": 1174,
+          "name": "DOGMO",
+          "world": "Adventure Time",
+          "abilities": ["Dig", "Illumination", "Guardian Ability", "BMO Docks"]
+        },
+        {
+          "id": 1175,
+          "name": "SNAKEMO",
+          "world": "Adventure Time",
+          "abilities": [
+            "Electricity",
+            "Dig",
+            "Illumination",
+            "Guardian Ability",
+            "BMO Docks"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1176,
+      "name": "Jakemobile",
+      "world": "Adventure Time",
+      "abilities": ["Tow Bar", "Guardian Ability", "Accelerator Switches"],
+      "rebuilds": [
+        {
+          "id": 1177,
+          "name": "Snail Dude Jake",
+          "world": "Adventure Time",
+          "abilities": [
+            "Sonar Smash",
+            "Super Jump",
+            "Super Strength",
+            "Guardian Ability",
+            "Tow Bar",
+            "Accelerator Switches"
+          ]
+        },
+        {
+          "id": 1178,
+          "name": "Hover Jake",
+          "world": "Adventure Time",
+          "abilities": [
+            "Sail",
+            "Tow Bar",
+            "Water Spray",
+            "Guardian Ability",
+            "Sonar Smash",
+            "Super Jump",
+            "Super Strength",
+            "Tow Bar",
+            "Accelerator Switches"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1179,
+      "name": "Lumpy Car",
+      "world": "Adventure Time",
+      "abilities": ["Accelerator Switches", "Tow Bar", "Jump"],
+      "rebuilds": [
+        {
+          "id": 1181,
+          "name": "Lumpy Land Whale",
+          "world": "Adventure Time",
+          "abilities": [
+            "Underwater Drone",
+            "Sonar Smash",
+            "Underwater Interactions",
+            "Accelerator Switches",
+            "Tow Bar",
+            "Jump"
+          ]
+        },
+        {
+          "id": 1180,
+          "name": "Lumpy Truck",
+          "world": "Adventure Time",
+          "abilities": [
+            "Rainbow LEGO Objects",
+            "Gold LEGO Blowup",
+            "Flight Docks and Flight Cargo Hooks",
+            "Underwater Drone",
+            "Sonar Smash",
+            "Underwater Interactions",
+            "Accelerator Switches",
+            "Tow Bar",
+            "Jump"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1182,
+      "name": "Lunatic Amp",
+      "world": "Adventure Time",
+      "abilities": ["Sonar Smash", "Super Jump", "Dig", "Tow Bar"],
+      "rebuilds": [
+        {
+          "id": 1183,
+          "name": "Shadow Scorpion",
+          "world": "Adventure Time",
+          "abilities": [
+            "Flight Docks and Flight Cargo Hooks",
+            "Special Attack",
+            "Tow Bar",
+            "Sonar Smash",
+            "Super Jump",
+            "Dig"
+          ]
+        },
+        {
+          "id": 1184,
+          "name": "Heavy Metal Monster",
+          "world": "Adventure Time",
+          "abilities": [
+            "Guardian Ability",
+            "Super Strength",
+            "Cursed Red LEGO Objects",
+            "Flight Docks and Flight Cargo Hooks",
+            "Special Attack",
+            "Tow Bar",
+            "Sonar Smash",
+            "Super Jump",
+            "Dig"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1185,
+      "name": "B.A.'s Van",
+      "world": "The A-Team",
+      "abilities": ["Accelerator Switches", "Tow Bar"],
+      "rebuilds": [
+        {
+          "id": 1186,
+          "name": "Fool Smasher",
+          "world": "The A-Team",
+          "abilities": [
+            "Accelerator Switches",
+            "Silver LEGO Blowup",
+            "Special Attack",
+            "Super Strength",
+            "Tow Bar"
+          ]
+        },
+        {
+          "id": 1187,
+          "name": "Pain Plane",
+          "world": "The A-Team",
+          "abilities": [
+            "Flying",
+            "Flight Docks and Flight Cargo Hooks",
+            "Sail",
+            "Accelerator Switches",
+            "Silver LEGO Blowup",
+            "Special Attack",
+            "Super Strength",
+            "Tow Bar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1188,
+      "name": "Phone Home",
+      "world": "E.T. the Extra-Terrestrial",
+      "abilities": ["Phone Home", "Sonar Smash"],
+      "rebuilds": [
+        {
+          "id": 1189,
+          "name": "Mobile Uplink",
+          "world": "E.T. the Extra-Terrestrial",
+          "abilities": ["Phone Home", "Special Attack", "Sonar Smash"]
+        },
+        {
+          "id": 1190,
+          "name": "Super-Charged Satellite",
+          "world": "E.T. the Extra-Terrestrial",
+          "abilities": [
+            "Silver LEGO Blowup",
+            "Gold LEGO Blowup",
+            "Flight Docks and Flight Cargo Hooks",
+            "Tow Bar",
+            "Phone Home",
+            "Special Attack",
+            "Sonar Smash"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1191,
+      "name": "Niffler",
+      "world": "Fantastic Beasts and Where to Find Them",
+      "abilities": [
+        "Playable Character",
+        "Enhanced Stud Attraction",
+        "Dig",
+        "Guardian Ability"
+      ],
+      "rebuilds": [
+        {
+          "id": 1192,
+          "name": "Sinister Scorpion",
+          "world": "Fantastic Beasts and Where to Find Them",
+          "abilities": [
+            "Vine Cut",
+            "Special Weapon",
+            "Playable Character",
+            "Enhanced Stud Attraction",
+            "Dig",
+            "Guardian Ability"
+          ]
+        },
+        {
+          "id": 1193,
+          "name": "Vicious Vulture",
+          "world": "Fantastic Beasts and Where to Find Them",
+          "abilities": [
+            "Gold LEGO Blowup",
+            "Guardian Ability",
+            "Vine Cut",
+            "Special Weapon",
+            "Playable Character",
+            "Enhanced Stud Attraction",
+            "Dig"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1194,
+      "name": "Swooping Evil",
+      "world": "Fantastic Beasts and Where to Find Them",
+      "abilities": ["Playable Character", "Guardian Ability"],
+      "rebuilds": [
+        {
+          "id": 1195,
+          "name": "Brutal Bloom",
+          "world": "Fantastic Beasts and Where to Find Them",
+          "abilities": [
+            "Special Weapon",
+            "Guardian Ability",
+            "Tow Bar",
+            "Vine Cut",
+            "Playable Character"
+          ]
+        },
+        {
+          "id": 1196,
+          "name": "Crawling Creeper",
+          "world": "Fantastic Beasts and Where to Find Them",
+          "abilities": [
+            "Super Jump",
+            "Electricity",
+            "Dig",
+            "Special Weapon",
+            "Guardian Ability",
+            "Tow Bar",
+            "Vine Cut",
+            "Playable Character"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1197,
+      "name": "Ecto-1 (2016)",
+      "world": "Ghostbusters (2016)",
+      "abilities": ["Accelerator Switches", "Tow Bar"],
+      "rebuilds": [
+        {
+          "id": 1198,
+          "name": "Ectozer",
+          "world": "Ghostbusters (2016)",
+          "abilities": [
+            "Accelerator Switches",
+            "Tow Bar",
+            "Special Attack",
+            "Super Strength"
+          ]
+        },
+        {
+          "id": 1199,
+          "name": "PerfEcto",
+          "world": "Ghostbusters (2016)",
+          "abilities": [
+            "Electricity",
+            "Water Spray",
+            "Flying",
+            "Sail",
+            "Accelerator Switches",
+            "Tow Bar",
+            "Special Attack",
+            "Super Strength"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1201,
+      "name": "Rampage Record Player",
+      "world": "Gremlins",
+      "abilities": [
+        "Special Attack",
+        "Special Weapon",
+        "Illumination",
+        "Sonar Smash",
+        "Gold LEGO Blowup"
+      ],
+      "rebuilds": [
+        {
+          "id": 1202,
+          "name": "Stripe's Throne",
+          "world": "Gremlins",
+          "abilities": [
+            "Super Jump",
+            "Cursed Red LEGO Objects",
+            "Special Attack",
+            "Special Weapon",
+            "Illumination",
+            "Sonar Smash",
+            "Gold LEGO Blowup"
+          ]
+        },
+        {
+          "id": 1203,
+          "name": "R.C. Racer",
+          "world": "Gremlins",
+          "abilities": ["Accelerator Switches", "Special Attack", "Electricity"]
+        }
+      ]
+    },
+    {
+      "id": 1204,
+      "name": "Gadget-O-Matic",
+      "world": "Gremlins",
+      "abilities": [
+        "Accelerator Switches",
+        "Special Attack",
+        "Tow Bar",
+        "Electricity"
+      ],
+      "rebuilds": [
+        {
+          "id": 1205,
+          "name": "Scarlet Scorpion",
+          "world": "Gremlins",
+          "abilities": [
+            "Super Jump",
+            "Vine Cut",
+            "Accelerator Switches",
+            "Special Attack",
+            "Tow Bar",
+            "Electricity"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1206,
+      "name": "Hogwarts Express",
+      "world": "Harry Potter",
+      "abilities": ["Accelerator Switches", "Tow Bar", "Sonar Smash"],
+      "rebuilds": []
+    },
+    {
+      "id": 1210,
+      "name": "Shark Sub",
+      "world": "Harry Potter",
+      "abilities": [
+        "Underwater Drone",
+        "Underwater Interactions",
+        "Sonar Smash",
+        "Accelerator Switches",
+        "Tow Bar",
+        "Flight Docks and Flight Cargo Hooks"
+      ],
+      "rebuilds": [
+        {
+          "id": 1211,
+          "name": "Monstrous Mouth",
+          "world": "Harry Potter",
+          "abilities": [
+            "Vine Cut",
+            "Gold LEGO Blowup",
+            "Underwater Drone",
+            "Underwater Interactions",
+            "Sonar Smash",
+            "Accelerator Switches",
+            "Tow Bar",
+            "Flight Docks and Flight Cargo Hooks"
+          ]
+        },
+        {
+          "id": 1212,
+          "name": "IMF Scrambler",
+          "world": "Mission: Impossible",
+          "abilities": ["Accelerator Switches", "Jump", "Special Attack"]
+        }
+      ]
+    },
+    {
+      "id": 1213,
+      "name": "Shock Cycle",
+      "world": "Mission: Impossible",
+      "abilities": [
+        "Accelerator Switches",
+        "Jump",
+        "Special Weapon",
+        "Silver LEGO Blowup",
+        "Special Attack"
+      ],
+      "rebuilds": [
+        {
+          "id": 1214,
+          "name": "IMF Covert Jet",
+          "world": "Mission: Impossible",
+          "abilities": [
+            "Flight Docks and Flight Cargo Hooks",
+            "Underwater Interactions",
+            "Special Weapon",
+            "Tow Bar",
+            "Accelerator Switches",
+            "Jump",
+            "Silver LEGO Blowup",
+            "Special Attack"
+          ]
+        },
+        {
+          "id": 1215,
+          "name": "IMF Sports Car",
+          "world": "Mission: Impossible",
+          "abilities": ["Accelerator Switches", "Tow Bar"]
+        }
+      ]
+    },
+    {
+      "id": 1216,
+      "name": "IMF Tank",
+      "world": "Mission: Impossible",
+      "abilities": [
+        "Super Strength",
+        "Gold LEGO Blowup",
+        "Tow Bar",
+        "Accelerator Switches"
+      ],
+      "rebuilds": [
+        {
+          "id": 1217,
+          "name": "IMF Splorer",
+          "world": "Mission: Impossible",
+          "abilities": [
+            "Underwater Drone",
+            "Underwater Interactions",
+            "Super Strength",
+            "Gold LEGO Blowup",
+            "Tow Bar",
+            "Accelerator Switches"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1218,
+      "name": "Sonic Speedster",
+      "world": "Sonic the Hedgehog",
+      "abilities": ["Accelerator Switches", "Tow Bar"],
+      "rebuilds": [
+        {
+          "id": 1219,
+          "name": "Blue Typhoon",
+          "world": "Sonic the Hedgehog",
+          "abilities": [
+            "Flight Docks and Flight Cargo Hooks",
+            "Sail",
+            "Sonar Smash",
+            "Tow Bar",
+            "Accelerator Switches"
+          ]
+        },
+        {
+          "id": 1220,
+          "name": "Moto Bug",
+          "world": "Sonic the Hedgehog",
+          "abilities": [
+            "Accelerator Switches",
+            "Dig",
+            "Vine Cut",
+            "Super Jump",
+            "Flight Docks and Flight Cargo Hooks",
+            "Sail",
+            "Sonar Smash",
+            "Tow Bar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1221,
+      "name": "The Tornado",
+      "world": "Sonic the Hedgehog",
+      "abilities": ["Tow Bar", "Flight Docks and Flight Cargo Hooks"],
+      "rebuilds": [
+        {
+          "id": 1222,
+          "name": "Crabmeat",
+          "world": "Sonic the Hedgehog",
+          "abilities": [
+            "Jump",
+            "Gold LEGO Blowup",
+            "Super Jump",
+            "Guardian Ability",
+            "Tow Bar",
+            "Flight Docks and Flight Cargo Hooks"
+          ]
+        },
+        {
+          "id": 1223,
+          "name": "Eggcatcher",
+          "world": "Sonic the Hedgehog",
+          "abilities": [
+            "Tow Bar",
+            "Flight Docks and Flight Cargo Hooks",
+            "Electricity",
+            "Jump",
+            "Gold LEGO Blowup",
+            "Super Jump",
+            "Guardian Ability"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1224,
+      "name": "K.I.T.T.",
+      "world": "Knight Rider",
+      "abilities": ["Accelerator Switches", "Gold LEGO Blowup"],
+      "rebuilds": []
+    },
+    {
+      "id": 1227,
+      "name": "Police Helicopter",
+      "world": "LEGO City: Undercover",
+      "abilities": [
+        "Flight Docks and Flight Cargo Hooks",
+        "Special Attack",
+        "Tow Bar"
+      ],
+      "rebuilds": [
+        {
+          "id": 1228,
+          "name": "Police Hovercraft",
+          "world": "LEGO City: Undercover",
+          "abilities": [
+            "Gold LEGO Blowup",
+            "Accelerator Switches",
+            "Super Jump",
+            "Special Attack",
+            "Flight Docks and Flight Cargo Hooks",
+            "Tow Bar"
+          ]
+        },
+        {
+          "id": 1229,
+          "name": "Police Plane",
+          "world": "LEGO City: Undercover",
+          "abilities": [
+            "Flight Docks and Flight Cargo Hooks",
+            "Tow Bar",
+            "Drone Mazes",
+            "Gold LEGO Blowup",
+            "Accelerator Switches",
+            "Super Jump",
+            "Special Attack",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1230,
+      "name": "Bionic Steed",
+      "world": "The LEGO Batman Movie",
+      "abilities": ["Super Jump", "Special Weapon"],
+      "rebuilds": [
+        {
+          "id": 1231,
+          "name": "Bat-Raptor",
+          "world": "The LEGO Batman Movie",
+          "abilities": ["Super Jump", "Super Strength", "Special Weapon"]
+        },
+        {
+          "id": 1232,
+          "name": "Ultrabat",
+          "world": "The LEGO Batman Movie",
+          "abilities": [
+            "Sonar Smash",
+            "Super Strength",
+            "Super Jump",
+            "Super Strength",
+            "Special Weapon"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1233,
+      "name": "Batwing",
+      "world": "The LEGO Batman Movie",
+      "abilities": ["Tow Bar", "Flight Docks and Flight Cargo Hooks"],
+      "rebuilds": [
+        {
+          "id": 1234,
+          "name": "The Black Thunder",
+          "world": "The LEGO Batman Movie",
+          "abilities": [
+            "Accelerator Switches",
+            "Tow Bar",
+            "Flight Docks and Flight Cargo Hooks"
+          ]
+        },
+        {
+          "id": 1235,
+          "name": "Bat-Tank",
+          "world": "The LEGO Batman Movie",
+          "abilities": [
+            "Accelerator Switches",
+            "Tow Bar",
+            "Silver LEGO Blowup",
+            "Flight Docks and Flight Cargo Hooks"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1236,
+      "name": "Skeleton Organ",
+      "world": "The Goonies",
+      "abilities": ["Organ Docks", "Special Weapon", "Sonar Smash"],
+      "rebuilds": [
+        {
+          "id": 1237,
+          "name": "Skeleton Jukebox",
+          "world": "The Goonies",
+          "abilities": [
+            "Jump",
+            "Special Weapon",
+            "Electricity",
+            "Organ Docks",
+            "Sonar Smash"
+          ]
+        },
+        {
+          "id": 1238,
+          "name": "Skele-Turkey",
+          "world": "The Goonies",
+          "abilities": [
+            "Gold LEGO Blowup",
+            "Flight Docks and Flight Cargo Hooks",
+            "Tow Bar",
+            "Jump",
+            "Special Weapon",
+            "Electricity",
+            "Organ Docks",
+            "Sonar Smash"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1239,
+      "name": "One-Eyed Willy's Pirate Ship",
+      "world": "The Goonies",
+      "abilities": ["Sail", "Silver LEGO Blowup", "Special Attack"],
+      "rebuilds": [
+        {
+          "id": 1240,
+          "name": "Fanged Fortune",
+          "world": "The Goonies",
+          "abilities": [
+            "Water Spray",
+            "Special Attack",
+            "Vine Cut",
+            "Sail",
+            "Silver LEGO Blowup"
+          ]
+        },
+        {
+          "id": 1241,
+          "name": "Inferno Cannon",
+          "world": "The Goonies",
+          "abilities": [
+            "Special Attack",
+            "Special Weapon",
+            "Silver LEGO Blowup",
+            "Water Spray",
+            "Vine Cut",
+            "Sail"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1242,
+      "name": "Buckbeak",
+      "world": "Harry Potter",
+      "abilities": [
+        "Super Strength",
+        "Flying",
+        "Guardian Ability",
+        "Silver LEGO Blowup"
+      ],
+      "rebuilds": [
+        {
+          "id": 1243,
+          "name": "Giant Owl",
+          "world": "Harry Potter",
+          "abilities": [
+            "Flying",
+            "Electricity",
+            "Super Strength",
+            "Guardian Ability",
+            "Silver LEGO Blowup"
+          ]
+        },
+        {
+          "id": 1244,
+          "name": "Fierce Falcon",
+          "world": "Harry Potter",
+          "abilities": [
+            "Flying",
+            "Special Weapon",
+            "Sonar Smash",
+            "Electricity",
+            "Super Strength",
+            "Guardian Ability",
+            "Silver LEGO Blowup"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1245,
+      "name": "Saturn's Sandworm",
+      "world": "Beetlejuice",
+      "abilities": ["Sonar Smash"],
+      "rebuilds": [
+        {
+          "id": 1247,
+          "name": "Haunted Vacuum",
+          "world": "Beetlejuice",
+          "abilities": [
+            "Special Weapon",
+            "Super Jump",
+            "Cursed Red LEGO Objects",
+            "Enhanced Stud Attraction",
+            "Sonar Smash"
+          ]
+        },
+        {
+          "id": 1246,
+          "name": "Spooky Spider",
+          "world": "Beetlejuice",
+          "abilities": [
+            "Gold LEGO Blowup",
+            "Tow Bar",
+            "Silver LEGO Blowup",
+            "Special Weapon",
+            "Super Jump",
+            "Cursed Red LEGO Objects",
+            "Enhanced Stud Attraction",
+            "Sonar Smash"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1248,
+      "name": "PPG Smartphone",
+      "world": "The Powerpuff Girls",
+      "abilities": ["Flight Docks and Flight Cargo Hooks", "Gold LEGO Blowup"],
+      "rebuilds": [
+        {
+          "id": 1249,
+          "name": "PPG Hotline",
+          "world": "The Powerpuff Girls",
+          "abilities": [
+            "Special Weapon",
+            "Rainbow LEGO Objects",
+            "Flight Docks and Flight Cargo Hooks",
+            "Gold LEGO Blowup"
+          ]
+        },
+        {
+          "id": 1250,
+          "name": "Powerpuff Mag-Net",
+          "world": "The Powerpuff Girls",
+          "abilities": [
+            "Special Weapon",
+            "Enhanced Stud Attraction",
+            "Silver LEGO Blowup",
+            "Rainbow LEGO Objects",
+            "Flight Docks and Flight Cargo Hooks",
+            "Gold LEGO Blowup"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1253,
+      "name": "Mega Blast Bot",
+      "world": "The Powerpuff Girls",
+      "abilities": ["Special Weapon", "Silver LEGO Blowup"],
+      "rebuilds": []
+    },
+    {
+      "id": 1254,
+      "name": "Octi",
+      "world": "The Powerpuff Girls",
+      "abilities": ["Gold LEGO Blowup"],
+      "rebuilds": [
+        {
+          "id": 1255,
+          "name": "Super Skunk",
+          "world": "The Powerpuff Girls",
+          "abilities": ["Vine Cut", "Super Jump", "Dig", "Gold LEGO Blowup"]
+        },
+        {
+          "id": 1256,
+          "name": "Sonic Squid",
+          "world": "The Powerpuff Girls",
+          "abilities": [
+            "Water Spray",
+            "Vine Cut",
+            "Super Jump",
+            "Dig",
+            "Gold LEGO Blowup"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1257,
+      "name": "T-Car",
+      "world": "Teen Titans Go!",
+      "abilities": ["Super Jump", "Accelerator Switches", "Tow Bar"],
+      "rebuilds": [
+        {
+          "id": 1258,
+          "name": "T-Forklift",
+          "world": "Teen Titans Go!",
+          "abilities": [
+            "Super Jump",
+            "Accelerator Switches",
+            "Drone Mazes",
+            "Tow Bar"
+          ]
+        },
+        {
+          "id": 1259,
+          "name": "T-Plane",
+          "world": "Teen Titans Go!",
+          "abilities": [
+            "Accelerator Switches",
+            "Flight Docks and Flight Cargo Hooks",
+            "Tow Bar",
+            "Sail",
+            "Super Jump",
+            "Drone Mazes"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1260,
+      "name": "Spellbook of Azarath",
+      "world": "Teen Titans Go!",
+      "abilities": [
+        "Summon Ability",
+        "Rainbow LEGO Objects",
+        "Cursed Red LEGO Objects",
+        "Sonar Smash"
+      ],
+      "rebuilds": [
+        {
+          "id": 1261,
+          "name": "Raven Wings",
+          "world": "Teen Titans Go!",
+          "abilities": [
+            "Cursed Red LEGO Objects",
+            "Flying",
+            "Gold LEGO Blowup",
+            "Tow Bar",
+            "Sonar Smash",
+            "Summon Ability",
+            "Rainbow LEGO Objects"
+          ]
+        },
+        {
+          "id": 1262,
+          "name": "Giant Hand",
+          "world": "Teen Titans Go!",
+          "abilities": [
+            "Super Jump",
+            "Dig",
+            "Super Strength",
+            "Cursed Red LEGO Objects",
+            "Flying",
+            "Gold LEGO Blowup",
+            "Tow Bar",
+            "Sonar Smash",
+            "Summon Ability",
+            "Rainbow LEGO Objects"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1263,
+      "name": "Titan Robot",
+      "world": "Teen Titans Go!",
+      "abilities": [
+        "Special Weapon",
+        "Super Strength",
+        "Tow Bar",
+        "Silver LEGO Blowup"
+      ],
+      "rebuilds": [
+        {
+          "id": 1264,
+          "name": "T-Rocket",
+          "world": "Teen Titans Go!",
+          "abilities": [
+            "Gold LEGO Blowup",
+            "Flying",
+            "Special Weapon",
+            "Super Strength",
+            "Tow Bar",
+            "Silver LEGO Blowup"
+          ]
+        },
+        {
+          "id": 1265,
+          "name": "Robot Retriever",
+          "world": "Teen Titans Go!",
+          "abilities": [
+            "Super Jump",
+            "Dig",
+            "Electricity",
+            "Gold LEGO Blowup",
+            "Flying",
+            "Special Weapon",
+            "Super Strength",
+            "Tow Bar",
+            "Silver LEGO Blowup"
+          ]
+        }
+      ]
+    }
+  ]
+}

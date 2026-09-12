@@ -29,6 +29,9 @@ class ToyTag : public Toy, public virtual LEGODimensions::ToyTag {
 
     void getUIDStr(char* out) const override { LEGODimensions::ToyTag::getUIDStr(out); }
 
+    int rawLocation() const override { return static_cast<int>(padIndex); }
+    void setRawLocation(int loc) override { padIndex = static_cast<TagIndex>(loc); }
+
     JsonDocument toJSON() const override {
         JsonDocument doc;
         fillJSON(doc);

@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include <led/led_controller.h>
 #include "config/config.h"
+#include "infinity/toypad.h"
 #include "lego/toypad.h"
 #include "log/logger.h"
 #include "RP2040Support.h"
@@ -9,13 +10,18 @@
 
 CaptivePortal* initializationPortal = nullptr;
 LegoServer* webServer = nullptr;
-Toypad playPad;
 
-PlaypadLEDController<4> padLEDs(&playPad, {3, 1, 3});
+// Exactly one PortalTransport-derived object is ever constructed, chosen by the persisted game -
+// LEGO Dimensions and Disney Infinity are mutually exclusive USB device identities per boot, so
+// there's no need (and no room, USB-wise) for both to exist at once.
+PortalTransport* activePad = nullptr;
+ToyGame activeGame = ToyGame::LegoDimensions;
+
+PlaypadLEDController<4>* padLEDs = nullptr;
 
 void create_captive_portal() {
     logger.blinkStatus(5, 1000);
-    playPad.getPad(PadLocation::CENTER)->setColor(PadColor::Red());
+    activePad->getPad(PadLocation::CENTER)->setColor(PadColor::Red());
 
     log_dbg("[create_captive_portal] Creating captive portal...");
     initializationPortal = new CaptivePortal("captive", NULL);
@@ -35,17 +41,38 @@ void setup() {
     log_init();
     config.init();
 
-    playPad.begin();
-    padLEDs.begin();
+    activeGame = static_cast<ToyGame>(
+        config.getUChar("game", static_cast<uint8_t>(ToyGame::LegoDimensions)));
+
+    if (activeGame == ToyGame::DisneyInfinity) {
+        InfinityToypad* pad = new InfinityToypad();
+        pad->begin();
+        activePad = pad;
+    } else {
+        Toypad* pad = new Toypad();
+        pad->begin();
+        activePad = pad;
+    }
+
+    padLEDs = new PlaypadLEDController<4>(activePad, {3, 1, 3});
+    padLEDs->begin();
 
     if (config.getBool("initialized", false)) {
         log_dbg("[setup] Device already initialized, skipping captive portal...");
         logger.blinkStatus(2, 100);
 
-        if (playPad.platform() == ToypadPlatform::PS3) {
-            playPad.getPad(PadLocation::CENTER)->setFade(PadColor::Blue(), 50, 2);
+        if (activePad->platform() == ToypadPlatform::PS3) {
+            activePad->getPad(PadLocation::CENTER)->setFade(PadColor::Blue(), 50, 2);
         } else {
-            playPad.getPad(PadLocation::CENTER)->setFade(PadColor::Green(), 50, 2);
+            activePad->getPad(PadLocation::CENTER)->setFade(PadColor::Green(), 50, 2);
+        }
+
+        if (activeGame == ToyGame::LegoDimensions) {
+            activePad->getPad(PadLocation::LEFT)->setFade(PadColor::Blue(), 50, 2);
+            activePad->getPad(PadLocation::RIGHT)->setFade(PadColor::Blue(), 50, 2);
+        } else if (activeGame == ToyGame::DisneyInfinity) {
+            activePad->getPad(PadLocation::LEFT)->setFade(PadColor::White(), 50, 2);
+            activePad->getPad(PadLocation::RIGHT)->setFade(PadColor::White(), 50, 2);
         }
 
         return;
@@ -56,9 +83,9 @@ void setup() {
 }
 
 void loop() {
-    // Updates the current USB state (i.e. sending events/etc/etc)
-    playPad.update();
-    padLEDs.update();
+    // Updates the current USB state (i.e. sending events/etc/etc), plus fade/flash pad state.
+    activePad->update();
+    padLEDs->update();
 
     if (initializationPortal != nullptr) {
         // For the sake of seeing if the portal is initialized, just blink the LED on/off while we
@@ -81,7 +108,10 @@ void loop() {
         const char* ssid = config.getString("ssid", "");
         const char* pass = config.getString("password", "");
 
-        webServer = new LegoServer(ssid, pass, &playPad);
+        // server.cpp is game-agnostic - it only ever calls generic PortalTransport/Toy interface
+        // methods (placeToy(), game(), onTagStateChange(), etc), so the single active portal
+        // object works here regardless of which game it's emulating.
+        webServer = new LegoServer(ssid, pass, activePad);
 
         free((void*)ssid);
         free((void*)pass);
