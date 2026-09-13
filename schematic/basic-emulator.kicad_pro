@@ -657,16 +657,16 @@
       {
         "filename": "basic-emulator.kicad_sch",
         "name": "basic-emulator",
-        "uuid": "00000000-0000-0000-0000-000000000000"
+        "uuid": "51d491f5-019d-406b-98bc-26a802e36131"
       }
     ],
-    "used_designators": "",
+    "used_designators": "U1,#PWR14-21,C9-14,J1,R2-4,TP1-2,RV1",
     "variants": []
   },
   "sheets": [
     [
       "51d491f5-019d-406b-98bc-26a802e36131",
-      "Root"
+      "basic-emulator"
     ]
   ],
   "text_variables": {},
