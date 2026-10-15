@@ -158,6 +158,25 @@
                 </div>
               </div>
             </div>
+
+            <!-- Kamen Rider SummonRide: the Ride Gate is treated as a single (center) section holding up to 7 tags -->
+            <div
+              id="kamenrider-pads"
+              style="
+                display: none;
+                grid-template-columns: repeat(7, 1fr);
+                gap: 0.5em;
+                justify-items: center;
+              "
+            >
+              <div class="pad" data-pad-id="1" data-pad-index="1-0"></div>
+              <div class="pad" data-pad-id="1" data-pad-index="1-1"></div>
+              <div class="pad" data-pad-id="1" data-pad-index="1-2"></div>
+              <div class="pad" data-pad-id="1" data-pad-index="1-3"></div>
+              <div class="pad" data-pad-id="1" data-pad-index="1-4"></div>
+              <div class="pad" data-pad-id="1" data-pad-index="1-5"></div>
+              <div class="pad" data-pad-id="1" data-pad-index="1-6"></div>
+            </div>
           </div>
         </div>
 
@@ -329,6 +348,14 @@
                     >
                       Disney Infinity
                     </button>
+                    <button
+                      type="button"
+                      style="flex-grow: 1"
+                      data-game="kamenrider"
+                      onclick="changeGame('kamenrider', this)"
+                    >
+                      Kamen Rider SummonRide
+                    </button>
                   </div>
                   <p id="game-status" class="sm" style="display: none"></p>
                 </div>
@@ -339,6 +366,12 @@
                   const statusEl = document.getElementById("game-status");
                   const buttons =
                     button.parentElement.querySelectorAll("button");
+
+                  if (!gameSupportsPlatform(value, selectedPlatform)) {
+                    statusEl.style.display = "block";
+                    statusEl.textContent = `${GAMES[value].label} is not supported on ${PLATFORM_LABELS[selectedPlatform]} - switch the platform first.`;
+                    return;
+                  }
 
                   buttons.forEach((b) => (b.disabled = true));
                   statusEl.style.display = "block";

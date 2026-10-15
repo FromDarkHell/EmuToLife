@@ -2,6 +2,12 @@ async function changePlatform(value, button) {
   const statusEl = document.getElementById("platform-status");
   const buttons = button.parentElement.querySelectorAll("button");
 
+  if (!gameSupportsPlatform(selectedGame, value)) {
+    statusEl.style.display = "block";
+    statusEl.textContent = `${GAMES[selectedGame].label} is not supported on ${PLATFORM_LABELS[value]}.`;
+    return;
+  }
+
   buttons.forEach((b) => (b.disabled = true));
   statusEl.style.display = "block";
   statusEl.textContent = "Switching platform...";

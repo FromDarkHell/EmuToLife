@@ -22,6 +22,13 @@ class ToyTag : public Toy, public virtual LEGODimensions::ToyTag {
    public:
     using LEGODimensions::ToyTag::ToyTag;
 
+    /**
+     * @brief A string describing the tag's name, used for display/serialization purposes. Kept
+     * here rather than on the library's LEGODimensions::ToyTag since persistence format is an
+     * application concern, not a protocol one.
+     */
+    char name[48] = "";
+
     ToyGame toyGame() const override { return ToyGame::LegoDimensions; }
     uint32_t toyId() const override { return id; }
     const char* toyName() const override { return name; }
@@ -96,7 +103,12 @@ class ToyTag : public Toy, public virtual LEGODimensions::ToyTag {
  */
 class VehicleTag : public ToyTag, public LEGODimensions::VehicleTag {
    public:
-    using LEGODimensions::VehicleTag::VehicleTag;
+    VehicleTag() = default;
+
+    VehicleTag(uint16_t vehicleId, const char* vehicleName, uint32_t upg23 = 0, uint32_t upg25 = 0)
+        : LEGODimensions::VehicleTag(vehicleId, upg23, upg25) {
+        strlcpy(name, vehicleName, sizeof(name));
+    }
 
    protected:
     void fillJSON(JsonDocument& doc) const override {
@@ -120,7 +132,11 @@ class VehicleTag : public ToyTag, public LEGODimensions::VehicleTag {
  */
 class CharacterTag : public ToyTag, public LEGODimensions::CharacterTag {
    public:
-    using LEGODimensions::CharacterTag::CharacterTag;
+    CharacterTag() = default;
+
+    CharacterTag(uint16_t charId, const char* charName) : LEGODimensions::CharacterTag(charId) {
+        strlcpy(name, charName, sizeof(name));
+    }
 
    protected:
     void fillJSON(JsonDocument& doc) const override {

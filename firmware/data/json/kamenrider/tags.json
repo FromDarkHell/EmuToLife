@@ -1,0 +1,328 @@
+{
+  "characters": [
+    {
+      "id": 268505104,
+      "name": "Kamen Rider Drive (Wind)",
+      "rebuilds": [
+        {
+          "id": 268509200,
+          "name": "Kamen Rider Drive (Water)"
+        },
+        {
+          "id": 268513296,
+          "name": "Kamen Rider Drive (Fire)"
+        },
+        {
+          "id": 268517392,
+          "name": "Kamen Rider Drive (Light)"
+        },
+        {
+          "id": 268521488,
+          "name": "Kamen Rider Drive (Dark)"
+        },
+        {
+          "id": 536936464,
+          "name": "Kamen Rider Drive - Type Wild"
+        },
+        {
+          "id": 537002000,
+          "name": "Kamen Rider Drive - Type Wild Gyasha Ver"
+        },
+        {
+          "id": 537067537,
+          "name": "Kamen Rider Drive - Type Technic"
+        },
+        {
+          "id": 537264144,
+          "name": "Kamen Rider Drive - Type Speed Flare"
+        }
+      ]
+    },
+    {
+      "id": 285282320,
+      "name": "Kamen Rider Gaim (Wind)",
+      "rebuilds": [
+        {
+          "id": 285286416,
+          "name": "Kamen Rider Gaim (Water)"
+        },
+        {
+          "id": 553713680,
+          "name": "Kamen Rider Gaim - Jimber Lemon Arms"
+        },
+        {
+          "id": 553779216,
+          "name": "Kamen Rider Gaim - Kachidoki Arms"
+        },
+        {
+          "id": 553844752,
+          "name": "Kamen Rider Gaim - Kiwami Arms"
+        }
+      ]
+    },
+    {
+      "id": 302063632,
+      "name": "Kamen Rider Wizard (Water)",
+      "rebuilds": [
+        {
+          "id": 302067728,
+          "name": "Kamen Rider Wizard (Fire)"
+        },
+        {
+          "id": 570490896,
+          "name": "Kamen Rider Wizard - Infinity Style"
+        },
+        {
+          "id": 570556432,
+          "name": "Kamen Rider Wizard - All Dragon"
+        },
+        {
+          "id": 570621968,
+          "name": "Kamen Rider Wizard - Infinity Gold Dragon"
+        }
+      ]
+    },
+    {
+      "id": 318849040,
+      "name": "Kamen Rider Fourze (Light)",
+      "rebuilds": [
+        {
+          "id": 587268112,
+          "name": "Kamen Rider Fourze - Magnet States"
+        },
+        {
+          "id": 587333648,
+          "name": "Kamen Rider Fourze - Cosmic States"
+        },
+        {
+          "id": 587399184,
+          "name": "Kamen Rider Fourze - Meteor Nadeshiko Fusion States"
+        }
+      ]
+    },
+    {
+      "id": 335618064,
+      "name": "Kamen Rider OOO (Water)",
+      "rebuilds": [
+        {
+          "id": 604045328,
+          "name": "Kamen Rider OOO - Super Tatoba Combo"
+        },
+        {
+          "id": 604110864,
+          "name": "Kamen Rider OOO - Putotyra Combo"
+        },
+        {
+          "id": 604241936,
+          "name": "Kamen Rider OOO - Tajadol Combo"
+        }
+      ]
+    },
+    {
+      "id": 352391184,
+      "name": "Kamen Rider W (Double) (Wind)",
+      "rebuilds": [
+        {
+          "id": 620822544,
+          "name": "Kamen Rider W (Double) - Cyclone Joker Extreme"
+        },
+        {
+          "id": 620888080,
+          "name": "Kamen Rider W (Double) - Cyclone Joker Gold Extreme"
+        },
+        {
+          "id": 620953616,
+          "name": "Kamen Rider W (Double) - Fang Joker"
+        }
+      ]
+    },
+    {
+      "id": 369184784,
+      "name": "Kamen Rider Decade (Dark)",
+      "rebuilds": [
+        {
+          "id": 637599760,
+          "name": "Kamen Rider Decade - Complete Form"
+        },
+        {
+          "id": 637665296,
+          "name": "Kamen Rider Decade - Strongest Complete Form"
+        },
+        {
+          "id": 637730832,
+          "name": "Kamen Rider Decade - Final Form"
+        }
+      ]
+    },
+    {
+      "id": 385962000,
+      "name": "Kamen Rider Kiva (Dark)",
+      "rebuilds": [
+        {
+          "id": 654376976,
+          "name": "Kamen Rider Kiva - Dogabaki Form"
+        },
+        {
+          "id": 654442512,
+          "name": "Kamen Rider Kiva - Emperor Form"
+        }
+      ]
+    },
+    {
+      "id": 402735120,
+      "name": "Kamen Rider Den-O (Light)",
+      "rebuilds": [
+        {
+          "id": 671154192,
+          "name": "Kamen Rider Den-O - Super Climax Form"
+        },
+        {
+          "id": 671219728,
+          "name": "Kamen Rider Den-O - Liner Form"
+        },
+        {
+          "id": 671285264,
+          "name": "Kamen Rider Den-O - Climax Form"
+        }
+      ]
+    },
+    {
+      "id": 419508240,
+      "name": "Kamen Rider Kabuto (Fire)",
+      "rebuilds": [
+        {
+          "id": 687931408,
+          "name": "Kamen Rider Kabuto - Hyper Form"
+        },
+        {
+          "id": 687996944,
+          "name": "Kamen Rider Kabuto - Masked Form"
+        }
+      ]
+    },
+    {
+      "id": 436285456,
+      "name": "Kamen Rider Hibiki (Fire)",
+      "rebuilds": [
+        {
+          "id": 704708624,
+          "name": "Kamen Rider Hibiki - Kurenai"
+        },
+        {
+          "id": 704774160,
+          "name": "Kamen Rider Hibiki - Armed"
+        }
+      ]
+    },
+    {
+      "id": 453070864,
+      "name": "Kamen Rider Blade (Dark)",
+      "rebuilds": [
+        {
+          "id": 721485840,
+          "name": "Kamen Rider Blade - Joker Form"
+        },
+        {
+          "id": 721551376,
+          "name": "Kamen Rider Blade - King Form"
+        }
+      ]
+    },
+    {
+      "id": 469848080,
+      "name": "Kamen Rider Faiz (Dark)",
+      "rebuilds": [
+        {
+          "id": 738263056,
+          "name": "Kamen Rider Faiz - Axel Form"
+        },
+        {
+          "id": 738328592,
+          "name": "Kamen Rider Faiz - Blaster Form"
+        }
+      ]
+    },
+    {
+      "id": 486608912,
+      "name": "Kamen Rider Ryuki (Wind)",
+      "rebuilds": [
+        {
+          "id": 755040272,
+          "name": "Kamen Rider Ryuki - Dragreder"
+        },
+        {
+          "id": 755105808,
+          "name": "Kamen Rider Ryuki - Survive"
+        }
+      ]
+    },
+    {
+      "id": 503390224,
+      "name": "Kamen Rider Agito (Water)",
+      "rebuilds": [
+        {
+          "id": 771817488,
+          "name": "Kamen Rider Agito - Shining Form"
+        },
+        {
+          "id": 771883024,
+          "name": "Kamen Rider Agito - Burning Form"
+        }
+      ]
+    },
+    {
+      "id": 520175632,
+      "name": "Kamen Rider Kuuga (Light)",
+      "rebuilds": [
+        {
+          "id": 788594704,
+          "name": "Kamen Rider Kuuga - Ultimate Form"
+        },
+        {
+          "id": 788660240,
+          "name": "Kamen Rider Kuuga - Amazing Mighty"
+        }
+      ]
+    },
+    {
+      "id": 805371921,
+      "name": "Kamen Rider Mach"
+    },
+    {
+      "id": 822149136,
+      "name": "Kamen Rider Baron"
+    },
+    {
+      "id": 822214672,
+      "name": "Kamen Rider Zangetsu Shin"
+    },
+    {
+      "id": 838926352,
+      "name": "Kamen Rider Beast"
+    },
+    {
+      "id": 855703568,
+      "name": "Kamen Rider Meteor"
+    },
+    {
+      "id": 872480784,
+      "name": "Kamen Rider Birth"
+    },
+    {
+      "id": 889258000,
+      "name": "Kamen Rider Accel"
+    },
+    {
+      "id": 906035216,
+      "name": "Kamen Rider Diend"
+    },
+    {
+      "id": 906100752,
+      "name": "Kamen Rider Shocker Combatman"
+    },
+    {
+      "id": 956366864,
+      "name": "Kamen Rider Gatack"
+    }
+  ]
+}

@@ -2,6 +2,7 @@
 #include <Arduino.h>
 #include <ArduinoJson.h>
 #include "infinity/toy_tag.h"
+#include "kamenrider/toy_tag.h"
 #include "lego/toy_tag.h"
 
 /**

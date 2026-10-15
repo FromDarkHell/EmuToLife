@@ -127,6 +127,11 @@ button:hover {
   color: #ffcc00;
   box-shadow: 0 3px #000;
 }
+#game-select button.unsupported,
+#platform-select button.unsupported {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 .reset:hover {
   background: #990000;
 }

@@ -2,6 +2,7 @@
 #include <led/led_controller.h>
 #include "config/config.h"
 #include "infinity/toypad.h"
+#include "kamenrider/toypad.h"
 #include "lego/toypad.h"
 #include "log/logger.h"
 #include "RP2040Support.h"
@@ -12,8 +13,8 @@ CaptivePortal* initializationPortal = nullptr;
 LegoServer* webServer = nullptr;
 
 // Exactly one PortalTransport-derived object is ever constructed, chosen by the persisted game -
-// LEGO Dimensions and Disney Infinity are mutually exclusive USB device identities per boot, so
-// there's no need (and no room, USB-wise) for both to exist at once.
+// each game is a mutually exclusive USB device identity per boot, so there's no need (and no room,
+// USB-wise) for more than one to exist at once.
 PortalTransport* activePad = nullptr;
 ToyGame activeGame = ToyGame::LegoDimensions;
 
@@ -48,6 +49,10 @@ void setup() {
         InfinityToypad* pad = new InfinityToypad();
         pad->begin();
         activePad = pad;
+    } else if (activeGame == ToyGame::KamenRider) {
+        KamenRiderToypad* pad = new KamenRiderToypad();
+        pad->begin();
+        activePad = pad;
     } else {
         Toypad* pad = new Toypad();
         pad->begin();
@@ -73,6 +78,9 @@ void setup() {
         } else if (activeGame == ToyGame::DisneyInfinity) {
             activePad->getPad(PadLocation::LEFT)->setFade(PadColor::White(), 50, 2);
             activePad->getPad(PadLocation::RIGHT)->setFade(PadColor::White(), 50, 2);
+        } else if (activeGame == ToyGame::KamenRider) {
+            activePad->getPad(PadLocation::LEFT)->setFade(PadColor::Red(), 50, 2);
+            activePad->getPad(PadLocation::RIGHT)->setFade(PadColor::Red(), 50, 2);
         }
 
         return;

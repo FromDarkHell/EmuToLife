@@ -347,6 +347,12 @@ bool LegoServer::add_lego_endpoints() {
         const ToypadPlatform platformInt =
             ToypadPlatform(static_cast<uint8_t>(std::stoi(platform)));
 
+        if (this->toypad != nullptr
+            && !toyGameSupportsPlatform(this->toypad->game(), platformInt)) {
+            request->send(400, "text/plain", "Platform is not supported for the current game");
+            return;
+        }
+
         log_dbg("[server::platform] Setting platform to %s",
                 platformInt == ToypadPlatform::PS3 ? "PS3" : "X360");
         config.setUChar("platform", static_cast<uint8_t>(platformInt));
@@ -393,6 +399,13 @@ bool LegoServer::add_lego_endpoints() {
         }
 
         const ToyGame gameEnum = toyGameFromString(game);
+
+        const ToypadPlatform platform = static_cast<ToypadPlatform>(
+            config.getUChar("platform", static_cast<uint8_t>(ToypadPlatform::PS3)));
+        if (!toyGameSupportsPlatform(gameEnum, platform)) {
+            request->send(400, "text/plain", "Game is not supported on the current platform");
+            return;
+        }
 
         log_dbg("[server::game] Setting game to %s", toyGameString(gameEnum));
         config.setUChar("game", static_cast<uint8_t>(gameEnum));

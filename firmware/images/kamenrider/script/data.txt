@@ -1,0 +1,75 @@
+| Character | Type | Source | Char/ERC/Fig/Patch | Image |
+|-|-|-|-|-|
+| Drive | Wind | Starter | 0x10/0x01/0x10/0x10<br/>(16/1/16/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/f4957274-8164-4135-9ac3-7d236c444a7c" /> |
+| Drive | Water | Candy Toy | 0x10/0x01/0x20/0x10<br/>(16/1/32/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/301d8f6b-e762-4b2b-9d5d-d63a163ea1c6" /> |
+| Drive | Fire | Candy Toy | 0x10/0x01/0x30/0x10<br/>(16/1/48/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/f1fa821f-fe13-4ccd-b187-13331bb8029a" /> |
+| Drive | Light | SR-01 | 0x10/0x01/0x40/0x10<br/>(16/1/64/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/f9166ef5-77b6-4a97-850c-c99291c83a99" /> |
+| Drive | Dark | Candy Toy | 0x10/0x01/0x50/0x10<br/>(16/1/80/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/957f2434-c1ad-4301-95a0-c85e21806918" /> |
+| Drive | Type Wild | Starter | 0x20/0x01/0x00/0x10<br/>(32/1/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/69918728-6fc3-4233-a843-8e4b3a31bda4" /> |
+| Drive | Type Wild Gyasha Ver | Gashapon | 0x20/0x02/0x00/0x10<br/>(32/2/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/26b22a84-4bbc-44db-afca-389297d4707a" /> |
+| Drive | Type Technic | SR-07<br/>(1.05 update) | 0x20/0x03/0x00/0x11<br/>(32/3/0/17) | <img width="150" src="https://gist.github.com/user-attachments/assets/5d41726a-e2e5-439b-8298-021a48791e0b" /> |
+| Drive | Type Speed Flare | Fan Book | 0x20/0x06/0x00/0x10<br/>(32/6/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/36732d2b-aaab-40b5-8473-954e8fd225cb" /> |
+| Gaim | Wind | Candy Toy | 0x11/0x01/0x10/0x10<br/>(17/1/16/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/924c9806-2695-4255-b941-298a477771d6" /> |
+| Gaim | Water | Starter | 0x11/0x01/0x20/0x10<br/>(17/1/32/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/f7967a13-f44e-4bc2-adca-f9c8e001e838" /> |
+| Gaim | Jimber Lemon Arms | Gashapon | 0x21/0x01/0x00/0x10<br/>(33/1/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/e4d54039-5950-4b75-8eff-bd0c1d5ca4a2" /> |
+| Gaim | Kachidoki Arms | Starter | 0x21/0x02/0x00/0x10<br/>(33/2/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/175d416c-5616-4eec-a876-cd8ffcebbc82" /> |
+| Gaim | Kiwami Arms | SR-04  | 0x21/0x03/0x00/0x10<br/>(33/3/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/edf6967a-1b09-48e6-a6df-1210c0a6f5d7" /> |
+| Wizard | Water | Candy Toy | 0x12/0x01/0x20/0x10<br/>(18/1/32/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/0afe2a4b-88e1-473d-82d5-e74bca51330e" /> |
+| Wizard | Fire | Starter | 0x12/0x01/0x30/0x10<br/>(18/1/48/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/574a056b-c350-40ea-bbdc-8b59dd14439a" /> |
+| Wizard | Infinity Style | SR-05 | 0x22/0x01/0x00/0x10<br/>(34/1/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/b5755d2d-ccd7-4151-b6b9-4b7f471e591c" /> |
+| Wizard | All Dragon | Starter | 0x22/0x02/0x00/0x10<br/>(34/2/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/19d32676-2c55-4b3d-90e6-06ab1a55f582" /> |
+| Wizard | Infinity Gold Dragon | Gashapon | 0x22/0x03/0x00/0x10<br/>(34/3/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/3782e6db-a18d-48f5-921f-fa635e5191e5" /> |
+| Fourze | Light | SR-01 | 0x13/0x01/0x40/0x10<br/>(19/1/64/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/df175606-617a-4863-a659-c87b7d58510b" /> |
+| Fourze | Magnet States | SR-06 | 0x23/0x01/0x00/0x10<br/>(35/1/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/9dac5835-f4e7-4ef8-a689-97e6b57319a9" /> |
+| Fourze | Cosmic States | SR-08 | 0x23/0x02/0x00/0x10<br/>(35/2/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/8bc47fe9-220d-4a91-ae1a-930bee25280a" /> |
+| Fourze | Meteor Nadeshiko Fusion States | Gashapon | 0x23/0x03/0x00/0x10<br/>(35/3/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/db494e37-bd0c-4c7a-b634-1e06a19e130f" /> |
+| OOO | Water | SR-04 | 0x14/0x01/0x20/0x10<br/>(20/1/32/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/83b1d3db-3869-42f5-9902-3d21e5116acb" /> |
+| OOO | Super Tatoba Combo | Gashapon | 0x24/0x01/0x00/0x10<br/>(36/1/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/1d7ec7c8-5523-44d3-a3fb-3bc169f88565" /> |
+| OOO | Putotyra Combo | SR-06 | 0x24/0x02/0x00/0x10<br/>(36/2/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/2396ab0c-1d2b-4416-a6c5-5cc06d0917ae" /> |
+| OOO | Tajadol Combo | World Hobby | 0x24/0x04/0x00/0x10<br/>(36/4/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/db52ba66-a9e1-435c-b37b-7e6e5919fc80" /> |
+| W (Double) | Wind | SR-03 | 0x15/0x01/0x10/0x10<br/>(21/1/16/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/36082597-03a9-49f8-82ff-d9388ce07d6b" /> |
+| W (Double) | Cyclone Joker Extreme | SR-06 | 0x25/0x01/0x00/0x10<br/>(37/1/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/a088e1a9-e6a7-44a9-8c27-ce5885f1b1db" /> |
+| W (Double) | Cyclone Joker Gold Extreme | Gashapon | 0x25/0x02/0x00/0x10<br/>(37/2/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/46da96b6-c97b-45e8-86b7-0abcf813bd0b" /> |
+| W (Double) | Fang Joker | Unreleased | 0x25/0x03/0x00/0x10<br/>(37/3/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/7adedcb2-67c8-4411-86a0-6e9f740322e5" /> |
+| Decade | Dark | SR-02 | 0x16/0x01/0x50/0x10<br/>(22/1/80/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/f620caf9-3454-4d4b-92db-144eb5eaae44" /> |
+| Decade | Complete Form | SR-02 | 0x26/0x01/0x00/0x10<br/>(38/1/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/cf2ace7a-3473-4fcf-893c-bccadd32b126" /> |
+| Decade | Strongest Complete Form | Gashapon | 0x26/0x02/0x00/0x10<br/>(38/2/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/5fe96373-c3ad-4b9b-a825-76bf44df7605" /> |
+| Decade | Final Form | SR-06 | 0x26/0x03/0x00/0x10<br/>(38/3/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/50007315-4c13-40a0-89c2-77474d528945" /> |
+| Kiva | Dark | SR-08 | 0x17/0x01/0x50/0x10<br/>(23/1/80/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/529c2a0e-76bf-4e11-90b5-1b24e3255412" /> |
+| Kiva | Dogabaki Form | Unreleased | 0x27/0x01/0x00/0x10<br/>(39/1/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/15a93dd0-e048-4ed7-9238-f1f735e51c88" /> |
+| Kiva | Emperor Form | SR-09 | 0x27/0x02/0x00/0x10<br/>(39/2/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/1f074c30-7cd9-46e9-95ba-77248d63d759" /> |
+| Den-O | Light | SR-07 | 0x18/0x01/0x40/0x10<br/>(24/1/64/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/88d25ccd-25ea-4612-b8dc-586acc19b856" /> |
+| Den-O | Super Climax Form | Gashapon | 0x28/0x01/0x00/0x10<br/>(40/1/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/e70730c8-61c6-453e-9d9a-6883b4a30e6d" /> |
+| Den-O | Liner Form | World Hobby | 0x28/0x02/0x00/0x10<br/>(40/2/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/d6772e49-40b6-4c89-a1b6-b10ce326b2fb" /> |
+| Den-O | Climax Form | SR-09 | 0x28/0x03/0x00/0x10<br/>(40/3/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/97a8645b-a723-42d0-85ab-381e6c5e2b8b" /> |
+| Kabuto | Fire | SR-05 | 0x19/0x01/0x30/0x10<br/>(25/1/48/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/e8ff06e1-08e4-4120-bbdd-35292f9d7098" /> |
+| Kabuto | Hyper Form | SR-06 | 0x29/0x01/0x00/0x10<br/>(41/1/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/005ee4b4-8349-4f4c-8e3b-4736938089fc" /> |
+| Kabuto | Masked Form | Unreleased | 0x29/0x02/0x00/0x10<br/>(41/2/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/852a7ed3-886e-4273-9899-ce0a28650d8a" /> |
+| Hibiki | Fire | SR-05 | 0x1a/0x01/0x30/0x10<br/>(26/1/48/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/7d2575a5-7743-4f98-9773-480088d178fe" /> |
+| Hibiki | Kurenai | Unreleased | 0x2a/0x01/0x00/0x10<br/>(42/1/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/2fcde62f-f7f5-4d74-a62e-2b8f46a6ee8f" /> |
+| Hibiki | Armed | Unreleased | 0x2a/0x02/0x00/0x10<br/>(42/2/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/95d9db3f-ebaa-45b0-8744-656eab1b6af6" /> |
+| Blade | Dark | SR-02 | 0x1b/0x01/0x50/0x10<br/>(27/1/80/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/8e89795c-a049-440c-956c-e02bfa4aa17a" /> |
+| Blade | Joker Form | SR-09 | 0x2b/0x01/0x00/0x10<br/>(43/1/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/368fe8cb-2ccf-45d7-a481-b895f139728b" /> |
+| Blade | King Form | Unreleased | 0x2b/0x02/0x00/0x10<br/>(43/2/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/35b83607-74eb-4365-8a17-171c85496ef2" /> |
+| Faiz | Dark | SR-08 | 0x1c/0x01/0x50/0x10<br/>(28/1/80/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/cd69bcf3-d782-45b0-8b98-7688f50a2c3f" /> |
+| Faiz | Axel Form | SR-02 | 0x2c/0x01/0x00/0x10<br/>(44/1/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/d48698d4-542f-4609-967c-5372538b520d" /> |
+| Faiz | Blaster Form | SR-09 | 0x2c/0x02/0x00/0x10<br/>(44/2/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/7a9027e1-28e6-4cb6-9884-9e59700f66c8" /> |
+| Ryuki | Wind | SR-03 | 0x1d/0x01/0x10/0x10<br/>(29/1/16/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/9044d4c1-81c0-4db5-b202-7b127a2262a4" /> |
+| Ryuki | Dragreder | Unreleased | 0x2d/0x01/0x00/0x10<br/>(45/1/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/cc1f6552-2bbb-4f67-b8ba-97e1db2c026e" /> |
+| Ryuki | Survive | Unreleased | 0x2d/0x02/0x00/0x10<br/>(45/2/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/16acb4a7-64c5-4690-8a3d-4e2b740c43b5" /> |
+| Agito | Water | SR-04 | 0x1e/0x01/0x20/0x10<br/>(30/1/32/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/cd3591c8-af85-4fd2-94ed-dedadd525935" /> |
+| Agito | Shining Form | Unreleased | 0x2e/0x01/0x00/0x10<br/>(46/1/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/17df350d-9a31-4f1f-9a98-a09a676ab8dc" /> |
+| Agito | Burning Form | Unreleased | 0x2e/0x02/0x00/0x10<br/>(46/2/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/f44704ff-6c64-45f7-a227-19c8bdfeb760" /> |
+| Kuuga | Light | SR-07 | 0x1f/0x01/0x40/0x10<br/>(31/1/64/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/0190ac6c-c426-4759-bddf-c4939818c98d" /> |
+| Kuuga | Ultimate Form | Gashapon | 0x2f/0x01/0x00/0x10<br/>(47/1/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/45e15f2b-d371-4303-889f-c2657f8281ed" /> |
+| Kuuga | Amazing Mighty | SR-09 | 0x2f/0x02/0x00/0x10<br/>(47/2/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/78f0d34e-5b87-4140-a152-9478f59a595c" /> |
+| Mach | FRC | SR-07<br/>(1.05 update) | 0x30/0x01/0x00/0x11<br/>(48/1/0/17) | <img width="150" src="https://gist.github.com/user-attachments/assets/cdf3beac-3377-4101-b4ba-3f11d1052294" /> |
+| Baron | FRC | SR-03 | 0x31/0x01/0x00/0x10<br/>(49/1/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/e43ff1ac-b782-44fe-9bed-1d693f2e8cfe" /> |
+| Zangetsu Shin | FRC | Starter | 0x31/0x02/0x00/0x10<br/>(49/2/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/0d7d09d3-089f-49ba-a93f-f75a994a35a3" /> |
+| Beast | FRC | SR-01 | 0x32/0x01/0x00/0x10<br/>(50/1/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/8c628088-2ba6-4cf9-a522-57bb016994d8" /> |
+| Meteor | FRC | SR-01 | 0x33/0x01/0x00/0x10<br/>(51/1/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/4b6d46d3-3150-466a-94b3-f74be6788839" /> |
+| Birth | FRC | SR-04 | 0x34/0x01/0x00/0x10<br/>(52/1/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/7ec80ec9-fa28-4ae7-9ed6-028da2308c78" /> |
+| Accel | FRC | SR-03 | 0x35/0x01/0x00/0x10<br/>(53/1/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/6f08a19d-4bb6-4e66-ab9c-7eb2c0019887" /> |
+| Diend | FRC | SR-08 | 0x36/0x01/0x00/0x10<br/>(54/1/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/795b41a5-7fd4-4fd5-8d63-54e9732b6b11" /> |
+| Shocker Combatman | FRC | Gashapon | 0x36/0x02/0x00/0x10<br/>(54/2/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/97b50e22-3623-4044-a496-a974c0193be9" /> |
+| Gatack | FRC | SR-05 | 0x39/0x01/0x00/0x10<br/>(57/1/0/16) | <img width="150" src="https://gist.github.com/user-attachments/assets/4cacfddf-c37b-457f-a8ce-84e9c99c4cc9" /> |

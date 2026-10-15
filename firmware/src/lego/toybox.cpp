@@ -14,8 +14,11 @@ bool Toybox::addToy(const char* name, const int id, const char* type, const char
         return false;
     }
 
-    if (game && strcmp(game, "infinity") == 0) {
+    const ToyGame toyGame = toyGameFromString(game);
+    if (toyGame == ToyGame::DisneyInfinity) {
         toys[toyCount] = new InfinityToyTag(id, name, type);
+    } else if (toyGame == ToyGame::KamenRider) {
+        toys[toyCount] = new KamenRiderToyTag(id, name, type);
     } else if (strcmp(type, "vehicle") == 0) {
         // TODO: Add the upgrades for this (???)
         toys[toyCount] = new VehicleTag(id, name);
@@ -141,11 +144,13 @@ bool Toybox::deserialize(const char* json) {
             break;  // Safety check to prevent overflow
         }
 
-        const char* gameStr = toy["game"] | "dimensions";
+        const ToyGame toyGame = toyGameFromString(toy["game"] | "dimensions");
         const char* typeStr = toy["type"] | "";
         Toy* tag;
-        if (strcmp(gameStr, "infinity") == 0) {
+        if (toyGame == ToyGame::DisneyInfinity) {
             tag = new InfinityToyTag();
+        } else if (toyGame == ToyGame::KamenRider) {
+            tag = new KamenRiderToyTag();
         } else if (strcmp(typeStr, "vehicle") == 0) {
             tag = new VehicleTag();
         } else if (strcmp(typeStr, "character") == 0) {

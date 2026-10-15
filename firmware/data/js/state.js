@@ -1,26 +1,50 @@
+const PLATFORM_PS3 = 0;
+const PLATFORM_X360 = 1;
+
 // Games supported by the Toy Creator / toybox. `cdnPath` and `jsonPath` are
 // the per-game subdirectories under the images CDN and the firmware's
-// /json/ endpoint respectively.
+// /json/ endpoint respectively. `padGridId` is the DOM id of the game's pad
+// grid in index.html, and `platforms` lists the platforms the game's portal
+// has a USB identity for (mirrors the firmware's toyGameSupportsPlatform()).
 const GAMES = {
   dimensions: {
     label: "LEGO Dimensions",
     cdnPath: "dimensions",
     jsonPath: "dimensions",
+    padGridId: "dimensions-pads",
+    platforms: [PLATFORM_PS3, PLATFORM_X360],
   },
   infinity: {
     label: "Disney Infinity",
     cdnPath: "infinity",
     jsonPath: "infinity",
+    padGridId: "infinity-pads",
+    platforms: [PLATFORM_PS3, PLATFORM_X360],
+  },
+  kamenrider: {
+    label: "Kamen Rider SummonRide",
+    cdnPath: "kamenrider",
+    jsonPath: "kamenrider",
+    padGridId: "kamenrider-pads",
+    platforms: [PLATFORM_PS3],
   },
 };
 
-// Overwritten with the firmware's persisted choice once /settings is fetched (see grid.js's
-// loadSettings()); "dimensions" is just what's rendered for the instant before that resolves.
+const PLATFORM_LABELS = {
+  [PLATFORM_PS3]: "PS3",
+  [PLATFORM_X360]: "Xbox 360",
+};
+
+// Overwritten with the firmware's persisted choice once /settings is fetched, defaults to Dimensions + PS3 because
 var selectedGame = "dimensions";
+var selectedPlatform = PLATFORM_PS3;
+
+function gameSupportsPlatform(game, platform) {
+  return GAMES[game].platforms.includes(platform);
+}
 
 function cdnForGame(game) {
-  return `http://192.168.1.236:8000/${GAMES[game].cdnPath}`;
-  // return `https://raw.githubusercontent.com/FromDarkHell/EmuToLife/refs/heads/main/firmware/images/${GAMES[game].cdnPath}`;
+  return `https://raw.githubusercontent.com/FromDarkHell/EmuToLife/refs/heads/main/firmware/images/${GAMES[game].cdnPath}`;
 }
 
 var cdn = cdnForGame(selectedGame);
@@ -122,7 +146,10 @@ function categoryLabel(category) {
 // Dimensions' backend (ToysToLifeLib) distinguishes vehicle/character tags by a singular "type"
 // string; Infinity has no such distinction and just stores whatever category key it's given
 // verbatim. This only needs to translate Dimensions' two known categories.
-const DIMENSIONS_TYPE_OVERRIDE = { characters: "character", vehicles: "vehicle" };
+const DIMENSIONS_TYPE_OVERRIDE = {
+  characters: "character",
+  vehicles: "vehicle",
+};
 
 function toyTypeForCategory(category) {
   if (selectedGame === "dimensions") {
@@ -139,12 +166,12 @@ function imageFolderForType(type) {
 }
 
 // The DOM id of the pad grid for the currently active game (see index.html: #dimensions-pads has
-// LEGO's 7 sub-positions, #infinity-pads has Infinity's 3 plain pad sections). Both grids' pad
-// elements reuse the same small data-pad-index numbers, so anything that queries pad elements by
-// index must scope to whichever grid is actually active - never query `.pad[data-pad-index]`
-// document-wide.
+// LEGO's 7 sub-positions, #infinity-pads has Infinity's 3 stacked pad sections, #kamenrider-pads
+// has the Ride Gate's slots). Every grid's pad elements reuse the same small data-pad-index
+// numbers, so anything that queries pad elements by index must scope to whichever grid is
+// actually active - never query `.pad[data-pad-index]` document-wide.
 function activePadGridId() {
-  return selectedGame === "infinity" ? "infinity-pads" : "dimensions-pads";
+  return GAMES[selectedGame].padGridId;
 }
 
 // Fetches the pad info (platform + game) from the firmware
@@ -157,29 +184,34 @@ async function loadSettings() {
       selectedGame = settings.game;
       cdn = cdnForGame(selectedGame);
     }
+    selectedPlatform = settings.platform;
 
-    document
-      .querySelectorAll("#game-select button")
-      .forEach((b) =>
-        b.classList.toggle("active", b.dataset.game === selectedGame),
+    document.querySelectorAll("#game-select button").forEach((b) => {
+      b.classList.toggle("active", b.dataset.game === selectedGame);
+      b.classList.toggle(
+        "unsupported",
+        !gameSupportsPlatform(b.dataset.game, selectedPlatform),
       );
+    });
 
-    document
-      .querySelectorAll("#platform-select button")
-      .forEach((b) =>
-        b.classList.toggle(
-          "active",
-          Number(b.dataset.platform) === settings.platform,
-        ),
+    document.querySelectorAll("#platform-select button").forEach((b) => {
+      b.classList.toggle(
+        "active",
+        Number(b.dataset.platform) === selectedPlatform,
       );
+      b.classList.toggle(
+        "unsupported",
+        !gameSupportsPlatform(selectedGame, Number(b.dataset.platform)),
+      );
+    });
 
     // Show only the pad grid for the active game - see activePadGridId()'s comment for why the
-    // other one must stay out of the click-handling/rendering path entirely, not just hidden.
+    // others must stay out of the click-handling/rendering path entirely, not just hidden.
     const activeGridId = activePadGridId();
-    document.getElementById("dimensions-pads").style.display =
-      activeGridId === "dimensions-pads" ? "grid" : "none";
-    document.getElementById("infinity-pads").style.display =
-      activeGridId === "infinity-pads" ? "grid" : "none";
+    Object.values(GAMES).forEach((game) => {
+      document.getElementById(game.padGridId).style.display =
+        game.padGridId === activeGridId ? "grid" : "none";
+    });
   } catch (e) {
     console.error("[settings] Failed to load current platform/game:", e);
   }
