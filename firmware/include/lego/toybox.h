@@ -15,7 +15,17 @@ class Toybox {
    public:
     Toybox();
 
-    bool addToy(const char* name, const int id, const char* type, const char* game = "dimensions");
+    /**
+     * @brief Creates a new toy and adds it to the toybox.
+     *
+     * @param gameVersion The game version the toy was released for (1, 2 or 3). Only used by
+     * Disney Infinity figures; other games ignore it.
+     */
+    bool addToy(const char* name,
+                const int id,
+                const char* type,
+                const char* game = "dimensions",
+                uint8_t gameVersion = 0);
     bool removeToy(const char* uid);
 
     Toy* getToy(size_t index);

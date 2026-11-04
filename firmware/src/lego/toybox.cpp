@@ -3,7 +3,11 @@
 
 Toybox::Toybox() : toyCount(0) {}
 
-bool Toybox::addToy(const char* name, const int id, const char* type, const char* game) {
+bool Toybox::addToy(const char* name,
+                    const int id,
+                    const char* type,
+                    const char* game,
+                    uint8_t gameVersion) {
     // Check if we have space for another toy
     if (toyCount >= MAX_TOYS) {
         return false;
@@ -16,7 +20,7 @@ bool Toybox::addToy(const char* name, const int id, const char* type, const char
 
     const ToyGame toyGame = toyGameFromString(game);
     if (toyGame == ToyGame::DisneyInfinity) {
-        toys[toyCount] = new InfinityToyTag(id, name, type);
+        toys[toyCount] = new InfinityToyTag(id, name, type, gameVersion);
     } else if (toyGame == ToyGame::KamenRider) {
         toys[toyCount] = new KamenRiderToyTag(id, name, type);
     } else if (strcmp(type, "vehicle") == 0) {

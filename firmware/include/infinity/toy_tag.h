@@ -24,15 +24,21 @@ class InfinityToyTag : public Toy, public DisneyInfinity::Figure {
     // does, so this is purely carried through for the frontend's CDN image lookup and display.
     char figureType[24];
     int16_t padIndex;
+    // The game version (1, 2 or 3) the figure was released for, from the frontend's tags.json.
+    // Baked into the character-ID block's series and manufacture date bytes.
+    uint8_t gameVersion;
 
-    InfinityToyTag() : DisneyInfinity::Figure(), padIndex(-1) {
+    InfinityToyTag() : DisneyInfinity::Figure(), padIndex(-1), gameVersion(0) {
         figureName[0] = '\0';
         strlcpy(figureType, "characters", sizeof(figureType));
         _writeCharacterIdBlock();
     }
 
-    InfinityToyTag(uint32_t figureId, const char* name, const char* type = "characters")
-        : DisneyInfinity::Figure(figureId), padIndex(-1) {
+    InfinityToyTag(uint32_t figureId,
+                   const char* name,
+                   const char* type = "characters",
+                   uint8_t version = 0)
+        : DisneyInfinity::Figure(figureId), padIndex(-1), gameVersion(version) {
         strlcpy(figureName, name, sizeof(figureName));
         strlcpy(figureType, (type && type[0] != '\0') ? type : "characters", sizeof(figureType));
         _writeCharacterIdBlock();
@@ -98,6 +104,7 @@ class InfinityToyTag : public Toy, public DisneyInfinity::Figure {
 
         doc["index"] = padIndex;
         doc["type"] = toyType();
+        doc["gameVersion"] = gameVersion;
         doc["game"] = toyGameString(ToyGame::DisneyInfinity);
         MifareS20Json::writePages(*this, doc);
         return doc;
@@ -108,6 +115,7 @@ class InfinityToyTag : public Toy, public DisneyInfinity::Figure {
         padIndex = input["index"] | -1;
         strlcpy(figureName, input["name"] | "", sizeof(figureName));
         strlcpy(figureType, input["type"] | "characters", sizeof(figureType));
+        gameVersion = input["gameVersion"] | 0;
         setUIDStr(input["uid"] | "");
         if (!MifareS20Json::readPages(*this, input)) {
             _writeCharacterIdBlock();
@@ -128,7 +136,7 @@ class InfinityToyTag : public Toy, public DisneyInfinity::Figure {
         DisneyInfinity::FigureCrypto::deriveKey(uid, key);
 
         uint8_t plaintext[DisneyInfinity::FigureCrypto::BLOCK_SIZE];
-        DisneyInfinity::FigureCrypto::buildPlaintextBlock(id, plaintext);
+        DisneyInfinity::FigureCrypto::buildPlaintextBlock(id, gameVersion, plaintext);
 
         uint8_t ciphertext[DisneyInfinity::FigureCrypto::BLOCK_SIZE];
         DisneyInfinity::FigureCrypto::encryptBlock(key, plaintext, ciphertext);

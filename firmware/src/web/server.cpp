@@ -248,6 +248,7 @@ bool LegoServer::add_lego_endpoints() {
         int tag_id = 0xFFFF;
         const char* tag_type = nullptr;
         const char* tag_game = "dimensions";
+        uint8_t tag_game_version = 0;
 
         for (int i = 0; i < request->params(); i++) {
             const AsyncWebParameter* param = request->getParam(i);
@@ -260,16 +261,19 @@ bool LegoServer::add_lego_endpoints() {
                 tag_type = param->value().c_str();
             } else if (param->name() == "game") {
                 tag_game = param->value().c_str();
+            } else if (param->name() == "gameVersion") {
+                tag_game_version = static_cast<uint8_t>(atoi(param->value().c_str()));
             } else {
                 log_warn("[server::toybox] Unknown param %s", param->name().c_str());
             }
         }
 
         log_dbg(
-            "[server::toybox] Adding new tag to toybox / Name: %s / ID: %d / Type: %s / Game: %s",
-            tag_name, tag_id, tag_type, tag_game);
+            "[server::toybox] Adding new tag to toybox / Name: %s / ID: %d / Type: %s / Game: %s "
+            "/ Game Version: %d",
+            tag_name, tag_id, tag_type, tag_game, tag_game_version);
 
-        this->toybox->addToy(tag_name, tag_id, tag_type, tag_game);
+        this->toybox->addToy(tag_name, tag_id, tag_type, tag_game, tag_game_version);
         this->store_toybox();
         request->send(200, "application/json", this->toybox->serialize());
     });

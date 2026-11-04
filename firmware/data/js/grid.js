@@ -166,17 +166,24 @@ function refreshGrid(category) {
 
 // Sends a new request to the server, creating a new toy for inside the toybox
 async function createNewToy(element, tag, category) {
+  const params = new URLSearchParams({
+    name: tag.name,
+    id: tag.id,
+    type: toyTypeForCategory(category),
+    game: selectedGame,
+  });
+
+  // Only Infinity tags carry a gameVersion; it's baked into the figure's character-ID block.
+  if (tag.gameVersion !== undefined) {
+    params.append("gameVersion", tag.gameVersion);
+  }
+
   await fetch("/toybox", {
     method: "PUT",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
     },
-    body: new URLSearchParams({
-      name: tag.name,
-      id: tag.id,
-      type: toyTypeForCategory(category),
-      game: selectedGame,
-    }),
+    body: params,
   }).then((x) => {
     updateToybox().then((x) => {
       // Close the modal
